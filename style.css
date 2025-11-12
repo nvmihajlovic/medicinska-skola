@@ -2834,7 +2834,7 @@ html {
 }
 
 .footer-logo-stack img {
-    height: 78px;
+    height: 90px;
     width: auto;
     filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.4));
     transition: transform 0.3s ease;
@@ -3466,11 +3466,11 @@ html {
     }
 
     .footer-logo-stack {
-        margin-top: -10px;
+        margin-top: 0px;
     }
 
     .footer-logo-stack img {
-        height: 86px;
+        height: 96px;
     }
 
     .footer-contact-card {
@@ -5007,12 +5007,12 @@ input:checked + .cookie-slider:before {
     }
 }
 
-/* Footer logo fine-tuning for small screens: slightly larger and nudged up but keep padding */
+/* Footer logo fine-tuning for small screens: slightly larger and nudged down */
 @media (max-width: 480px) {
     .footer-logo-stack img {
-        height: 86px; /* ~10% larger than 78px */
-        transform: translateY(-6px); /* nudge up toward edge */
-        margin-bottom: 12px; /* keep breathing room */
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 15px;
     }
 
     /* Slightly reduce inner padding so logo sits visually closer to edge without touching it */
