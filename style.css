@@ -4397,19 +4397,19 @@ html {
 
     .hero {
         min-height: 100vh;
-        height: auto;
+        height: 100vh;
+        max-height: 100vh;
         overflow: visible;
-        position: static;
     }
     
     .hero-carousel {
-        position: relative;
-        min-height: 100vh;
+        position: absolute;
+        height: 100%;
     }
     
     .carousel-slide {
-        position: relative;
-        min-height: 100vh;
+        position: absolute;
+        height: 100%;
         background-attachment: scroll !important;
     }
 
