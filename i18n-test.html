@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i18n Test - Translation Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .lang-btn {
+            padding: 12px 30px;
+            border: 2px solid #4a90e2;
+            background: white;
+            color: #4a90e2;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+        
+        .lang-btn.active {
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+        }
+        
+        .test-section {
+            margin-bottom: 30px;
+            padding: 25px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            background: #f8f9fa;
+        }
+        
+        .test-section h2 {
+            color: #4a90e2;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .test-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #4a90e2;
+        }
+        
+        .test-item i {
+            margin-right: 12px;
+            color: #4a90e2;
+            font-size: 20px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            color: #155724;
+            text-align: center;
+        }
+        
+        .debug {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 i18n Translation Test</h1>
+        
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="sr">🇷🇸 СР</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+            <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
+        </div>
+
+        <!-- Navigation Test -->
+        <div class="test-section">
+            <h2>📱 Navigation Menu</h2>
+            <div class="test-item">
+                <i class="fas fa-school"></i>
+                <span data-i18n="nav.about">О школи</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span data-i18n="nav.educational_profiles">Образовни профили</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-users"></i>
+                <span data-i18n="nav.employees">Запослени</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-images"></i>
+                <span data-i18n="nav.gallery">Галерија</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-archive"></i>
+                <span data-i18n="nav.archive">Архива</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-phone"></i>
+                <span data-i18n="nav.contact">Контакт</span>
+            </div>
+        </div>
+
+        <!-- Common Phrases Test -->
+        <div class="test-section">
+            <h2>💬 Common Phrases</h2>
+            <div class="test-item">
+                <i class="fas fa-home"></i>
+                <span data-i18n="common.home">Почетна</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-search"></i>
+                <span data-i18n="common.search">Претрага</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-times"></i>
+                <span data-i18n="common.close">Затвори</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-language"></i>
+                <span data-i18n="common.language">Језик</span>
+            </div>
+        </div>
+
+        <!-- Hero Section Test -->
+        <div class="test-section">
+            <h2>🎯 Hero Section</h2>
+            <div class="test-item">
+                <i class="fas fa-star"></i>
+                <span data-i18n="hero.title">Добродошли у</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-school"></i>
+                <span data-i18n="hero.school_name">Медицинску школу „Стевица Јовановић"</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-quote-left"></i>
+                <span data-i18n="hero.subtitle">Обликујте будућност медицине кроз образовање светске класе</span>
+            </div>
+        </div>
+
+        <!-- Stats Test -->
+        <div class="test-section">
+            <h2>📊 Statistics</h2>
+            <div class="test-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span data-i18n="stats.years_tradition">58 година традиције</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-user-graduate"></i>
+                <span data-i18n="stats.students">800+ ученика</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span data-i18n="stats.professors">60+ професора</span>
+            </div>
+            <div class="test-item">
+                <i class="fas fa-trophy"></i>
+                <span data-i18n="stats.success_rate">95% успешности</span>
+            </div>
+        </div>
+
+        <!-- Status -->
+        <div class="status">
+            <strong>✅ Статус:</strong> <span id="status-text">Учитавање...</span>
+        </div>
+
+        <!-- Debug Info -->
+        <div class="debug">
+            <strong>Debug Info:</strong><br>
+            Current Language: <span id="current-lang">...</span><br>
+            Translation Loaded: <span id="trans-loaded">...</span><br>
+            LocalStorage: <span id="local-storage">...</span>
+        </div>
+    </div>
+
+    <!-- i18n Script -->
+    <script src="i18n.js"></script>
+    
+    <script>
+        // Status update
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const statusText = document.getElementById('status-text');
+                const currentLangEl = document.getElementById('current-lang');
+                const transLoadedEl = document.getElementById('trans-loaded');
+                const localStorageEl = document.getElementById('local-storage');
+                
+                if (window.i18n) {
+                    statusText.textContent = 'i18n систем успешно учитан!';
+                    currentLangEl.textContent = window.i18n.getCurrentLanguage();
+                    transLoadedEl.textContent = Object.keys(window.i18n.translations).length > 0 ? 'YES ✅' : 'NO ❌';
+                    localStorageEl.textContent = localStorage.getItem('selectedLanguage') || 'none';
+                } else {
+                    statusText.textContent = 'Грешка: i18n систем није учитан!';
+                    statusText.style.background = '#f8d7da';
+                    statusText.style.color = '#721c24';
+                }
+            }, 500);
+        });
+
+        // Update debug info on language change
+        window.addEventListener('languageChanged', (e) => {
+            document.getElementById('current-lang').textContent = e.detail.language;
+            document.getElementById('local-storage').textContent = localStorage.getItem('selectedLanguage');
+            console.log('Language changed to:', e.detail.language);
+        });
+    </script>
+</body>
+</html>
