@@ -4399,6 +4399,7 @@ html {
         min-height: 100vh;
         height: auto;
         overflow: visible;
+        position: static;
     }
     
     .hero-carousel {
@@ -4409,6 +4410,7 @@ html {
     .carousel-slide {
         position: relative;
         min-height: 100vh;
+        background-attachment: scroll !important;
     }
 
     .hero-title {
