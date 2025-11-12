@@ -11,41 +11,6 @@
     
     <style>
         /* Sitemap Specific Styles */
-        .sitemap-hero {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            padding: 100px 20px 60px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .sitemap-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.03)"/></svg>');
-            background-size: 50px 50px;
-            opacity: 0.3;
-        }
-        
-        .sitemap-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .sitemap-hero p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-        }
-        
         .sitemap-container {
             max-width: 1400px;
             margin: 60px auto;
@@ -219,10 +184,6 @@
         
         /* Responsive */
         @media (max-width: 768px) {
-            .sitemap-hero h1 {
-                font-size: 2rem;
-            }
-            
             .sitemap-grid {
                 grid-template-columns: 1fr;
             }
@@ -266,7 +227,7 @@
                 <li><a href="arhiva.html" class="nav-link">Архива</a></li>
                 <li><a href="erasmus-projekti.html" class="nav-link">Еразмус+ пројекти</a></li>
                 <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
-            </ul>
+    </ul>
 
             <div class="hamburger" id="hamburger" aria-label="Мени">
                 <span class="bar"></span>
@@ -276,13 +237,22 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="sitemap-hero">
-        <h1><i class="fas fa-sitemap"></i> Мапа сајта</h1>
-        <p>Брз преглед свих страница и садржаја на нашем сајту</p>
+    <!-- Заглавље странице -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Почетна</a>
+                <span class="breadcrumb-separator"><i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+                <span class="current-page">Мапа сајта</span>
+            </div>
+            <h1 class="page-title"><i class="fas fa-sitemap"></i> Мапа сајта</h1>
+            <p class="page-subtitle">Брз преглед свих страница и садржаја на нашем сајту</p>
+        </div>
     </section>
 
     <!-- Main Content -->
+    <main class="page-content">
     <div class="sitemap-container">
         <!-- Search -->
         <div class="sitemap-search">
@@ -411,6 +381,13 @@
             </div>
         </div>
     </div>
+    </main>
+
+    <!-- Page Ending -->
+    <div class="page-ending">
+        <div class="ending-divider"></div>
+        <p class="ending-text">Медицинска школа „Стевица Јовановић" Панчево</p>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
@@ -429,18 +406,42 @@
                     <ul class="footer-links">
                         <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="maturska-pitanja.html"><span>Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="ucenici-i-roditelji.html"><span>Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="erasmus-projekti.html"><span>Erasmus+ пројекти</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Контакт</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Војводе Радомира Путника 8, Панчево</li>
-                        <li><i class="fas fa-phone"></i> 013/344-201</li>
-                        <li><i class="fas fa-envelope"></i> medicinska@skolapancevo.edu.rs</li>
+                    <h4>Документа</h4>
+                    <ul class="footer-links">
+                        <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="arhiva.html"><span>Архива</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="sekcije.html"><span>Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="politika-privatnosti.html"><span>Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html#lokacija"><span>Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                     </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Останимо у контакту</h4>
+                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+                    <div class="footer-socials social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link tiktok" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="footer-newsletter">
+                        <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
+                            <span>Пошаљи нам питање</span>
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </a>
+                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
+                    </div>
                 </div>
             </div>
         </div>
