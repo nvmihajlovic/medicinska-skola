@@ -1181,9 +1181,19 @@
             noResults.classList.remove('active');
 
             try {
+                console.log('Fetching manifest.json...');
                 const response = await fetch('archive-posts/manifest.json');
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
                 const data = await response.json();
+                console.log('Data loaded:', data);
+                
                 allPosts = data.posts || data; // Support both formats
+                console.log('All posts:', allPosts);
                 filteredPosts = [...allPosts];
                 
                 // Populate year filter
@@ -1213,7 +1223,7 @@
                 loadingState.classList.remove('active');
                 noResults.classList.add('active');
                 document.querySelector('.no-results h3').textContent = 'Грешка при учитавању';
-                document.querySelector('.no-results p').textContent = 'Молимо покушајте поново касније';
+                document.querySelector('.no-results p').textContent = error.message || 'Молимо покушајте поново касније';
             }
         }
 
