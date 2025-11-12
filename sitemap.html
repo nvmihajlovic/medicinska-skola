@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мапа сајта – Медицинска школа „Стевица Јовановић"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="wcag-elements.css">
+    
+    <style>
+        /* Sitemap Specific Styles */
+        .sitemap-hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 100px 20px 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sitemap-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+        
+        .sitemap-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sitemap-hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sitemap-container {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .sitemap-section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .sitemap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border-color: var(--primary-color);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0;
+        }
+        
+        .sitemap-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sitemap-links li {
+            margin-bottom: 12px;
+        }
+        
+        .sitemap-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        
+        .sitemap-link:hover {
+            background: #f8f9fa;
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .sitemap-link i {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+        
+        .sitemap-link:hover i {
+            transform: scale(1.2);
+        }
+        
+        /* Stats Section */
+        .sitemap-stats {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Search Box */
+        .sitemap-search {
+            max-width: 600px;
+            margin: 0 auto 50px;
+            position: relative;
+        }
+        
+        .sitemap-search input {
+            width: 100%;
+            padding: 18px 60px 18px 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .sitemap-search input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+        }
+        
+        .sitemap-search button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .sitemap-search button:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sitemap-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sitemap-stats {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 30px 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/images_preview_rev_1.png" alt="Медицинска школа — лого" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="dropdown">
+                    <a href="o-nama.html" class="nav-link">О школи <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-nama.html"><i class="fas fa-school"></i> О нама</a></li>
+                        <li><a href="zaposleni.html"><i class="fas fa-users"></i> Запослени</a></li>
+                        <li><a href="dokumentacija.html"><i class="fas fa-file-alt"></i> Документација</a></li>
+                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends"></i> Стручни тимови</a></li>
+                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line"></i> Јавне набавке и фин. извештаји</a></li>
+                        <li><a href="sekcije.html"><i class="fas fa-star"></i> Секције</a></li>
+                    </ul>
+                </li>
+                <li><a href="obrazovni-profili.html" class="nav-link">Образовни профили</a></li>
+                <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
+                <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
+                <li><a href="galerija.html" class="nav-link">Галерија</a></li>
+                <li><a href="arhiva.html" class="nav-link">Архива</a></li>
+                <li><a href="erasmus-projekti.html" class="nav-link">Еразмус+ пројекти</a></li>
+                <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger" aria-label="Мени">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="sitemap-hero">
+        <h1><i class="fas fa-sitemap"></i> Мапа сајта</h1>
+        <p>Брз преглед свих страница и садржаја на нашем сајту</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="sitemap-container">
+        <!-- Search -->
+        <div class="sitemap-search">
+            <input type="text" placeholder="Претражите мапу сајта..." id="sitemapSearch">
+            <button onclick="filterSitemap()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <!-- Stats -->
+        <div class="sitemap-stats">
+            <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Страница</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Главних секција</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Образовна профила</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Информација</div>
+            </div>
+        </div>
+
+        <!-- Sitemap Grid -->
+        <div class="sitemap-grid" id="sitemapGrid">
+            <!-- О школи -->
+            <div class="sitemap-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h2 class="section-title">О школи</h2>
+                </div>
+                <ul class="sitemap-links">
+                    <li><a href="o-nama.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> О нама</a></li>
+                    <li><a href="zaposleni.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Запослени</a></li>
+                    <li><a href="dokumentacija.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Документација</a></li>
+                    <li><a href="strucni-timovi.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Стручни тимови</a></li>
+                    <li><a href="javne-nabavke.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Јавне набавке</a></li>
+                    <li><a href="sekcije.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Секције</a></li>
+                </ul>
+            </div>
+
+            <!-- Образовање -->
+            <div class="sitemap-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="section-title">Образовање</h2>
+                </div>
+                <ul class="sitemap-links">
+                    <li><a href="obrazovni-profili.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Образовни профили</a></li>
+                    <li><a href="maturska-pitanja.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Матурска питања</a></li>
+                    <li><a href="strucna-praksa.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Стручна пракса</a></li>
+                    <li><a href="ucenici-i-roditelji.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Ученици и родитељи</a></li>
+                </ul>
+            </div>
+
+            <!-- Пројекти -->
+            <div class="sitemap-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h2 class="section-title">Пројекти</h2>
+                </div>
+                <ul class="sitemap-links">
+                    <li><a href="erasmus-projekti.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Еразмус+ пројекти</a></li>
+                    <li><a href="humanitarna-akcija.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Хуманитарне акције</a></li>
+                    <li><a href="donacija-krvi.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Донација крви</a></li>
+                </ul>
+            </div>
+
+            <!-- Галерија -->
+            <div class="sitemap-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h2 class="section-title">Мултимедија</h2>
+                </div>
+                <ul class="sitemap-links">
+                    <li><a href="galerija.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Галерија</a></li>
+                    <li><a href="arhiva.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Архива</a></li>
+                    <li><a href="dan-planete.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Дан планете</a></li>
+                    <li><a href="fruska-gora-maraton.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Фрушка гора маратон</a></li>
+                </ul>
+            </div>
+
+            <!-- Документа -->
+            <div class="sitemap-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h2 class="section-title">Документа</h2>
+                </div>
+                <ul class="sitemap-links">
+                    <li><a href="dokumentacija.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Документација</a></li>
+                    <li><a href="dokumenti.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Документи</a></li>
+                    <li><a href="javne-nabavke.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Јавне набавке</a></li>
+                    <li><a href="politika-privatnosti.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Политика приватности</a></li>
+                    <li><a href="uslovi-koristenja.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Услови коришћења</a></li>
+                </ul>
+            </div>
+
+            <!-- Контакт -->
+            <div class="sitemap-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h2 class="section-title">Контакт</h2>
+                </div>
+                <ul class="sitemap-links">
+                    <li><a href="kontakt.html" class="sitemap-link"><i class="fas fa-chevron-right"></i> Контакт</a></li>
+                    <li><a href="kontakt.html#lokacija" class="sitemap-link"><i class="fas fa-chevron-right"></i> Како до нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-main">
+            <div class="footer-content">
+                <div class="footer-column footer-brand">
+                    <div class="footer-logo-stack">
+                        <img src="images/Untitled_preview_rev_1.png" alt="Медицинска школа — лого" class="footer-logo-img">
+                        <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> 58 година традиције</span>
+                    </div>
+                    <p class="footer-description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Брзе везе</h4>
+                    <ul class="footer-links">
+                        <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Контакт</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Војводе Радомира Путника 8, Панчево</li>
+                        <li><i class="fas fa-phone"></i> 013/344-201</li>
+                        <li><i class="fas fa-envelope"></i> medicinska@skolapancevo.edu.rs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
+                <div class="developer-credit">
+                    <span>Израда и одржавање</span>
+                    <img src="images/pansoft-logo.png" alt="Pansoft">
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="politika-privatnosti.html">Политика приватности</a>
+                    <span>•</span>
+                    <a href="uslovi-koristenja.html">Услови коришћења</a>
+                    <span>•</span>
+                    <a href="sitemap.html">Мапа сајта</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WCAG Toolbar -->
+    <div class="wcag-toolbar">
+        <button class="wcag-button" id="wcag-toggle" title="Опције приступачности" aria-label="Опције приступачности">
+            <i class="fas fa-universal-access"></i>
+        </button>
+
+        <div class="wcag-panel" id="wcag-panel">
+            <div class="wcag-panel-header">
+                <h3>Приступачност</h3>
+                <button class="wcag-close" id="wcag-close" aria-label="Затвори">&times;</button>
+            </div>
+
+            <div class="wcag-controls">
+                <div class="wcag-control-group">
+                    <label>Величина текста</label>
+                    <div class="wcag-buttons">
+                        <button class="wcag-control-btn" id="decrease-font">A-</button>
+                        <button class="wcag-control-btn" id="reset-font">A</button>
+                        <button class="wcag-control-btn" id="increase-font">A+</button>
+                    </div>
+                </div>
+
+                <div class="wcag-control-group">
+                    <label>Контраст</label>
+                    <div class="wcag-buttons">
+                        <button class="wcag-control-btn" id="high-contrast">
+                            <i class="fas fa-adjust"></i>
+                        </button>
+                        <button class="wcag-control-btn" id="invert-colors">
+                            <i class="fas fa-circle-half-stroke"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="wcag-reset-btn" id="reset-all">
+                    <i class="fas fa-undo"></i> Ресетуј све
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="wcag-controls.js"></script>
+    
+    <script>
+        // Filter sitemap
+        function filterSitemap() {
+            const searchInput = document.getElementById('sitemapSearch');
+            const query = searchInput.value.toLowerCase();
+            const sections = document.querySelectorAll('.sitemap-section');
+            
+            sections.forEach(section => {
+                const text = section.textContent.toLowerCase();
+                section.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        }
+        
+        // Live search
+        document.getElementById('sitemapSearch').addEventListener('input', filterSitemap);
+        
+        // Current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
