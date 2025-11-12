@@ -950,9 +950,9 @@ html {
 /* Hero Section */
 .hero {
     height: 100vh;
+    min-height: 100vh;
     position: relative;
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4396,9 +4396,19 @@ html {
     }
 
     .hero {
-        min-height: 600px;
+        min-height: 100vh;
         height: auto;
-        padding: 120px 0 80px;
+        overflow: visible;
+    }
+    
+    .hero-carousel {
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .carousel-slide {
+        position: relative;
+        min-height: 100vh;
     }
 
     .hero-title {
