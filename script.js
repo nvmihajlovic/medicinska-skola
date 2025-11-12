@@ -1358,7 +1358,7 @@ window.addEventListener('scroll', () => {
 // ============================================
 
 // ============================================
-// TABS FOR EDUCATION PROFILES
+// TABS FOR EDUCATION PROFILES - ENHANCED ANIMATIONS
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
     const tabButtons = document.querySelectorAll('.tab-btn');
@@ -1377,23 +1377,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Remove active class from all buttons and panels in this container
-            tabsContainer.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            tabsContainer.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
-            
-            // Add active class to clicked button and corresponding panel
-            this.classList.add('active');
+            // Find currently active panel
+            const currentPanel = tabsContainer.querySelector('.tab-panel.active');
             const targetPanel = document.getElementById(targetTab);
             
-            if (targetPanel) {
-                targetPanel.classList.add('active');
-                console.log('Active panel:', targetTab);
-            } else {
+            if (!targetPanel) {
                 console.error('Target panel not found:', targetTab);
+                return;
             }
+            
+            // Skip if clicking on already active tab
+            if (currentPanel === targetPanel) {
+                return;
+            }
+            
+            // Add fade-out animation to current panel
+            if (currentPanel) {
+                currentPanel.classList.add('fade-out');
+                
+                // Wait for fade-out animation to complete
+                setTimeout(() => {
+                    currentPanel.classList.remove('active', 'fade-out');
+                    
+                    // Show new panel with fade-in animation
+                    targetPanel.classList.add('active');
+                }, 400); // Match CSS animation duration
+            } else {
+                // No current panel, just show the target
+                targetPanel.classList.add('active');
+            }
+            
+            // Update button states
+            tabsContainer.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            console.log('Active panel:', targetTab);
         });
     });
 });
 
 // Console log for development
-console.log('Medicinska Škola website loaded successfully with UI/UX enhancements!');
+console.log('Medicinska Škola website loaded successfully with enhanced UI/UX animations!');
