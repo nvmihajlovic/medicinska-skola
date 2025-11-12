@@ -283,6 +283,10 @@ p, li, span {
 .icon-circle {
     width: 50px;
     height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
     background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
     border-radius: 50%;
     display: inline-flex;
@@ -301,6 +305,9 @@ p, li, span {
 .icon-circle-lg {
     width: 70px;
     height: 70px;
+    min-width: 70px;
+    min-height: 70px;
+    aspect-ratio: 1 / 1;
     font-size: 1.8rem;
 }
 
@@ -1702,6 +1709,9 @@ html {
 .card-icon {
     width: 50px;
     height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    flex-shrink: 0;
     background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
     border-radius: 12px;
     display: flex;
@@ -3013,6 +3023,10 @@ html {
 .social-link {
     width: 48px;
     height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
     border-radius: 14px;
     display: inline-flex;
     align-items: center;
@@ -4021,6 +4035,9 @@ html {
     .social-link {
         width: 40px;
         height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        aspect-ratio: 1 / 1;
         font-size: 16px;
     }
     
@@ -4049,6 +4066,10 @@ html {
 @media (max-width: 1300px) {
     .hamburger {
         display: flex;
+    }
+
+    .logo-img {
+        height: 48px;
     }
 
     .nav-menu {
@@ -4370,9 +4391,14 @@ html {
         }
     }
 
+    .logo-img {
+        height: 42px;
+    }
+
     .hero {
         min-height: 600px;
-        height: 100vh;
+        height: auto;
+        padding: 120px 0 80px;
     }
 
     .hero-title {
