@@ -1182,7 +1182,8 @@
 
             try {
                 const response = await fetch('archive-posts/manifest.json');
-                allPosts = await response.json();
+                const data = await response.json();
+                allPosts = data.posts || data; // Support both formats
                 filteredPosts = [...allPosts];
                 
                 // Populate year filter
