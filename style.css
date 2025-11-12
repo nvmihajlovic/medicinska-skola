@@ -944,11 +944,14 @@ html {
 .hero {
     height: 100vh;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
 }
 
 .hero-carousel {
