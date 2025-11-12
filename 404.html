@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страница није пронађена | Медицинска школа</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* 404 Page Styles */
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        /* Animated Background */
+        .error-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.1;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+        
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            bottom: 10%;
+            left: 30%;
+            animation-delay: 6s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-30px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-60px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-30px) rotate(270deg);
+            }
+        }
+        
+        /* Error Container */
+        .error-container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 404 Number */
+        .error-number {
+            font-size: 180px;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .error-number::before {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: rgba(255,255,255,0.1);
+            z-index: -1;
+            transform: translate(8px, 8px);
+        }
+        
+        /* Glitch Animation */
+        .glitch {
+            animation: glitch 1.5s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 100% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+        }
+        
+        /* Medical Icon */
+        .error-icon {
+            font-size: 120px;
+            color: white;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        
+        /* Error Title */
+        .error-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* Error Message */
+        .error-message {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        /* Buttons */
+        .error-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .error-btn {
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .btn-primary:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* Search Box */
+        .error-search {
+            max-width: 500px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 18px 60px 18px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Quick Links */
+        .quick-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .quick-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .quick-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .error-number {
+                font-size: 120px;
+            }
+            
+            .error-icon {
+                font-size: 80px;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-message {
+                font-size: 1.1rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+            }
+            
+            .error-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .quick-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .quick-link {
+                justify-content: center;
+            }
+        }
+        
+        /* Heartbeat Animation */
+        .heartbeat {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            10%, 30% {
+                transform: scale(0.9);
+            }
+            20%, 40%, 60%, 80% {
+                transform: scale(1.1);
+            }
+            50%, 70% {
+                transform: scale(1.15);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <!-- Animated Background -->
+        <div class="error-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        
+        <!-- Error Container -->
+        <div class="error-container">
+            <!-- Medical Icon -->
+            <div class="error-icon heartbeat">
+                <i class="fas fa-stethoscope"></i>
+            </div>
+            
+            <!-- 404 Number -->
+            <div class="error-number glitch">404</div>
+            
+            <!-- Title -->
+            <h1 class="error-title">Страница није пронађена</h1>
+            
+            <!-- Message -->
+            <p class="error-message">
+                Упс! Изгледа да сте залутали. Страница коју тражите не постоји или је премештена.<br>
+                Али не брините - помоћи ћемо вам да пронађете право место! 🩺
+            </p>
+            
+            <!-- Search Box -->
+            <div class="error-search">
+                <input type="text" 
+                       class="search-input" 
+                       placeholder="Претражите сајт..." 
+                       id="errorSearch">
+                <button class="search-btn" onclick="performSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="error-actions">
+                <a href="index.html" class="error-btn btn-primary">
+                    <i class="fas fa-home"></i>
+                    Почетна страна
+                </a>
+                <a href="kontakt.html" class="error-btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Контактирајте нас
+                </a>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <a href="o-nama.html" class="quick-link">
+                    <i class="fas fa-school"></i>
+                    О школи
+                </a>
+                <a href="obrazovni-profili.html" class="quick-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    Образовни профили
+                </a>
+                <a href="galerija.html" class="quick-link">
+                    <i class="fas fa-images"></i>
+                    Галерија
+                </a>
+                <a href="arhiva.html" class="quick-link">
+                    <i class="fas fa-archive"></i>
+                    Архива
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Search functionality
+        function performSearch() {
+            const searchInput = document.getElementById('errorSearch');
+            const query = searchInput.value.trim();
+            
+            if (query) {
+                // Redirect to search page or Google search
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}+site:${window.location.hostname}`;
+            }
+        }
+        
+        // Enter key to search
+        document.getElementById('errorSearch').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // Easter egg - Konami code
+        let konamiCode = [];
+        const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.key);
+            konamiCode = konamiCode.slice(-10);
+            
+            if (konamiCode.join(',') === konamiPattern.join(',')) {
+                document.querySelector('.error-icon i').classList.remove('fa-stethoscope');
+                document.querySelector('.error-icon i').classList.add('fa-rocket');
+                document.querySelector('.error-message').textContent = '🎉 Честитамо! Открили сте скривени код! 🎉';
+            }
+        });
+        
+        // Log 404 error for analytics
+        console.log('%c404 Error ', 'background: #667eea; color: white; font-size: 20px; padding: 10px; border-radius: 5px;');
+        console.log('Page not found:', window.location.href);
+        console.log('Referrer:', document.referrer || 'Direct access');
+    </script>
+</body>
+</html>
