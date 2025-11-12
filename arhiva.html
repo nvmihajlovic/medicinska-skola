@@ -1,0 +1,718 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Историјат школе – Медицинска школа „Стевица Јовановић"</title>
+    <meta name="description" content="58 година традиције у здравственом образовању - Историјат Медицинске школе Стевица Јовановић од 1967. до данас">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="wcag-elements.css">
+    <style>
+        /* ARCHIVE PAGE STYLES */
+        .archive-hero {
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            padding: 100px 0 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .archive-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.03)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .archive-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .archive-hero-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .archive-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .archive-hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        /* Timeline Container */
+        .timeline-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .timeline-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .timeline-intro h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .timeline-intro p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Decade Filters */
+        .decade-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .decade-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .decade-btn:hover,
+        .decade-btn.active {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            border-color: #4a90e2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #4a90e2, #357abd);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .timeline-content {
+            flex: 1;
+            padding: 0 40px;
+            max-width: calc(50% - 20px);
+        }
+
+        .timeline-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(74, 144, 226, 0.1);
+            border: 1px solid rgba(74, 144, 226, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(74, 144, 226, 0.2);
+            border-color: rgba(74, 144, 226, 0.3);
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, #4a90e2, transparent);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-card::before {
+            right: -60px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-card::before {
+            left: -60px;
+            background: linear-gradient(270deg, #4a90e2, transparent);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .timeline-description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .timeline-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 15px;
+            filter: sepia(0.2);
+            transition: filter 0.3s ease;
+        }
+
+        .timeline-card:hover .timeline-image {
+            filter: sepia(0);
+        }
+
+        /* Timeline Marker */
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid #4a90e2;
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-marker {
+            transform: translateX(-50%) scale(1.3);
+            box-shadow: 0 0 0 8px rgba(74, 144, 226, 0.3);
+        }
+
+        /* Stats Section */
+        .archive-stats {
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+            padding: 60px 20px;
+            margin: 80px 0;
+        }
+
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4a90e2;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .archive-hero h1 {
+                font-size: 2rem;
+            }
+
+            .archive-hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .archive-hero-icon {
+                font-size: 3rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                max-width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+
+            .timeline-card::before {
+                display: none;
+            }
+
+            .decade-btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+
+            .timeline-intro h2 {
+                font-size: 1.8rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/images_preview_rev_1.jpg" alt="Медицинска школа — лого" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="dropdown">
+                    <a href="o-nama.html" class="nav-link">О школи <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-nama.html"><i class="fas fa-school"></i> О нама</a></li>
+                        <li><a href="zaposleni.html"><i class="fas fa-users"></i> Запослени</a></li>
+                        <li><a href="dokumentacija.html"><i class="fas fa-file-alt"></i> Документација</a></li>
+                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends"></i> Стручни тимови</a></li>
+                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line"></i> Јавне набавке и фин. извештаји</a></li>
+                        <li><a href="sekcije.html"><i class="fas fa-star"></i> Секције</a></li>
+                    </ul>
+                </li>
+                <li><a href="obrazovni-profili.html" class="nav-link">Образовни профили</a></li>
+                <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
+                <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
+                <li><a href="galerija.html" class="nav-link">Галерија</a></li>
+                <li><a href="erasmus-projekti.html" class="nav-link">Еразмус+ пројекти</a></li>
+                <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="archive-hero">
+        <div class="archive-hero-content">
+            <div class="archive-hero-icon">
+                <i class="fas fa-landmark"></i>
+            </div>
+            <h1>Историјат школе</h1>
+            <p class="archive-hero-subtitle">58 година традиције у здравственом образовању • 1967-2025</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="archive-stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">58</div>
+                <div class="stat-label">Година традиције</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15,000+</div>
+                <div class="stat-label">Дипломираних ученика</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Образовна профила</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">Запослених</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Container -->
+    <div class="timeline-container">
+        <div class="timeline-intro">
+            <h2>Наша прича кроз деценије</h2>
+            <p>Од оснивања 1967. године до данас, Медицинска школа „Стевица Јовановић" је континуирано радила на образовању нових генерација здравствених радника, прилагођавајући се потребама времена и увек држећи корак са развојем медицине.</p>
+        </div>
+
+        <!-- Decade Filters -->
+        <div class="decade-filters">
+            <button class="decade-btn active" data-decade="all">Све године</button>
+            <button class="decade-btn" data-decade="1960">1960-е</button>
+            <button class="decade-btn" data-decade="1970">1970-е</button>
+            <button class="decade-btn" data-decade="1980">1980-е</button>
+            <button class="decade-btn" data-decade="1990">1990-е</button>
+            <button class="decade-btn" data-decade="2000">2000-е</button>
+            <button class="decade-btn" data-decade="2010">2010-е</button>
+            <button class="decade-btn" data-decade="2020">2020-е</button>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+            <!-- 1967 - Оснивање -->
+            <div class="timeline-item" data-decade="1960">
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <span class="timeline-year">1967</span>
+                        <h3 class="timeline-title">Оснивање школе</h3>
+                        <p class="timeline-description">
+                            Медицинска школа „Стевица Јовановић" основана је у Панчеву као одговор на растућу потребу за здравственим кадром у региону. Школа је добила име по истакнутом лекару и ратном хероју др Стевици Јовановићу.
+                        </p>
+                        <img src="images/arhiva/osnivanje.jpg" alt="Оснивање школе 1967" class="timeline-image" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <!-- 1975 - Први објекат -->
+            <div class="timeline-item" data-decade="1970">
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <span class="timeline-year">1975</span>
+                        <h3 class="timeline-title">Изградња првог објекта</h3>
+                        <p class="timeline-description">
+                            Завршена је изградња првог специјализованог школског објекта са модерним кабинетима за практичну наставу. Овај објекат је омогућио проширење капацитета и унапређење квалитета образовања.
+                        </p>
+                        <img src="images/arhiva/objekat1975.jpg" alt="Први објекат 1975" class="timeline-image" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <!-- 1985 - Проширење програма -->
+            <div class="timeline-item" data-decade="1980">
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <span class="timeline-year">1985</span>
+                        <h3 class="timeline-title">Проширење образовних профила</h3>
+                        <p class="timeline-description">
+                            Уведени су нови образовни профили - Гинеколошко-акушерска сестра и Медицинска сестра-васпитач, чиме је школа проширила своју понуду и одговорила на специфичне потребе здравственог система.
+                        </p>
+                        <img src="images/arhiva/prosirenje1985.jpg" alt="Проширење 1985" class="timeline-image" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <!-- 1995 - Модернизација -->
+            <div class="timeline-item" data-decade="1990">
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <span class="timeline-year">1995</span>
+                        <h3 class="timeline-title">Модернизација наставе</h3>
+                        <p class="timeline-description">
+                            Школа је прошла кроз обимну модернизацију - уведена су рачунарска учионица, нова медицинска опрема и савремени дидактички материјали. Успостављена је сарадња са водећим здравственим установама у региону.
+                        </p>
+                        <img src="images/arhiva/modernizacija1995.jpg" alt="Модернизација 1995" class="timeline-image" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <!-- 2005 - Нови објекат -->
+            <div class="timeline-item" data-decade="2000">
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <span class="timeline-year">2005</span>
+                        <h3 class="timeline-title">Нови школски простор</h3>
+                        <p class="timeline-description">
+                            Усељење у нови, савремени објекат на адреси Пастерова 2. Нови простор обухвата модерне учионице, лабораторије, библиотеку и свечану салу. Школа је опремљена најсавременијом медицинском опремом за практичну наставу.
+                        </p>
+                        <img src="images/arhiva/noviobjekat2005.jpg" alt="Нови објекат 2005" class="timeline-image" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <!-- 2015 - Erasmus+ -->
+            <div class="timeline-item" data-decade="2010">
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <span class="timeline-year">2015</span>
+                        <h3 class="timeline-title">Интернационализација</h3>
+                        <p class="timeline-description">
+                            Почетак учешћа у Erasmus+ програму. Школа је започела међународну сарадњу, омогућавајући ученицима и наставницима мобилности у европске земље ради размене искустава и стицања нових компетенција.
+                        </p>
+                        <img src="images/arhiva/erasmus2015.jpg" alt="Erasmus+ 2015" class="timeline-image" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <!-- 2020 - Дигитализација -->
+            <div class="timeline-item" data-decade="2020">
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <span class="timeline-year">2020</span>
+                        <h3 class="timeline-title">Дигитална трансформација</h3>
+                        <p class="timeline-description">
+                            Школа се успешно прилагодила новим околностима уводећи онлајн наставу и дигиталне алате. Инвестирано је у технологију која омогућава квалитетну хибридну наставу и савремене облике учења.
+                        </p>
+                        <img src="images/arhiva/digitalizacija2020.jpg" alt="Дигитализација 2020" class="timeline-image" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+
+            <!-- 2025 - Данас -->
+            <div class="timeline-item" data-decade="2020">
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <span class="timeline-year">2025</span>
+                        <h3 class="timeline-title">Данас - Настављамо традицију</h3>
+                        <p class="timeline-description">
+                            Школа наставља да буде водећа институција у здравственом образовању, са фокусом на практичну наставу, савремене методе и континуирано усавршавање. Поносно обележавамо 58 година непрекидног рада и образовања више од 15.000 дипломираних здравствених радника.
+                        </p>
+                        <img src="images/arhiva/danas2025.jpg" alt="Данас 2025" class="timeline-image" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <div class="timeline-marker"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-main">
+            <div class="footer-content">
+                <div class="footer-column footer-brand">
+                    <div class="footer-logo-stack">
+                        <img src="images/Untitled_preview_rev_1.png" alt="Медицинска школа — лого" class="footer-logo-img">
+                        <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> 58 година традиције</span>
+                    </div>
+                    <p class="footer-description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама. Подржавамо сваког ученика кроз менторство, пројекте и реалне стручне ситуације.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Брзе везе</h4>
+                    <ul class="footer-links">
+                        <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="maturska-pitanja.html"><span>Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="ucenici-i-roditelji.html"><span>Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="erasmus-projekti.html"><span>Erasmus+ пројекти</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Документа</h4>
+                    <ul class="footer-links">
+                        <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="sekcije.html"><span>Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="politika-privatnosti.html"><span>Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html#lokacija"><span>Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Останимо у контакту</h4>
+                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+                    <div class="footer-socials social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link tiktok" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="footer-newsletter">
+                        <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
+                            <span>Пошаљи нам питање</span>
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </a>
+                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
+                <div class="developer-credit">
+                    <span>Израда и одржавање</span>
+                    <img src="images/pansoft-logo.png" alt="Pansoft">
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="politika-privatnosti.html">Политика приватности</a>
+                    <span>•</span>
+                    <a href="#">Услови коришћења</a>
+                    <span>•</span>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Archive Link Section -->
+        <div class="footer-archive-section">
+            <a href="arhiva.html" class="archive-link">
+                <div class="archive-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="archive-content">
+                    <span class="archive-title">Историјат школе</span>
+                    <span class="archive-subtitle">58 година традиције • 1967-2025</span>
+                </div>
+                <i class="fas fa-arrow-right archive-arrow"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" title="Назад на врх" aria-label="Скролуј на врх стране">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- WCAG Badge -->
+    <div class="wcag-badge" role="img" aria-label="Сајт је прилагођен WCAG 2.1 стандардима приступачности">
+        <div class="wcag-icon">
+            <i class="fas fa-universal-access" aria-hidden="true"></i>
+        </div>
+        <div class="wcag-tooltip" role="tooltip">
+            <strong>WCAG 2.1</strong>
+            <span>Приступачан садржај</span>
+        </div>
+    </div>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher" id="language-switcher" aria-label="Промена језика">
+        <button class="lang-btn active" data-lang="sr" aria-pressed="true">СР</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Decade filter functionality
+        const decadeBtns = document.querySelectorAll('.decade-btn');
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        decadeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                decadeBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const decade = this.getAttribute('data-decade');
+
+                timelineItems.forEach(item => {
+                    if (decade === 'all' || item.getAttribute('data-decade') === decade) {
+                        item.style.display = 'flex';
+                        // Reset animation
+                        item.style.animation = 'none';
+                        setTimeout(() => {
+                            item.style.animation = 'fadeInUp 0.6s ease forwards';
+                        }, 10);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+/* ========================================
+   STAFF GALLERY - Modern Design
+   ======================================== */
+
+/* Staff Category Section */
+.staff-category {
+    margin-bottom: 100px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Category Header */
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 50px;
+    padding: 30px 35px;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05), rgba(53, 122, 189, 0.03));
+    border-radius: 20px;
+    border: 2px solid rgba(74, 144, 226, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.category-icon {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.category-icon::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.category-icon.teachers {
+    background: linear-gradient(135deg, #5a9de8, #3d7ec0);
+    box-shadow: 0 15px 40px rgba(90, 157, 232, 0.4);
+}
+
+.category-icon.teachers::before {
+    background: linear-gradient(135deg, #5a9de8, #3d7ec0);
+}
+
+.category-icon.support {
+    background: linear-gradient(135deg, #6eb5ff, #4a90e2);
+    box-shadow: 0 15px 40px rgba(110, 181, 255, 0.4);
+}
+
+.category-icon.support::before {
+    background: linear-gradient(135deg, #6eb5ff, #4a90e2);
+}
+
+.category-title-wrapper {
+    flex: 1;
+}
+
+.category-title {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.category-subtitle {
+    font-size: 1.05rem;
+    color: #5a6c7d;
+    font-weight: 500;
+}
+
+/* Staff Grid */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Staff Card */
+.staff-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(74, 144, 226, 0.08);
+}
+
+.staff-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #357abd);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.staff-card:hover::before {
+    transform: scaleX(1);
+}
+
+.staff-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(74, 144, 226, 0.2);
+    border-color: rgba(74, 144, 226, 0.2);
+}
+
+.staff-card.happy {
+    cursor: pointer;
+}
+
+/* Staff Avatar */
+.staff-avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    margin: 0 auto 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.staff-avatar::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.3), rgba(53, 122, 189, 0.3));
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(15px);
+}
+
+.staff-card:hover .staff-avatar::before {
+    opacity: 1;
+}
+
+.staff-card:hover .staff-avatar {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.4);
+}
+
+/* Avatar Variations - Subtle Blue Shades */
+.staff-avatar.male {
+    background: linear-gradient(135deg, #5a9de8, #3d7ec0);
+}
+
+.staff-avatar.female {
+    background: linear-gradient(135deg, #6eb5ff, #4a90e2);
+}
+
+.staff-avatar.female.long-hair {
+    background: linear-gradient(135deg, #7ec4ff, #5aa0e6);
+}
+
+.staff-avatar.male.short-hair {
+    background: linear-gradient(135deg, #4580d4, #3468b0);
+}
+
+.staff-avatar.female.short-hair {
+    background: linear-gradient(135deg, #87ceeb, #6bb3db);
+}
+
+/* Staff Info */
+.staff-info {
+    text-align: center;
+}
+
+.staff-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.staff-card:hover .staff-name {
+    color: #4a90e2;
+}
+
+.staff-position {
+    font-size: 0.98rem;
+    color: #7f8c8d;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+/* Staff Contact */
+.staff-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 2px solid rgba(74, 144, 226, 0.1);
+}
+
+.staff-contact span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #5a6c7d;
+    padding: 8px 15px;
+    background: rgba(74, 144, 226, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.staff-contact span:hover {
+    background: rgba(74, 144, 226, 0.1);
+    transform: translateX(5px);
+}
+
+.staff-contact i {
+    color: #4a90e2;
+    font-size: 1rem;
+}
+
+/* Subject Tags */
+.staff-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.subject-tag {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(53, 122, 189, 0.08));
+    border: 1px solid rgba(74, 144, 226, 0.2);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a90e2;
+    transition: all 0.3s ease;
+}
+
+.subject-tag:hover {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+/* Staff Badge */
+.staff-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #4a90e2;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.staff-card:hover .staff-badge {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* Badge Color Accents - Keep vibrant for distinction */
+.staff-badge.teacher {
+    color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+}
+
+.staff-badge.support {
+    color: #f5576c;
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.15), rgba(245, 87, 108, 0.15));
+}
+
+/* Happy Animation */
+@keyframes happyBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.staff-card.happy:hover .staff-avatar {
+    animation: happyBounce 0.6s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .staff-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    
+    .category-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .category-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.2rem;
+    }
+    
+    .category-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .staff-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    
+    .staff-card {
+        padding: 30px 25px;
+    }
+    
+    .staff-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+    }
+    
+    .category-title {
+        font-size: 1.8rem;
+    }
+    
+    .category-subtitle {
+        font-size: 1rem;
+    }
+    
+    .staff-name {
+        font-size: 1.3rem;
+    }
+    
+    .staff-category {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .staff-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .category-header {
+        padding: 30px 20px;
+    }
+    
+    .category-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .staff-avatar {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5rem;
+    }
+    
+    .staff-name {
+        font-size: 1.2rem;
+    }
+    
+    .category-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .staff-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .category-header {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+}

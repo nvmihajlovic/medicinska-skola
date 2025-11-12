@@ -1,0 +1,21 @@
+# Ignore backup folders and files
+*backup*/
+*.bak
+*_backup.*
+*.zip
+
+# Ignore scripts
+*.ps1
+*.py
+
+# Ignore config files
+netlify.toml
+weather-data.json
+
+# Ignore editor files
+.vscode/
+.editorconfig
+
+# Ignore system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,843 @@
+<!DOCTYPE html><!DOCTYPE html>
+
+<html lang="sr"><html lang="sr">
+
+<head><head>
+
+    <meta charset="UTF-8">    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Секције - Медицинска школа</title>    <title>Секције - Медицинска школа</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="pages.css">    <link rel="stylesheet" href="pages.css">
+
+    <style>    <link rel="stylesheet" href="o-nama-simple.css">
+
+        /* Gallery Section Styles (isti kao u galerija.html) */</head>
+
+        .gallery-section {<body>
+
+            margin-bottom: 100px;    <!-- Navigation Bar -->
+
+            position: relative;    <nav class="navbar" id="navbar">
+
+        }        <div class="nav-container">
+
+                    <div class="nav-logo">
+
+        .gallery-section:last-child {                <a href="index.html">
+
+            margin-bottom: 0;                    <img src="images/images_preview_rev_1.png" alt="Медицинска школа — лого" class="logo-img">
+
+        }                </a>
+
+                    </div>
+
+        .section-header {            <ul class="nav-menu" id="nav-menu">
+
+            text-align: center;                <li class="dropdown">
+
+            margin-bottom: 50px;                    <a href="o-nama.html" class="nav-link">О школи <i class="fas fa-chevron-down"></i></a>
+
+            position: relative;                    <ul class="dropdown-menu">
+
+            z-index: 1;                        <li><a href="o-nama.html"><i class="fas fa-school"></i> О нама</a></li>
+
+        }                        <li><a href="zaposleni.html"><i class="fas fa-users"></i> Запослени</a></li>
+
+                                <li><a href="dokumentacija.html"><i class="fas fa-file-alt"></i> Документација</a></li>
+
+        .section-icon {                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends"></i> Стручни тимови</a></li>
+
+            width: 80px;                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line"></i> Јавне набавке и фин. извештаји</a></li>
+
+            height: 80px;                        <li><a href="sekcije.html"><i class="fas fa-star"></i> Секције</a></li>
+
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2868a8 100%);                    </ul>
+
+            border-radius: 50%;                </li>
+
+            display: flex;                <li><a href="obrazovni-profili.html" class="nav-link">Образовни профили</a></li>
+
+            align-items: center;                <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
+
+            justify-content: center;                <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
+
+            margin: 0 auto 25px;                <li><a href="galerija.html" class="nav-link">Галерија</a></li>
+
+            font-size: 32px;                <li><a href="#" class="nav-link">Еразмус+ пројекти</a></li>
+
+            color: white;                <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
+
+            box-shadow:             </ul>
+
+                0 10px 30px rgba(74, 144, 226, 0.4),
+
+                0 0 0 3px rgba(255, 255, 255, 0.3),                        <div class="hamburger" id="hamburger" aria-label="Мени">
+
+                inset 0 -5px 15px rgba(0, 0, 0, 0.2);                <span class="bar"></span>
+
+            transition: all 0.4s ease;                <span class="bar"></span>
+
+        }                <span class="bar"></span>
+
+                    </div>
+
+        .gallery-section:hover .section-icon {        </div>
+
+            transform: scale(1.1) rotate(5deg);    </nav>
+
+            box-shadow: 
+
+                0 15px 40px rgba(74, 144, 226, 0.5),
+
+                0 0 0 4px rgba(255, 255, 255, 0.4),<section class="page-header">
+
+                inset 0 -5px 15px rgba(0, 0, 0, 0.15);        <div class="page-header-overlay"></div>
+
+        }        <div class="page-header-content">
+
+                    <div class="breadcrumb">
+
+        .section-title {                <a href="index.html"><i class="fas fa-home"></i> Почетна</a>
+
+            font-size: 2.2rem;                <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+
+            font-weight: 800;                <span class="current-page">Секције</span>
+
+            color: #2c3e50;            </div>
+
+            margin-bottom: 15px;            <h1 class="page-title">СЕКЦИЈЕ</h1>
+
+            font-family: var(--font-heading);            <p class="page-subtitle">Ваннаставне активности и образовање ученика</p>
+
+        }        </div>
+
+            </section>
+
+        .section-description {
+
+            font-size: 1.15rem;    <main class="page-content">
+
+            color: #7f8c8d;        <div class="container">
+
+            margin-bottom: 0;        <!-- Strucne sekcije -->
+
+            font-weight: 500;        <section class="sections-category">
+
+        }                <h2 class="section-title">Стручне секције</h2>
+
+                        <p class="section-subtitle">Додатна едукација у области медицине</p>
+
+        .section-text {                <p style="text-align: center; color: #666; margin: 40px 0;">Информације о стручним секцијама ће ускоро бити доступне.</p>
+
+            max-width: 900px;        </section>
+
+            margin: 0 auto 60px;
+
+            text-align: center;        <!-- Sportske sekcije -->
+
+            padding: 0 20px;        <section class="sections-category bg-light">
+
+        }            <div class="container">
+
+                        <h2 class="section-title">Спортске секције</h2>
+
+        .section-text p {                <p class="section-subtitle">Здрави тело, здрави дух</p>
+
+            font-size: 1.05rem;                <p style="text-align: center; color: #666; margin: 40px 0;">Информације о спортским секцијама ће ускоро бити доступне.</p>
+
+            line-height: 1.8;            </div>
+
+            color: #555;        </section>
+
+            margin-bottom: 20px;
+
+            text-align: justify;        <!-- Kulturno-umetnicke sekcije -->
+
+        }        <section class="sections-category">
+
+                    <div class="container">
+
+        .section-text p:last-child {                <h2 class="section-title">Културно-уметничке секције</h2>
+
+            margin-bottom: 0;                <p class="section-subtitle">Развој креативности и уметничких способности</p>
+
+        }
+
+                        <div class="sections-grid">
+
+        /* Gallery Grid */                    <div class="section-card">
+
+        .gallery-grid {                        <div class="section-header">
+
+            display: grid;                            <div class="section-category purple-category">Драмска секција</div>
+
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));                        </div>
+
+            gap: 30px;                        <div class="section-image-placeholder purple-gradient">
+
+            margin-top: 50px;                            <i class="fas fa-theater-masks"></i>
+
+        }                            <h3>Драмска секција</h3>
+
+                                </div>
+
+        .gallery-item {                        <div class="section-content">
+
+            position: relative;                            <div class="section-icon purple-icon">
+
+            overflow: hidden;                                <i class="fas fa-masks-theater"></i>
+
+            border-radius: 16px;                            </div>
+
+            height: 350px;                            <h4>Драмска секција</h4>
+
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);                            <p>Позориште као облик уметности, глума, сценски покрети и припрема позоришних представа и фестивали.</p>
+
+            transition: all 0.4s ease;                            <div class="section-meta">
+
+            cursor: pointer;                                <div class="section-meta-item">
+
+        }                                    <i class="fas fa-user"></i>
+
+                                            <span>Наставник: Проф. Ана Петровић</span>
+
+        .gallery-item:hover {                                </div>
+
+            transform: translateY(-8px);                                <div class="section-meta-item">
+
+            box-shadow: 0 20px 50px rgba(74, 144, 226, 0.2);                                    <i class="fas fa-clock"></i>
+
+        }                                    <span>Уторак, 15:00-16:30</span>
+
+                                        </div>
+
+        .gallery-item img {                            <button class="btn-join-section purple-btn">
+
+            width: 100%;                                <i class="fas fa-user-plus"></i> Пријави се
+
+            height: 100%;                            </button>
+
+            object-fit: cover;                        </div>
+
+            transition: transform 0.5s ease;                        </div>
+
+        }                    </div>
+
+        
+
+        .gallery-item:hover img {                    <div class="section-card">
+
+            transform: scale(1.15);                        <div class="section-header">
+
+        }                            <div class="section-category purple-category">Хор</div>
+
+                                </div>
+
+        .gallery-item-overlay {                        <div class="section-image-placeholder purple-gradient">
+
+            position: absolute;                            <i class="fas fa-music"></i>
+
+            bottom: 0;                            <h3>Хор</h3>
+
+            left: 0;                        </div>
+
+            right: 0;                        <div class="section-content">
+
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, transparent 100%);                            <div class="section-icon purple-icon">
+
+            padding: 25px;                                <i class="fas fa-music"></i>
+
+            transform: translateY(100%);                            </div>
+
+            transition: transform 0.4s ease;                            <h4>Школски хор</h4>
+
+        }                            <p>Музичко васпитање кроз крујки пењање, вокална техника, музичко укускање и наступимо на конкурсима.</p>
+
+                                    <div class="section-meta">
+
+        .gallery-item:hover .gallery-item-overlay {                                <div class="section-meta-item">
+
+            transform: translateY(0);                                    <i class="fas fa-user"></i>
+
+        }                                    <span>Диригент: Проф. Ана Петровић</span>
+
+                                        </div>
+
+        .gallery-item-title {                                <div class="section-meta-item">
+
+            color: white;                                    <i class="fas fa-clock"></i>
+
+            font-size: 1.1rem;                                    <span>Уторак, 15:00-16:30</span>
+
+            font-weight: 600;                                </div>
+
+            margin: 0;                            <button class="btn-join-section purple-btn">
+
+        }                                <i class="fas fa-user-plus"></i> Пријави се
+
+                                    </button>
+
+        /* Responsive */                        </div>
+
+        @media (max-width: 768px) {                        </div>
+
+            .gallery-grid {                    </div>
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;                    <div class="section-card">
+
+            }                        <div class="section-header">
+
+                                        <div class="section-category purple-category">Новинара секција</div>
+
+            .section-title {                        </div>
+
+                font-size: 1.8rem;                        <div class="section-image-placeholder purple-gradient">
+
+            }                            <i class="fas fa-newspaper"></i>
+
+                                        <h3>Новинска секција</h3>
+
+            .section-icon {                        </div>
+
+                width: 60px;                        <div class="section-content">
+
+                height: 60px;                            <div class="section-icon purple-icon">
+
+                font-size: 24px;                                <i class="fas fa-pen-fancy"></i>
+
+            }                            </div>
+
+        }                            <h4>Новинарска секција</h4>
+
+    </style>                            <p>Израде школе новина, развој комуникације и писање креативно-документативну писање-рефлексију и публиковање.</p>
+
+</head>                            <div class="section-meta">
+
+<body>                                <div class="section-meta-item">
+
+    <!-- Navigation Bar -->                                    <i class="fas fa-user"></i>
+
+    <nav class="navbar" id="navbar">                                    <span>Наставник: Проф. Ана Петровић</span>
+
+        <div class="nav-container">                                </div>
+
+            <div class="nav-logo">                                <div class="section-meta-item">
+
+                <a href="index.html">                                    <i class="fas fa-clock"></i>
+
+                    <img src="images/images_preview_rev_1.png" alt="Медицинска школа — лого" class="logo-img">                                    <span>Среда, 14:00-15:30</span>
+
+                </a>                                </div>
+
+            </div>                            <button class="btn-join-section purple-btn">
+
+            <ul class="nav-menu" id="nav-menu">                                <i class="fas fa-user-plus"></i> Пријави се
+
+                <li class="dropdown">                            </button>
+
+                    <a href="o-nama.html" class="nav-link">О школи <i class="fas fa-chevron-down"></i></a>                        </div>
+
+                    <ul class="dropdown-menu">                        </div>
+
+                        <li><a href="o-nama.html"><i class="fas fa-school"></i> О нама</a></li>                    </div>
+
+                        <li><a href="zaposleni.html"><i class="fas fa-users"></i> Запослени</a></li>
+
+                        <li><a href="dokumentacija.html"><i class="fas fa-file-alt"></i> Документација</a></li>                    <div class="section-card">
+
+                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends"></i> Стручни тимови</a></li>                        <div class="section-header">
+
+                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line"></i> Јавне набавке и фин. извештаји</a></li>                            <div class="section-category purple-category">Књижевна секција</div>
+
+                        <li><a href="sekcije.html"><i class="fas fa-star"></i> Секције</a></li>                        </div>
+
+                    </ul>                        <div class="section-image-placeholder purple-gradient">
+
+                </li>                            <i class="fas fa-book-open"></i>
+
+                <li><a href="obrazovni-profili.html" class="nav-link">Образовни профили</a></li>                            <h3>Књижевна секција</h3>
+
+                <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>                        </div>
+
+                <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>                        <div class="section-content">
+
+                <li><a href="galerija.html" class="nav-link">Галерија</a></li>                            <div class="section-icon purple-icon">
+
+                <li><a href="#" class="nav-link">Еразмус+ пројекти</a></li>                                <i class="fas fa-feather-alt"></i>
+
+                <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>                            </div>
+
+            </ul>                            <h4>Књижевна секција</h4>
+
+            <div class="hamburger" id="hamburger" aria-label="Мени">                            <p>Писање песме, приче, есеји, развија књижевни лик, припрема критика и дискусција о књижевним делима.</p>
+
+                <span class="bar"></span>                            <div class="section-meta">
+
+                <span class="bar"></span>                                <div class="section-meta-item">
+
+                <span class="bar"></span>                                    <i class="fas fa-user"></i>
+
+            </div>                                    <span>Наставник: Проф. Ана Петровић</span>
+
+        </div>                                </div>
+
+    </nav>                                <div class="section-meta-item">
+
+                                    <i class="fas fa-clock"></i>
+
+    <section class="page-header">                                    <span>Четвртак, 14:00-15:30</span>
+
+        <div class="page-header-overlay"></div>                                </div>
+
+        <div class="page-header-content">                            <button class="btn-join-section purple-btn">
+
+            <div class="breadcrumb">                                <i class="fas fa-user-plus"></i> Пријави се
+
+                <a href="index.html"><i class="fas fa-home"></i> Почетна</a>                            </button>
+
+                <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>                        </div>
+
+                <span class="current-page">Секције</span>        </section>
+
+            </div>
+
+            <h1 class="page-title">СЕКЦИЈЕ</h1>        <!-- Druge aktivnosti -->
+
+            <p class="page-subtitle">Ваннаставне активности и образовање ученика</p>        <section class="sections-category bg-light">
+
+        </div>            <div class="container">
+
+    </section>                <h2 class="section-title">Друге активности</h2>
+
+                <p class="section-subtitle">Додатне могућности за развој</p>
+
+    <main class="page-content">
+
+        <div class="container">                <div class="activities-grid">
+
+                                <div class="activity-card card-hover">
+
+            <!-- ===== СЕКЦИЈА 1 ===== -->                        <div class="activity-icon blue-icon">
+
+            <section class="gallery-section" id="sekcija-1">                            <i class="fas fa-hands-helping"></i>
+
+                <div class="section-header">                        </div>
+
+                    <div class="section-icon"><i class="fas fa-microscope></i></div>                        <h4>Еколошка секција</h4>
+
+                    <h2 class="section-title">Биолошка секција</h2>                        <p>Заштита животне средине, рециклажа, еко пројекти, садњачје дрвећа.</p>
+
+                    <p class="section-description">Истраживање, практична настава и научни експерименти</p>                    </div>
+
+                </div>
+
+                                    <div class="activity-card card-hover">
+
+                <!-- Текст секције -->                        <div class="activity-icon blue-icon">
+
+                <div class="section-text">                            <i class="fas fa-laptop-code"></i>
+
+                    <p><strong>[ОВДЕ УБАЦИ ТЕКСТ ЗА СЕКЦИЈУ 1]</strong></p>                        </div>
+
+                    <p>Можеш додати више параграфа.</p>                        <h4>IT секција</h4>
+
+                </div>                        <p>Програмирање, веб дизајн и дигитални комплекс конкурси.</p>
+
+                                    </div>
+
+                <!-- Grid за слике -->
+
+                <div class="gallery-grid">                    <div class="activity-card card-hover">
+
+                    <!-- Пример структуре за једну слику: -->                        <div class="activity-icon blue-icon">
+
+                    <!--                            <i class="fas fa-comments"></i>
+
+                    <div class="gallery-item">                        </div>
+
+                        <img src="images/sekcija1/slika1.jpg" alt="Опис слике">                        <h4>Секција страних језика</h4>
+
+                        <div class="gallery-item-overlay">                        <p>Усавршавање ен, немачк, руски, учешће на такмичењу.</p>
+
+                            <p class="gallery-item-title">Наслов слике</p>                    </div>
+
+                        </div>
+
+                    </div>                    <div class="activity-card card-hover">
+
+                    -->                        <div class="activity-icon blue-icon">
+
+                </div>                            <i class="fas fa-camera"></i>
+
+            </section>                        </div>
+
+                        <h4>Фото секција</h4>
+
+            <!-- ===== СЕКЦИЈА 2 ===== -->                        <p>Фотографија као уметност, обрада, снимање догађаја, конкурси.</p>
+
+            <section class="gallery-section" id="sekcija-2">                    </div>
+
+                <div class="section-header">
+
+                    <div class="section-icon"><i class="fas fa-heartbeat></i></div>                    <div class="activity-card card-hover">
+
+                    <h2 class="section-title">Прва помоћ</h2>                        <div class="activity-icon blue-icon">
+
+                    <p class="section-description">Обука за пружање прве помоћи и брзу реакцију у хитним случајевима</p>                            <i class="fas fa-globe"></i>
+
+                </div>                        </div>
+
+                                        <div class="activity-icon blue-icon">
+
+                <!-- Текст секције -->                            <i class="fas fa-hands-helping"></i>
+
+                <div class="section-text">                        </div>
+
+                    <p><strong>[ОВДЕ УБАЦИ ТЕКСТ ЗА СЕКЦИЈУ 2]</strong></p>                        <h4>Волонтерски клуб</h4>
+
+                    <p>Можеш додати више параграфа.</p>                        <p>Хуманитарне акције, помоћ старијим и социјално угроженим.</p>
+
+                </div>                    </div>
+
+                
+
+                <!-- Grid за слике -->                    <div class="activity-card card-hover">
+
+                <div class="gallery-grid">                        <div class="activity-icon blue-icon">
+
+                    <!-- Слике ће бити овде -->                            <i class="fas fa-chart-line"></i>
+
+                </div>                        </div>
+
+            </section>                        <h4>Ученичко парламент</h4>
+
+                        <p>Обраде учeника, организација, спровођење пројеката и праваљученка.</p>
+
+            <!-- ===== СЕКЦИЈА 3 ===== -->                    </div>
+
+            <section class="gallery-section" id="sekcija-3">        </section>
+
+                <div class="section-header">        </div>
+
+                    <div class="section-icon"><i class="fas fa-running></i></div>    </main>    <!-- Footer -->
+
+                    <h2 class="section-title">Спортска секција</h2>    <footer class="footer">
+
+                    <p class="section-description">Спортске активности, такмичења и развој физичких способности</p>        <div class="footer-main">
+
+                </div>            <div class="footer-content">
+
+                                <div class="footer-column footer-brand">
+
+                <!-- Текст секције -->                    <div class="footer-logo-stack">
+
+                <div class="section-text">                        <img src="images/Untitled_preview_rev_1.png" alt="Медицинска школа — лого" class="footer-logo-img">
+
+                    <p><strong>[ОВДЕ УБАЦИ ТЕКСТ ЗА СЕКЦИЈУ 3]</strong></p>                        <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> 58 година традиције</span>
+
+                    <p>Можеш додати више параграфа.</p>                    </div>
+
+                </div>                    <p class="footer-description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама. Подржавамо сваког ученика кроз менторство, пројекте и реалне стручне ситуације.</p>
+
+                                </div>
+
+                <!-- Grid за слике -->
+
+                <div class="gallery-grid">                <div class="footer-column">
+
+                    <!-- Слике ће бити овде -->                    <h4>Брзе везе</h4>
+
+                </div>                    <ul class="footer-links">
+
+            </section>                        <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+                        <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+            <!-- ===== СЕКЦИЈА 4 ===== -->                        <li><a href="maturska-pitanja.html"><span>Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+            <section class="gallery-section" id="sekcija-4">                        <li><a href="ucenici-i-roditelji.html"><span>Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+                <div class="section-header">                        <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+                    <div class="section-icon"><i class="fas fa-theater-masks></i></div>                        <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+                    <h2 class="section-title">Драмска секција</h2>                    </ul>
+
+                    <p class="section-description">Позоришне представе, глума и сценска уметност</p>                </div>
+
+                </div>
+
+                                <div class="footer-column">
+
+                <!-- Текст секције -->                    <h4>Документа</h4>
+
+                <div class="section-text">                    <ul class="footer-links">
+
+                    <p><strong>[ОВДЕ УБАЦИ ТЕКСТ ЗА СЕКЦИЈУ 4]</strong></p>                        <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+                    <p>Можеш додати више параграфа.</p>                        <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+                </div>                        <li><a href="sekcije.html"><span>Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+                                        <li><a href="politika-privatnosti.html"><span>Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+                <!-- Grid за слике -->                        <li><a href="kontakt.html#lokacija"><span>Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+
+                <div class="gallery-grid">                    </ul>
+
+                    <!-- Слике ће бити овде -->                </div>
+
+                </div>
+
+            </section>                <div class="footer-column">
+
+                    <h4>Останимо у контакту</h4>
+
+            <!-- ===== СЕКЦИЈА 5 ===== -->                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+
+            <section class="gallery-section" id="sekcija-5">                    <div class="footer-socials social-links">
+
+                <div class="section-header">                        <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+
+                    <div class="section-icon"><i class="fas fa-palette></i></div>                        <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+
+                    <h2 class="section-title">Уметнички клуб</h2>                        <a href="#" class="social-link linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+
+                    <p class="section-description">Ликовна уметност, креативност и уметничко изражавање</p>                        <a href="#" class="social-link tiktok" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+
+                </div>                    </div>
+
+                                    <div class="footer-newsletter">
+
+                <!-- Текст секције -->                        <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
+
+                <div class="section-text">                            <span>Пошаљи нам питање</span>
+
+                    <p><strong>[ОВДЕ УБАЦИ ТЕКСТ ЗА СЕКЦИЈУ 5]</strong></p>                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+
+                    <p>Можеш додати више параграфа.</p>                        </a>
+
+                </div>                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
+
+                                    </div>
+
+                <!-- Grid за слике -->                </div>
+
+                <div class="gallery-grid">            </div>
+
+                    <!-- Слике ће бити овде -->        </div>
+
+                </div>
+
+            </section>        <div class="footer-divider"></div>
+
+
+
+        </div>        <div class="footer-bottom">
+
+    </main>            <div class="footer-bottom-content">
+
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић” Панчево. Сва права задржана.</p>
+
+    <!-- Footer -->                <div class="developer-credit">
+
+    <footer class="footer">                    <span>Израда и одржавање</span>
+
+        <div class="footer-content">                    <img src="images/pansoft-logo.png" alt="Pansoft">
+
+            <p>&copy; 2024 Медицинска школа. Сва права задржана.</p>                </div>
+
+        </div>                <div class="footer-bottom-links">
+
+    </footer>                    <a href="politika-privatnosti.html">Политика приватности</a>
+
+                    <span>•</span>
+
+    <button id="back-to-top" aria-label="Врх стране">                    <a href="#">Услови коришћења</a>
+
+        <i class="fas fa-chevron-up"></i>                    <span>•</span>
+
+    </button>                    <a href="#">Sitemap</a>
+
+                </div>
+
+    <script src="script.js"></script>            </div>
+
+    <script>        </div>
+
+        document.addEventListener('DOMContentLoaded', function() {    </footer>
+
+            // Mobile menu
+
+            const hamburger = document.getElementById('hamburger');    <!-- Back to Top Button -->
+
+            const navMenu = document.getElementById('nav-menu');    <button class="back-to-top" id="back-to-top" title="Назад на врх">
+
+                    <i class="fas fa-chevron-up"></i>
+
+            if (hamburger && navMenu) {    </button>
+
+                hamburger.addEventListener('click', function() {
+
+                    navMenu.classList.toggle('active');    <!-- Language Switcher -->
+
+                    hamburger.classList.toggle('active');    <div class="language-switcher" id="language-switcher" aria-label="Промена језика">
+
+                });        <button class="lang-btn active" data-lang="sr" aria-pressed="true">СР</button>
+
+            }        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+
+                    <button class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+
+            // Back to Top Button    </div>
+
+            const backToTopBtn = document.getElementById('back-to-top');
+
+            if (backToTopBtn) {    <!-- GDPR Cookie Consent -->
+
+                window.addEventListener('scroll', function() {    <div class="cookie-consent" id="cookieConsent" role="dialog" aria-labelledby="cookieTitle" aria-modal="true" hidden>
+
+                    if (window.pageYOffset > ((document.documentElement.scrollHeight - window.innerHeight) / 2)) {        <div class="cookie-consent-container">
+
+                        backToTopBtn.classList.add('visible');            <div class="cookie-consent-content">
+
+                    } else {                <div class="cookie-consent-title" id="cookieTitle">
+
+                        backToTopBtn.classList.remove('visible');                    <i class="fas fa-cookie-bite"></i>
+
+                    }                    Колачићи и приватност
+
+                });                </div>
+
+                                <p class="cookie-consent-text">
+
+                backToTopBtn.addEventListener('click', function() {                    На овом сајту користимо колачиће (cookies) ради бољег корисничког искуства и аналитике.
+
+                    window.scrollTo({                    За више информација погледајте <a href="politika-privatnosti.html">Политику приватности</a>.
+
+                        top: 0,                </p>
+
+                        behavior: 'smooth'            </div>
+
+                    });            <div class="cookie-consent-actions">
+
+                });                <button class="cookie-btn cookie-btn-settings" onclick="openCookieSettings()">Подешавања</button>
+
+            }                <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Одбиј</button>
+
+        });                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Прихвати</button>
+
+    </script>            </div>
+
+</body>        </div>
+
+</html>    </div>
+
+
+    <!-- Cookie Settings Modal -->
+    <div class="cookie-settings-modal" id="cookieSettingsModal" hidden>
+        <div class="cookie-settings-content" role="dialog" aria-modal="true" aria-labelledby="cookieSettingsTitle">
+            <div class="cookie-settings-header">
+                <h3 class="cookie-settings-title" id="cookieSettingsTitle">Подешавања колачића</h3>
+                <button class="cookie-close-btn" onclick="closeCookieSettings()" aria-label="Затвори">&times;</button>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Неопходни колачићи</h4>
+                    <label class="cookie-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    Ови колачићи су неопходни за правилан рад сајта и не могу се искључити.
+                </p>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Аналитички колачићи</h4>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="analyticsCookies">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    Помаже нам да разумемо како користите сајт и да унапредимо садржај.
+                </p>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Маркетиншки колачићи</h4>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="marketingCookies">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    Омогућавају персонализоване садржаје и оглашавање.
+                </p>
+            </div>
+
+            <div class="cookie-consent-actions" style="margin-top: 20px; justify-content: center;">
+                <button class="cookie-btn cookie-btn-decline" onclick="saveAndCloseCookieSettings(false)">Сачувај без ових</button>
+                <button class="cookie-btn cookie-btn-accept" onclick="saveAndCloseCookieSettings(true)">Сачувај подешавања</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script>        // Language Switcher - prikaÅ¾i samo u Hero/Page Header sekciji
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageSwitcher = document.getElementById('language-switcher');
+            const heroSection = document.querySelector('.hero, .page-header');
+            
+            if (languageSwitcher && heroSection) {
+                window.addEventListener('scroll', function() {
+                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    const scrollPosition = window.scrollY;
+                    
+                    if (scrollPosition < heroBottom) {
+                        languageSwitcher.style.opacity = '1';
+                        languageSwitcher.style.visibility = 'visible';
+                    } else {
+                        languageSwitcher.style.opacity = '0';
+                        languageSwitcher.style.visibility = 'hidden';
+                    }
+                });
+            }
+            
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > ((document.documentElement.scrollHeight - window.innerHeight) / 2)) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+    <!-- Савет: проверите у DevTools -> Network -> Headers да server враћа Content-Type: text/html; charset=UTF-8 -->
+</body>
+</html>

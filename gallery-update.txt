@@ -1,0 +1,291 @@
+// NAPOMENA: Ovo zamenjuje postojeći galleryData array i dodaje Load More funkcionalnost
+
+// Generisanje svih slika
+function generateAllGalleryData() {
+    const allImages = [];
+    
+    // Objekti - 20 slika
+    const objektiTitles = ['Учионица', 'Кабинет', 'Лабораторија', 'Библиотека', 'Ходник', 'Канцеларија'];
+    for(let i = 1; i <= 20; i++) {
+        allImages.push({
+            category: 'objekti',
+            title: `${objektiTitles[(i-1) % objektiTitles.length]} ${Math.ceil(i / objektiTitles.length)}`,
+            image: `images/gallery/objekti/objekat-${i}.jpg`,
+            date: i <= 10 ? '2024' : '2023',
+            views: Math.floor(Math.random() * 150) + 150
+        });
+    }
+    
+    // Praktikum - 20 slika
+    const praktikumTitles = ['Медицинске вежбе', 'Опрема', 'Симулација', 'Практична настава', 'Демонстрација', 'Инструменти'];
+    for(let i = 1; i <= 20; i++) {
+        allImages.push({
+            category: 'praktikum',
+            title: `${praktikumTitles[(i-1) % praktikumTitles.length]} ${Math.ceil(i / praktikumTitles.length)}`,
+            image: `images/gallery/praktikum/praktikum-${i}.jpg`,
+            date: i <= 10 ? '2024' : '2023',
+            views: Math.floor(Math.random() * 150) + 200
+        });
+    }
+    
+    // Aktivnosti - 19 slika
+    const aktivnostiTitles = ['Пројекат', 'Радионица', 'Изложба', 'Приредба', 'Награде', 'Активност'];
+    for(let i = 1; i <= 19; i++) {
+        allImages.push({
+            category: 'aktivnosti',
+            title: `${aktivnostiTitles[(i-1) % aktivnostiTitles.length]} ${Math.ceil(i / aktivnostiTitles.length)}`,
+            image: `images/gallery/aktivnosti/aktivnost-${i}.jpg`,
+            date: i <= 10 ? '2024' : '2023',
+            views: Math.floor(Math.random() * 130) + 170
+        });
+    }
+    
+    // Sport - 28 slika
+    const sportTitles = ['Турнир', 'Утакмица', 'Тренинг', 'Такмичење', 'Медаље', 'Тим'];
+    for(let i = 1; i <= 28; i++) {
+        allImages.push({
+            category: 'sport',
+            title: `${sportTitles[(i-1) % sportTitles.length]} ${Math.ceil(i / sportTitles.length)}`,
+            image: `images/gallery/sport/sport-${i}.jpg`,
+            date: i <= 14 ? '2024' : '2023',
+            views: Math.floor(Math.random() * 180) + 150
+        });
+    }
+    
+    // Dogadjaji - 16 slika
+    const dogadjajiTitles = ['Академија', 'Матурска вечер', 'Прослава', 'Екскурзија', 'Догађај', 'Церемонија'];
+    for(let i = 1; i <= 16; i++) {
+        allImages.push({
+            category: 'dogadjaji',
+            title: `${dogadjajiTitles[(i-1) % dogadjajiTitles.length]} ${Math.ceil(i / dogadjajiTitles.length)}`,
+            image: `images/gallery/dogadjaji/dogadjaj-${i}.jpg`,
+            date: i <= 8 ? '2024' : '2023',
+            views: Math.floor(Math.random() * 160) + 200
+        });
+    }
+    
+    // Manifestacije - 18 slika
+    const manifestacijeTitles = ['Сајам', 'Панел', 'Предавање', 'Промоција', 'Презентација', 'Форум'];
+    for(let i = 1; i <= 18; i++) {
+        allImages.push({
+            category: 'manifestacije',
+            title: `${manifestacijeTitles[(i-1) % manifestacijeTitles.length]} ${Math.ceil(i / manifestacijeTitles.length)}`,
+            image: `images/gallery/manifestacije/manifestacija-${i}.jpg`,
+            date: i <= 9 ? '2024' : '2023',
+            views: Math.floor(Math.random() * 140) + 190
+        });
+    }
+    
+    // Humanitarne - 20 slika
+    const humanitarneTitles = ['Давање крви', 'Акција', 'Волонтери', 'Едукација', 'Хуманост', 'Солидарност'];
+    for(let i = 1; i <= 20; i++) {
+        allImages.push({
+            category: 'humanitarne',
+            title: `${humanitarneTitles[(i-1) % humanitarneTitles.length]} ${Math.ceil(i / humanitarneTitles.length)}`,
+            image: `images/gallery/humanitarne/humanitarna-${i}.jpg`,
+            date: i <= 10 ? '2024' : '2023',
+            views: Math.floor(Math.random() * 170) + 220
+        });
+    }
+    
+    return allImages;
+}
+
+// DODAJ OVAJ KOD NAKON renderGallery FUNKCIJE:
+
+// Load More funkcionalnost
+let visibleCount = {};
+const IMAGES_PER_LOAD = 6;
+
+function initializeVisibleCount(filter = 'all') {
+    if (filter === 'all') {
+        const categories = ['objekti', 'praktikum', 'aktivnosti', 'sport', 'dogadjaji', 'manifestacije', 'humanitarne'];
+        categories.forEach(cat => {
+            visibleCount[cat] = IMAGES_PER_LOAD;
+        });
+    } else {
+        visibleCount = { [filter]: IMAGES_PER_LOAD };
+    }
+}
+
+function renderGalleryWithLoadMore(filter = 'all') {
+    const grid = document.getElementById('galleryGrid');
+    const loading = document.getElementById('galleryLoading');
+    
+    // Show loading
+    loading.classList.add('active');
+    grid.style.opacity = '0';
+    
+    setTimeout(() => {
+        grid.innerHTML = '';
+        initializeVisibleCount(filter);
+        
+        if (filter === 'all') {
+            // Render all categories with their intros
+            const categories = ['objekti', 'praktikum', 'aktivnosti', 'sport', 'dogadjaji', 'manifestacije', 'humanitarne'];
+            categories.forEach((category, catIndex) => {
+                const intro = categoryIntros[category];
+                const introSection = document.createElement('div');
+                introSection.className = 'gallery-section-intro';
+                introSection.style.animationDelay = `${catIndex * 0.2}s`;
+                introSection.innerHTML = `
+                    <div class="intro-icon">
+                        <i class="${intro.icon}"></i>
+                    </div>
+                    <h2>${intro.title}</h2>
+                    <p>${intro.text}</p>
+                `;
+                grid.appendChild(introSection);
+
+                // Category grid container
+                const categoryContainer = document.createElement('div');
+                categoryContainer.className = 'category-container';
+                categoryContainer.dataset.category = category;
+                
+                const categoryGrid = document.createElement('div');
+                categoryGrid.className = 'category-grid';
+                
+                // Add visible images
+                const categoryData = galleryData.filter(item => item.category === category);
+                const visibleImages = categoryData.slice(0, visibleCount[category]);
+                visibleImages.forEach((item, index) => {
+                    const card = createGalleryCard(item, catIndex * 6 + index);
+                    categoryGrid.appendChild(card);
+                });
+                
+                categoryContainer.appendChild(categoryGrid);
+                
+                // Add Load More button if there are more images
+                if (categoryData.length > visibleCount[category]) {
+                    const loadMoreBtn = document.createElement('button');
+                    loadMoreBtn.className = 'load-more-btn';
+                    loadMoreBtn.innerHTML = `
+                        <i class="fas fa-images"></i>
+                        <span>Прикажи још (${categoryData.length - visibleCount[category]})</span>
+                    `;
+                    loadMoreBtn.addEventListener('click', () => loadMoreImages(category, categoryContainer));
+                    categoryContainer.appendChild(loadMoreBtn);
+                }
+                
+                grid.appendChild(categoryContainer);
+            });
+        } else {
+            // Single category
+            const intro = categoryIntros[filter];
+            const introSection = document.createElement('div');
+            introSection.className = 'gallery-section-intro';
+            introSection.innerHTML = `
+                <div class="intro-icon">
+                    <i class="${intro.icon}"></i>
+                </div>
+                <h2>${intro.title}</h2>
+                <p>${intro.text}</p>
+            `;
+            grid.appendChild(introSection);
+
+            const categoryContainer = document.createElement('div');
+            categoryContainer.className = 'category-container';
+            categoryContainer.dataset.category = filter;
+            
+            const categoryGrid = document.createElement('div');
+            categoryGrid.className = 'category-grid';
+            
+            const filteredData = galleryData.filter(item => item.category === filter);
+            const visibleImages = filteredData.slice(0, visibleCount[filter]);
+            visibleImages.forEach((item, index) => {
+                const card = createGalleryCard(item, index);
+                categoryGrid.appendChild(card);
+            });
+            
+            categoryContainer.appendChild(categoryGrid);
+            
+            if (filteredData.length > visibleCount[filter]) {
+                const loadMoreBtn = document.createElement('button');
+                loadMoreBtn.className = 'load-more-btn';
+                loadMoreBtn.innerHTML = `
+                    <i class="fas fa-images"></i>
+                    <span>Прикажи још (${filteredData.length - visibleCount[filter]})</span>
+                `;
+                loadMoreBtn.addEventListener('click', () => loadMoreImages(filter, categoryContainer));
+                categoryContainer.appendChild(loadMoreBtn);
+            }
+            
+            grid.appendChild(categoryContainer);
+        }
+
+        loading.classList.remove('active');
+        grid.style.opacity = '1';
+    }, 600);
+}
+
+function loadMoreImages(category, container) {
+    const categoryGrid = container.querySelector('.category-grid');
+    const loadMoreBtn = container.querySelector('.load-more-btn');
+    const categoryData = galleryData.filter(item => item.category === category);
+    
+    // Update visible count
+    const currentCount = visibleCount[category];
+    const newCount = Math.min(currentCount + IMAGES_PER_LOAD, categoryData.length);
+    visibleCount[category] = newCount;
+    
+    // Add new images
+    const newImages = categoryData.slice(currentCount, newCount);
+    newImages.forEach((item, index) => {
+        const card = createGalleryCard(item, currentCount + index);
+        card.style.animation = 'cardFadeIn 0.5s ease forwards';
+        card.style.animationDelay = `${index * 0.08}s`;
+        categoryGrid.appendChild(card);
+    });
+    
+    // Update or remove button
+    if (newCount >= categoryData.length) {
+        loadMoreBtn.remove();
+    } else {
+        loadMoreBtn.querySelector('span').textContent = `Прикажи још (${categoryData.length - newCount})`;
+    }
+}
+
+// DODAJ CSS STILOVE ZA LOAD MORE DUGME:
+/*
+.category-container {
+    width: 100%;
+}
+
+.load-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.load-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.load-more-btn i {
+    font-size: 18px;
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+*/

@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Образовни профили – Медицинска школа „Стевица Јовановић“</title>
+
+    <meta name="description" content="Преглед образовних профила Медицинске школе „Стевица Јовановић" – предмети по разредима и кратки описи струка.">
+
+    <!-- Иконе -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
+    <!-- CSS -->
+    <link rel="preload" href="style.css?v=2" as="style">
+    <link rel="preload" href="pages.css?v=2" as="style">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="pages.css?v=2">
+</head>
+<body>
+    <!-- Навигација -->
+    <nav class="navbar" id="navbar" aria-label="Главна навигација">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/images_preview_rev_1.png" alt="Медицинска школа — лого" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="dropdown">
+                    <a href="o-nama.html" class="nav-link">О школи <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-nama.html"><i class="fas fa-school" aria-hidden="true"></i> О нама</a></li>
+                        <li><a href="zaposleni.html"><i class="fas fa-users" aria-hidden="true"></i> Запослени</a></li>
+                        <li><a href="dokumentacija.html"><i class="fas fa-file-alt" aria-hidden="true"></i> Документација</a></li>
+                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends" aria-hidden="true"></i> Стручни тимови</a></li>
+                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Јавне набавке и фин. извештаји</a></li>
+                        <li><a href="sekcije.html"><i class="fas fa-star" aria-hidden="true"></i> Секције</a></li>
+                    </ul>
+                </li>
+                <li><a href="obrazovni-profili.html" class="nav-link active">Образовни профили</a></li>
+                <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
+                <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
+                <li><a href="galerija.html" class="nav-link">Галерија</a></li>
+                <li><a href="#" class="nav-link">Еразмус+ пројекти</a></li>
+                <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Отвори мени" aria-controls="nav-menu" aria-expanded="false">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- Заглавље странице -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <div class="container">
+                <h1 class="page-title">Образовни профили</h1>
+                <p class="page-subtitle">Кратак преглед струка и предмета по разредима</p>
+            </div>
+        </div>
+    </section>
+    <!-- Садржај -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Профил 1: Медицинска сестра – техничар -->
+            <section class="education-profile" id="medicinska-sestra-tehnicar">
+                <div class="profile-header">
+                    <div class="profile-content">
+                        <h2 class="profile-title">Медицинска сестра – техничар</h2>
+                        <p class="profile-description">
+                            Профил оспособљава ученике за рад у стационарним и амбулантним условима,
+                            примену поступака здравствене неге, комуникацију са пацијентима, вођење документације,
+                            рад у тиму и поштовање етичких принципа. Практична настава се реализује у здравственим установама.
+                        </p>
+                        <!-- Табови: предмети по разредима -->
+                        <div class="subjects-tabs">
+                            <div class="tabs-header">
+                                <button class="tab-btn active" data-tab="year1-tech">I разред</button>
+                                <button class="tab-btn" data-tab="year2-tech">II разред</button>
+                                <button class="tab-btn" data-tab="year3-tech">III разред</button>
+                                <button class="tab-btn" data-tab="year4-tech">IV разред</button>
+                            </div>
+                            <div class="tabs-content">
+                                <div class="tab-panel active" id="year1-tech">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">1. Српски језик и књижевност</div>
+                                        <div class="subject-item">2. Математика</div>
+                                        <div class="subject-item">3. Енглески језик</div>
+                                        <div class="subject-item">4. Историја</div>
+                                        <div class="subject-item">5. Географија</div>
+                                        <div class="subject-item">6. Физика</div>
+                                        <div class="subject-item">7. Хемија</div>
+                                        <div class="subject-item">8. Биологија</div>
+                                        <div class="subject-item">9. Информатика</div>
+                                        <div class="subject-item">10. Устав и права грађана</div>
+                                        <div class="subject-item">11. Физичко васпитање</div>
+                                        <div class="subject-item">12. Анатомија и физиологија – основе</div>
+                                        <div class="subject-item">13. Хигијена са здравственом едукацијом</div>
+                                        <div class="subject-item">14. Психологија</div>
+                                        <div class="subject-item">15. Социологија</div>
+                                        <div class="subject-item">16. Прва помоћ</div>
+                                        <div class="subject-item">17. Основе здравствене неге</div>
+                                        <div class="subject-item">18. Практикум (кабинетске вежбе)</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year2-tech">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за II разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year3-tech">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за III разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year4-tech">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за IV разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-image">
+                        <img src="images/medicinska-sestra-tehnicar.jpg" alt="Медицинска сестра – техничар" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Профил 2: Гинеколошко-акушерска сестра -->
+            <section class="education-profile" id="ginekolosko-akuserska-sestra">
+                <div class="profile-header reverse">
+                    <div class="profile-image">
+                        <img src="images/ginekolosko-akuserska.jpg" alt="Гинеколошко-акушерска сестра" loading="lazy">
+                    </div>
+
+                    <div class="profile-content">
+                        <h2 class="profile-title">Гинеколошко-акушерска сестра</h2>
+                        <p class="profile-description">
+                            Обука обухвата негу трудница и породиља, припрему и праћење порођаја,
+                            неонатолошку негу, едукацију и саветодавни рад. Значајан део наставе одвија се
+                            у домовима здравља и породилиштима.
+                        </p>
+
+                        <div class="subjects-tabs">
+                            <div class="tabs-header">
+                                <button class="tab-btn active" data-tab="year1-gin">I разред</button>
+                                <button class="tab-btn" data-tab="year2-gin">II разред</button>
+                                <button class="tab-btn" data-tab="year3-gin">III разред</button>
+                                <button class="tab-btn" data-tab="year4-gin">IV разред</button>
+                            </div>
+
+                            <div class="tabs-content">
+                                <div class="tab-panel active" id="year1-gin">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">1. Општеобразовни предмети (Српски, Математика, Страни језик…)</div>
+                                        <div class="subject-item">2. Анатомија и физиологија</div>
+                                        <div class="subject-item">3. Основе гинекологије</div>
+                                        <div class="subject-item">4. Основе акушерства</div>
+                                        <div class="subject-item">5. Хигијена и исхрана</div>
+                                        <div class="subject-item">6. Психологија</div>
+                                        <div class="subject-item">7. Основе неонатологије</div>
+                                        <div class="subject-item">8. Прва помоћ</div>
+                                        <div class="subject-item">9. Практикум (кабинетске вежбе)</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year2-gin">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за II разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year3-gin">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за III разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year4-gin">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за IV разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Профил 3: Медицинска сестра – васпитач -->
+            <section class="education-profile" id="medicinska-sestra-vaspitac">
+                <div class="profile-header">
+                    <div class="profile-content">
+                        <h2 class="profile-title">Медицинска сестра – васпитач</h2>
+                        <p class="profile-description">
+                            Профил спаја здравствену заштиту и васпитно-образовни рад са децом предшколског узраста:
+                            развојне потребе, здрави стилови живота, основна нега, сарадња са родитељима и тимски рад
+                            у вртићима и предшколским установама.
+                        </p>
+
+                        <div class="subjects-tabs">
+                            <div class="tabs-header">
+                                <button class="tab-btn active" data-tab="year1-vasp">I разред</button>
+                                <button class="tab-btn" data-tab="year2-vasp">II разред</button>
+                                <button class="tab-btn" data-tab="year3-vasp">III разред</button>
+                                <button class="tab-btn" data-tab="year4-vasp">IV разред</button>
+                            </div>
+
+                            <div class="tabs-content">
+                                <div class="tab-panel active" id="year1-vasp">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">1. Општеобразовни предмети</div>
+                                        <div class="subject-item">2. Развој детета</div>
+                                        <div class="subject-item">3. Психологија детета</div>
+                                        <div class="subject-item">4. Педагогија</div>
+                                        <div class="subject-item">5. Хигијена и исхрана детета</div>
+                                        <div class="subject-item">6. Основе здравствене неге</div>
+                                        <div class="subject-item">7. Комуникација са родитељима</div>
+                                        <div class="subject-item">8. Прва помоћ</div>
+                                        <div class="subject-item">9. Практикум</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year2-vasp">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за II разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year3-vasp">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за III разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year4-vasp">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за IV разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-image">
+                        <img src="images/medicinska-sestra-vaspitac.jpg" alt="Медицинска сестра – васпитач" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Профил 4: Здравствени неговатељ -->
+            <section class="education-profile" id="zdravstveni-negovatelj">
+                <div class="profile-header reverse">
+                    <div class="profile-image">
+                        <img src="images/zdravstveni-negovatelj.jpg" alt="Здравствени неговатељ" loading="lazy">
+                    </div>
+
+                    <div class="profile-content">
+                        <h2 class="profile-title">Здравствени неговатељ</h2>
+                        <p class="profile-description">
+                            Оспособљава за свакодневну негу и помоћ корисницима, одржавање хигијене,
+                            превенцију декубитуса, мерење виталних параметара, асистирање у исхрани и кретању,
+                            као и за рад у кућним условима и установама социјалне заштите.
+                        </p>
+
+                        <div class="subjects-tabs">
+                            <div class="tabs-header">
+                                <button class="tab-btn active" data-tab="year1-neg">I разред</button>
+                                <button class="tab-btn" data-tab="year2-neg">II разред</button>
+                                <button class="tab-btn" data-tab="year3-neg">III разред</button>
+                            </div>
+
+                            <div class="tabs-content">
+                                <div class="tab-panel active" id="year1-neg">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">1. Општеобразовни предмети</div>
+                                        <div class="subject-item">2. Основе неге</div>
+                                        <div class="subject-item">3. Хигијена</div>
+                                        <div class="subject-item">4. Анатомија и физиологија</div>
+                                        <div class="subject-item">5. Здравствено-васпитни рад</div>
+                                        <div class="subject-item">6. Прва помоћ</div>
+                                        <div class="subject-item">7. Практикум</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year2-neg">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за II разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="year3-neg">
+                                    <div class="subjects-grid">
+                                        <div class="subject-item">Предмети за III разред биће објављени накнадно.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Подножје -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo-container">
+                <div class="footer-logo">
+                    <img src="images/Untitled_preview_rev_1.png" alt="Медицинска школа — лого у подножју" class="footer-logo-img">
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>О школи</h4>
+                <h3>Медицинска школа „Стевица Јовановић“</h3>
+                <p>Средња стручна школа са дугом традицијом и савременим образовним програмима.</p>
+                <div class="footer-contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Гундулићева 2, 26000 Панчево</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span>013/351-349</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>info@medicinskapancevo.edu.rs</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <span>Понедељак – Петак: 07:30–15:30</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Брзе везе</h4>
+                <ul class="footer-links">
+                    <li><a href="o-nama.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> О школи</a></li>
+                    <li><a href="obrazovni-profili.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Образовни профили</a></li>
+                    <li><a href="maturska-pitanja.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Матурска питања</a></li>
+                    <li><a href="galerija.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Галерија</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Јавне набавке</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right" aria-hidden="true"></i> Документа</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Документи</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Школски програм</a></li>
+                    <li><a href="#"><i class="fas fa-calendar" aria-hidden="true"></i> Годишњи календар</a></li>
+                    <li><a href="#"><i class="fas fa-table" aria-hidden="true"></i> Распоред часова</a></li>
+                    <li><a href="#"><i class="fas fa-book" aria-hidden="true"></i> Образовни профили</a></li>
+                    <li><a href="#"><i class="fas fa-certificate" aria-hidden="true"></i> Обрасци</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle" aria-hidden="true"></i> Информације од јавног значаја</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Пратите нас</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link instagram" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link linkedin" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" class="social-link tiktok" title="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић“ Панчево. Сва права задржана.</p>
+                <div class="footer-bottom-links">
+                    <a href="politika-privatnosti.html">Политика приватности</a>
+                    <span>|</span>
+                    <a href="#">Услови коришћења</a>
+                    <span>|</span>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипте -->
+    <script src="script.js"></script>
+    <script>
+        // Табови по секцијама (локално по групи табова)
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.subjects-tabs').forEach(function (tabsRoot) {
+                const buttons = tabsRoot.querySelectorAll('.tab-btn');
+                const panels  = tabsRoot.querySelectorAll('.tab-panel');
+
+                buttons.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        // деактивирај у овој групи
+                        buttons.forEach(b => b.classList.remove('active'));
+                        panels.forEach(p => p.classList.remove('active'));
+
+                        // активирај изабрани таб и панел
+                        this.classList.add('active');
+                        const id = this.getAttribute('data-tab');
+                        const panel = tabsRoot.querySelector('#' + id);
+                        if (panel) panel.classList.add('active');
+                    });
+                });
+            });
+
+            // година у футеру (ако већ није у script.js)
+            var y = document.getElementById('current-year');
+            if (y) y.textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

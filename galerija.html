@@ -1,0 +1,2049 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерија – Медицинска школа „Стевица Јовановић"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="wcag-elements.css">
+    <style>
+        /* Premium Gallery Styles */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 24px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            background: white;
+            border: 2px solid rgba(74, 144, 226, 0.15);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            font-family: var(--font-heading);
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .filter-btn i {
+            font-size: 15px;
+            color: #4a90e2;
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+
+        .filter-btn span {
+            position: relative;
+            z-index: 1;
+            font-family: var(--font-heading);
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            border-color: #4a90e2;
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.2);
+        }
+
+        .filter-btn:hover::before {
+            opacity: 0.1;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 6px 24px rgba(74, 144, 226, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active i {
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .filter-btn.active::before {
+            opacity: 1;
+        }
+
+        /* Gallery Section Intro Styles */
+        .gallery-section-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+            padding: 0 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .intro-icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+            color: white;
+            box-shadow: 0 12px 35px rgba(74, 144, 226, 0.35);
+            animation: iconFloat 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .intro-icon::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            border-radius: 25px;
+            opacity: 0.3;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .gallery-section-intro h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+            font-family: var(--font-heading);
+        }
+
+        .gallery-section-intro p {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            line-height: 1.8;
+            color: #475569;
+            text-align: justify;
+            text-align-last: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-family: var(--font-body);
+        }
+
+        /* Premium Masonry Grid */
+        .gallery-container {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #fafbff 0%, #ffffff 100%);
+        }
+
+        .masonry-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 0 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .masonry-grid > .gallery-card {
+            width: calc(33.333% - 20px);
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        /* Category grid wrapper */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            background: white;
+            animation: cardFadeIn 0.8s ease-out backwards;
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 16px 50px rgba(74, 144, 226, 0.16);
+            z-index: 10;
+        }
+
+        .gallery-card-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+        }
+
+        .gallery-card-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+
+        .gallery-card:hover .gallery-card-image::before {
+            opacity: 0.25;
+        }
+
+        .gallery-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
+            /* Subtle filter - lighter than hero section */
+            filter: brightness(0.92) contrast(1.02);
+        }
+
+        .gallery-card:hover .gallery-card-image img,
+        .gallery-card:active .gallery-card-image img,
+        .gallery-card:focus .gallery-card-image img {
+            transform: scale(1.12);
+            /* Remove filter on hover/click */
+            filter: brightness(1.05) saturate(1.15);
+        }
+
+        .gallery-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.82) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            padding: 18px;
+        }
+
+        .gallery-card:hover .gallery-card-overlay {
+            opacity: 1;
+        }
+
+        .gallery-card-overlay i {
+            font-size: 3rem;
+            color: white;
+            transform: scale(0.5) rotate(-20deg);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            margin-bottom: 12px;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+        }
+
+        .gallery-card:hover .gallery-card-overlay i {
+            transform: scale(1) rotate(0deg);
+        }
+
+        .gallery-overlay-text {
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.5s ease 0.1s;
+        }
+
+        .gallery-card:hover .gallery-overlay-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-card-info {
+            padding: 20px;
+            background: white;
+            position: relative;
+        }
+
+        .gallery-card-category {
+            font-size: 9px;
+            font-weight: 600;
+            color: #4a90e2;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 4px;
+            background: rgba(74, 144, 226, 0.08);
+            border-left: 3px solid #4a90e2;
+            transition: all 0.3s ease;
+            font-family: var(--font-heading);
+        }
+
+        .gallery-card:hover .gallery-card-category {
+            background: rgba(74, 144, 226, 0.14);
+            transform: translateX(2px);
+        }
+
+        .gallery-card-title {
+            font-size: clamp(15px, 2.5vw, 16px);
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.4;
+            margin: 0 0 10px 0;
+            transition: color 0.3s ease;
+            font-family: var(--font-heading);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: none;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            word-break: keep-all;
+        }
+
+        .gallery-card:hover .gallery-card-title {
+            color: #4a90e2;
+        }
+
+        .gallery-card-date {
+            font-size: clamp(11px, 2vw, 12px);
+            color: #999;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 500;
+            font-family: var(--font-body);
+        }
+
+        .gallery-card-date i {
+            font-size: 11px;
+            color: #4a90e2;
+        }
+
+        /* View Count Badge */
+        .gallery-card-views {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a90e2;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            z-index: 3;
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-card:hover .gallery-card-views {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Premium Stats Bar */
+        .gallery-stats {
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            padding: 50px 0;
+            margin: 70px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-stats::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Loading Animation */
+        .gallery-loading {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .gallery-loading.active {
+            display: block;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(74, 144, 226, 0.2);
+            border-top-color: #4a90e2;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #4a90e2;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .gallery-container {
+                padding: 60px 0;
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 24px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-filters {
+                top: 60px;
+                padding: 18px 15px;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+            
+            .gallery-container {
+                padding: 50px 0;
+            }
+
+            .gallery-section-intro {
+                padding: 0 15px;
+                margin-bottom: 40px;
+            }
+
+            .gallery-section-intro h2 {
+                font-size: clamp(1.6rem, 5vw, 1.8rem);
+            }
+
+            .gallery-section-intro p {
+                font-size: clamp(0.95rem, 2.2vw, 1rem);
+                text-align: justify;
+            }
+
+            .intro-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 20px;
+                padding: 0 15px;
+            }
+            
+            .gallery-card {
+                border-radius: 14px;
+            }
+            
+            .gallery-card-image {
+                height: 200px;
+            }
+
+            .masonry-grid {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 20px;
+                padding: 0 15px;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+            
+            .load-more-btn {
+                padding: 16px 40px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-filters {
+                position: relative;
+                top: auto;
+                padding: 15px;
+                border-radius: 12px;
+                margin-bottom: 25px;
+            }
+            
+            .filter-btn {
+                padding: 9px 18px;
+                font-size: 12px;
+                flex: 1;
+                min-width: 80px;
+            }
+            
+            .filter-btn i {
+                font-size: 13px;
+            }
+            
+            .gallery-container {
+                padding: 40px 0;
+            }
+            
+            .gallery-section-intro {
+                margin-bottom: 30px;
+            }
+            
+            .intro-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.6rem;
+                border-radius: 14px;
+            }
+            
+            .gallery-section-intro h2 {
+                font-size: clamp(1.5rem, 6vw, 1.7rem);
+                margin-bottom: 15px;
+            }
+            
+            .gallery-section-intro p {
+                font-size: clamp(0.9rem, 2.5vw, 0.95rem);
+                line-height: 1.7;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 0 12px;
+            }
+            
+            .gallery-card {
+                border-radius: 12px;
+            }
+            
+            .gallery-card-image {
+                height: 220px;
+                border-radius: 12px 12px 0 0;
+            }
+            
+            .gallery-card-content {
+                padding: 18px;
+            }
+            
+            .gallery-card-category {
+                font-size: 8px;
+                padding: 3px 8px;
+            }
+            
+            .gallery-card-title {
+                font-size: clamp(14px, 3vw, 15px);
+            }
+            
+            .gallery-card-date {
+                font-size: clamp(10px, 2.5vw, 11px);
+            }
+
+            .masonry-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 0 12px;
+            }
+            
+            .load-more-btn {
+                padding: 15px 35px;
+                font-size: 15px;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            .gallery-filters {
+                padding: 12px;
+                gap: 8px;
+            }
+            
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 11px;
+                min-width: 70px;
+            }
+            
+            .gallery-section-intro {
+                padding: 0 12px;
+            }
+            
+            .intro-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 1.4rem;
+                border-radius: 12px;
+            }
+            
+            .gallery-section-intro h2 {
+                font-size: clamp(1.4rem, 6.5vw, 1.6rem);
+            }
+            
+            .gallery-section-intro p {
+                font-size: clamp(0.85rem, 2.8vw, 0.9rem);
+            }
+            
+            .category-grid,
+            .masonry-grid {
+                padding: 0 10px;
+                gap: 15px;
+            }
+            
+            .gallery-card {
+                border-radius: 10px;
+            }
+            
+            .gallery-card-image {
+                height: 200px;
+            }
+            
+            .gallery-card-content {
+                padding: 15px;
+            }
+            
+            .load-more-btn {
+                padding: 14px 30px;
+                font-size: 14px;
+            }
+        }
+
+        /* Premium Lightbox Modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 25px 100px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-info {
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+        }
+
+        .lightbox-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .lightbox-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+            left: 30px;
+        }
+
+        .lightbox-next {
+            right: 30px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 24px;
+            border-radius: 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-nav,
+            .lightbox-close {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+
+            .lightbox-prev {
+                left: 15px;
+            }
+
+            .lightbox-next {
+                right: 15px;
+            }
+
+            .lightbox-close {
+                top: 15px;
+                right: 15px;
+            }
+
+            .lightbox-counter {
+                top: 15px;
+                font-size: 13px;
+                padding: 10px 20px;
+            }
+
+            .lightbox-info {
+                bottom: -60px;
+            }
+
+            .lightbox-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Load More Button Styles */
+        .category-container {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .load-more-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 40px auto;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.35);
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-heading);
+        }
+
+        .load-more-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .load-more-btn:hover::before {
+            left: 100%;
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(74, 144, 226, 0.5);
+        }
+
+        .load-more-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .load-more-btn i {
+            font-size: 20px;
+            animation: iconBounce 2s infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Responsive Load More */
+        @media screen and (max-width: 768px) {
+            .load-more-btn {
+                padding: 15px 35px;
+                font-size: 15px;
+            }
+        }
+
+        /* New Gallery Sections Styles */
+        .gallery-sections {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+            position: relative;
+        }
+        
+        .gallery-sections::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(74, 144, 226, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(53, 122, 189, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .gallery-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.1),
+                0 0 0 1px rgba(255,255,255,0.5) inset;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.03) 0%, transparent 70%);
+            animation: sectionGlow 15s ease-in-out infinite;
+        }
+        
+        @keyframes sectionGlow {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-20%, -20%); }
+        }
+        
+        .gallery-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 25px 70px rgba(0,0,0,0.15),
+                0 0 0 1px rgba(255,255,255,0.6) inset;
+        }
+        
+        .gallery-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 50%, #2868a8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: white;
+            box-shadow: 
+                0 10px 30px rgba(74, 144, 226, 0.4),
+                0 0 0 3px rgba(255, 255, 255, 0.3),
+                inset 0 -5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .section-icon::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-section:hover .section-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 
+                0 15px 40px rgba(74, 144, 226, 0.5),
+                0 0 0 4px rgba(255, 255, 255, 0.4),
+                inset 0 -5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-section:hover .section-icon::before {
+            opacity: 1;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #4a90e2, transparent);
+            border-radius: 2px;
+        }
+        
+        .section-description {
+            color: #5a6c7d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 20px auto 0;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        .section-text {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.03) 0%, rgba(53, 122, 189, 0.03) 100%);
+            border-radius: 15px;
+            border-left: 4px solid #4a90e2;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-text::before {
+            content: '\f05a';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 30px;
+            left: -12px;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+        }
+        
+        .section-text p {
+            color: #2c3e50;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .section-text p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-text p:first-letter {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #4a90e2;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+            justify-items: center;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.12),
+                0 0 0 1px rgba(255,255,255,0.8);
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(53, 122, 189, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.2),
+                0 0 0 1px rgba(74, 144, 226, 0.3),
+                inset 0 0 0 2px rgba(255,255,255,0.5);
+        }
+        
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+        
+        .gallery-item:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            content: '\f002';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a90e2;
+            font-size: 24px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: brightness(1) contrast(1);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.15);
+            filter: brightness(1.1) contrast(1.1);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(
+                to top, 
+                rgba(0,0,0,0.9) 0%, 
+                rgba(0,0,0,0.7) 50%,
+                transparent 100%
+            );
+            padding: 25px;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 3;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-item-title {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            letter-spacing: 0.3px;
+        }
+        
+        .hidden-items {
+            display: none;
+        }
+        
+        .load-more-btn.visible {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-section {
+                padding: 40px 25px;
+                border-radius: 20px;
+            }
+            .section-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 26px;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .section-description {
+                font-size: 1rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            @media (max-width: 480px) {
+                .gallery-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+            animation: lightboxFadeIn 0.4s ease;
+        }
+        
+        @keyframes lightboxFadeIn {
+            from {
+                opacity: 0;
+                backdrop-filter: blur(0);
+            }
+            to {
+                opacity: 1;
+                backdrop-filter: blur(20px);
+            }
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: lightboxZoomIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes lightboxZoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .lightbox img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 
+                0 30px 100px rgba(0,0,0,0.8),
+                0 0 0 1px rgba(255,255,255,0.1),
+                0 0 50px rgba(74, 144, 226, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .lightbox-close, .lightbox-prev, .lightbox-next {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.1) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            font-size: 24px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10001;
+            box-shadow: 
+                0 8px 25px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+        
+        .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.9) 0%, rgba(53, 122, 189, 0.9) 100%);
+            border-color: rgba(255,255,255,0.4);
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 
+                0 12px 35px rgba(74, 144, 226, 0.5),
+                inset 0 1px 0 rgba(255,255,255,0.3);
+        }
+        
+        .lightbox-close:active, .lightbox-prev:active, .lightbox-next:active {
+            transform: scale(1.05);
+        }
+        
+        .lightbox-close {
+            top: 30px;
+            right: 30px;
+        }
+        
+        .lightbox-prev {
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-prev:hover {
+            transform: translateY(-50%) scale(1.15) rotate(-5deg);
+        }
+        
+        .lightbox-next {
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-next:hover {
+            transform: translateY(-50%) scale(1.15) rotate(5deg);
+        }
+        
+        @media (max-width: 768px) {
+            .lightbox-close, .lightbox-prev, .lightbox-next {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+            .lightbox-close {
+                top: 15px;
+                right: 15px;
+            }
+            .lightbox-prev {
+                left: 15px;
+            }
+            .lightbox-next {
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/images_preview_rev_1.jpg" alt="Медицинска школа — лого" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="dropdown">
+                    <a href="o-nama.html" class="nav-link">О школи <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-nama.html"><i class="fas fa-school"></i> О нама</a></li>
+                        <li><a href="zaposleni.html"><i class="fas fa-users"></i> Запослени</a></li>
+                        <li><a href="dokumentacija.html"><i class="fas fa-file-alt"></i> Документација</a></li>
+                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends"></i> Стручни тимови</a></li>
+                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line"></i> Јавне набавке и фин. извештаји</a></li>
+                        <li><a href="sekcije.html"><i class="fas fa-star"></i> Секције</a></li>
+                    </ul>
+                </li>
+                <li><a href="obrazovni-profili.html" class="nav-link">Образовни профили</a></li>
+                <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
+                <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
+                <li><a href="galerija.html" class="nav-link">Галерија</a></li>
+                <li><a href="erasmus-projekti.html" class="nav-link">Еразмус+ пројекти</a></li>
+                <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger" aria-label="Мени">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <div class="breadcrumb" aria-label="Путања">
+                <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Почетна</a>
+                <span class="breadcrumb-separator" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <span class="current-page" aria-current="page">Галерија</span>
+            </div>
+            <h1 class="page-title">Галерија</h1>
+            <p class="page-subtitle">Откријте тренутке који дефинишу нашу школску заједницу и обликују будуће медицинске стручњаке</p>
+        </div>
+    </section>
+
+    <!-- Gallery Sections -->
+    <div class="gallery-sections">
+        <!-- 1. Изглед школе -->
+        <section class="gallery-section" id="objekti">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-building"></i></div>
+                <h2 class="section-title">🏫 Наш дом знања – Изглед школе</h2>
+                <p class="section-description">Простор где се стварају будући здравствени стручњаци</p>
+            </div>
+            
+            <!-- Текст секције -->
+            <div class="section-text">
+                <p>Простор школе је уређен тако да подржи наставу и свакодневни рад ученика. Библиотека је намењена учењу, истраживању и припреми наставе, док спортска сала омогућава различите активности које доприносе развоју здравих навика и тимског духа.</p>
+                
+                <p>Кабинети за стручне предмете опремљени су наставним средствима и дидактичким моделима који омогућавају практичну наставу и боље разумевање градива. Учионице су функционалне, прилагођене мањим групама и осмишљене тако да обезбеде несметан рад на часовима. Лабораторијски простор омогућава ученицима да теоријска знања примене у пракси, што је од великог значаја за медицинска занимања.</p>
+                
+                <p>Сви простори су осмишљени тако да подстакну радне навике, дисциплину и сарадњу међу ученицима. На овај начин ствара се окружење у ком се стичу знања и вештине потребне за будуће занимање, уз подршку наставника и савремених наставних метода.</p>
+            </div>
+            
+            <div class="gallery-grid" data-section="objekti"></div>
+            <button class="load-more-btn" data-section="objekti">Учитај још <i class="fas fa-arrow-right"></i></button>
+        </section>
+
+        <!-- 2. Дидактички материјали - Практикум -->
+        <section class="gallery-section" id="praktikum">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-stethoscope"></i></div>
+                <h2 class="section-title">🩺 Учимо радећи – Дидактички материјали</h2>
+                <p class="section-description">Од теорије до праксе: Тренирамо вештине будућих здравствених радника</p>
+            </div>
+            
+            <!-- Текст секције -->
+            <div class="section-text">
+                <p>Настава у школи није ограничена само на теоријско знање већ се велики део активности одвија кроз практичне вежбе. Ученици имају прилику да на моделима и симулаторима увежбавају поступке који ће им бити потребни у будућем раду. Рад у мањим групама омогућава сваком ученику да активно учествује и стекне потребно искуство.</p>
+                
+                <p>Кроз овакве вежбе ученици савладавају основе здравствене неге, уче правилно руковање инструментима и упознају се са процедурама које ће примењивати у здравственим установама. Наставници их воде кроз сваки корак, како би поступци били изведени стручно и безбедно.</p>
+                
+                <p>Оваква настава доприноси развоју сигурности у раду, одговорности и професионалног односа према будућем занимању. Практичне активности су важан део школовања јер повезују стечена знања са стварним ситуацијама које их очекују у професионалном окружењу.</p>
+            </div>
+            
+            <div class="gallery-grid" data-section="praktikum"></div>
+            <button class="load-more-btn" data-section="praktikum">Учитај још <i class="fas fa-arrow-right"></i></button>
+        </section>
+
+        <!-- 3. Прва помоћ - Активности -->
+        <section class="gallery-section" id="aktivnosti">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-heart-pulse"></i></div>
+                <h2 class="section-title">❤️‍🩹 Спасиоци у акцији – Прва помоћ</h2>
+                <p class="section-description">Тренирамо вештине које спасавају животе</p>
+            </div>
+            
+            <!-- Текст секције -->
+            <div class="section-text">
+                <p>Образовање у нашој школи обухвата и практичне активности из области прве помоћи. Ученици кроз вежбе стичу основна знања и вештине неопходне за пружање хитне медицинске помоћи у различитим ситуацијама. Рад се организује у тимовима, што доприноси развоју сарадње, одговорности и сналажљивости.</p>
+                
+                <p>Вежбе обухватају поступке збрињавања повреда, имобилизације, реанимације и припреме за евакуацију повређених. Наставници и инструктори воде ученике кроз све кораке, како би се поступци изводили правилно и у складу са медицинским протоколима.</p>
+                
+                <p>Овакве активности имају велики значај, јер ученици на практичан начин увежбавају ситуације са којима се могу сусрести у свакодневном животу и будућем раду. Стечено знање и сигурност у извођењу поступака представљају важан темељ за њихову професионалну каријеру у здравству.</p>
+            </div>
+            
+            <div class="gallery-grid" data-section="aktivnosti"></div>
+            <button class="load-more-btn" data-section="aktivnosti">Учитај још <i class="fas fa-arrow-right"></i></button>
+        </section>
+
+        <!-- 4. Такмичења - Спорт -->
+        <section class="gallery-section" id="sport">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-trophy"></i></div>
+                <h2 class="section-title">🏆 Борба за победу – Такмичења</h2>
+                <p class="section-description">Где се рађају шампиони и стварају успомене</p>
+            </div>
+            
+            <!-- Текст секције -->
+            <div class="section-text">
+                <p>Ученици наше школе активно учествују на различитим такмичењима, како у области стручних предмета, тако и у спорту и другим ваннаставним активностима. Ови догађаји представљају прилику да се стекну нова искуства, провери знање и вештине, али и да се развије тимски дух и такмичарска мотивација.</p>
+                
+                <p>Било да је реч о спортским утакмицама, шаховским турнирима, такмичењима у струци или креативним изазовима, ученици показују залагање и спремност да представе школу на најбољи начин. Успеси које постижу резултат су рада, дисциплине и подршке наставника који их усмеравају и мотивишу.</p>
+                
+                <p>Такмичења имају посебан значај јер омогућавају ученицима да своја знања и способности ставе у реалан контекст и упореде са вршњацима из других школа. Осим резултата и освојених награда, важна је и атмосфера заједништва и поноса што су део тима. На тај начин, ученици стичу драгоцено искуство које им помаже да граде самопоуздање и да се спремају за будуће професионалне и животне изазове.</p>
+            </div>
+            
+            <div class="gallery-grid" data-section="sport"></div>
+            <button class="load-more-btn" data-section="sport">Учитај још <i class="fas fa-arrow-right"></i></button>
+        </section>
+
+        <!-- 5. Сајам образовања - Догађаји -->
+        <section class="gallery-section" id="dogadjaji">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h2 class="section-title">🎓 Показујемо шта знамо – Сајам образовања</h2>
+                <p class="section-description">Представљамо будућност здравства широј јавности</p>
+            </div>
+            
+            <!-- Текст секције -->
+            <div class="section-text">
+                <p>Ученици наше школе редовно учествују на Сајму образовања, где имају прилику да представе своје знање и вештине широј јавности. Ово је важан догађај који омогућава младима да прикажу практичне поступке и начин рада у здравственој струци.</p>
+                
+                <p>Кроз различите демонстрације ученици показују како изгледају поступци из прве помоћи, здравствене неге и других стручних области. Посетиоци имају прилику да се упознају са наставним програмом, али и да стекну јаснију слику о томе како изгледа школовање у медицинској школи.</p>
+                
+                <p>Сајам је уједно и прилика за размену искустава са вршњацима из других школа и стручњацима из области здравства. За ученике он представља важно искуство које доприноси њиховом самопоуздању, јавном наступу и професионалном развоју. На овај начин школа се приближава будућим генерацијама, али и широј заједници којој су будући здравствени радници потребни.</p>
+            </div>
+            
+            <div class="gallery-grid" data-section="dogadjaji"></div>
+            <button class="load-more-btn" data-section="dogadjaji">Учитај још <i class="fas fa-arrow-right"></i></button>
+        </section>
+
+        <!-- 6. Матурантска парада - Манифестације -->
+        <section class="gallery-section" id="manifestacije">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-users"></i></div>
+                <h2 class="section-title">🎊 Сјај младости – Матурантска парада</h2>
+                <p class="section-description">Заједно славимо крај једне епохе и почетак нове</p>
+            </div>
+            
+            <!-- Текст секције -->
+            <div class="section-text">
+                <p>Матурaнтска парада је један од најсвечанијих тренутака у школској години, када ученици завршних разреда заједно обележавају крај свог srednjошколског образовања. Уз музичку пратњу и кореографију, матуранти корачају улицама града и шаљу поруку јединства, младости и заједништва.</p>
+                
+                <p>Овај догађај окупља велики број ученика и наставника, али и грађане који их подржавају и поздрављају. Поред свечаног карактера, парада носи и симболичну тежину – она представља прелазак у ново животно раздобље и корак ка професионалном и личном развоју.</p>
+                
+                <p>Учешће у оваквој манифестацији оставља снажан утисак на ученике и ствара успомене које ће памтити дуго након завршетка школе. Истовремено, парада је и прилика да се покаже дух заједништва и понос што су део генерације која корача у будућност.</p>
+            </div>
+            
+            <div class="gallery-grid" data-section="manifestacije"></div>
+            <button class="load-more-btn" data-section="manifestacije">Учитај још <i class="fas fa-arrow-right"></i></button>
+        </section>
+
+        <!-- 7. Добровољно давање крви - Хуманитарне акције -->
+        <section class="gallery-section" id="humanitarne">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h2 class="section-title">❤️ Дајемо живот – Добровољно давање крви</h2>
+                <p class="section-description">Солидарност која спасава животе</p>
+            </div>
+            
+            <!-- Текст секције -->
+            <div class="section-text">
+                <p>Добровољно давалаштво крви је једна од најзначајнијих хуманитарних активности у којој учествују наши ученици. Ова акција има за циљ развијање свести о значају солидарности и помоћи другима, као и промоцију здравих животних навика.</p>
+                
+                <p>Ученици имају прилику да се упознају са поступком давања крви, као и са значајем који тај чин има за спасавање живота. Акције се одвијају у сарадњи са здравственим установама и организацијама, што доприноси њиховом практичном искуству и бољем разумевању професионалне одговорности.</p>
+                
+                <p>Осим што учествују као добровољни даваоци или помоћници, ученици овим чином показују зрелост, хуманост и спремност да допринесу заједници. На тај начин, школа негује вредности које су темељ здравствене струке – бригу о другима, солидарност и одговорност.</p>
+            </div>
+            
+            <div class="gallery-grid" data-section="humanitarne"></div>
+            <button class="load-more-btn" data-section="humanitarne">Учитај још <i class="fas fa-arrow-right"></i></button>
+        </section>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-content">
+                <div class="footer-column footer-brand">
+                    <div class="footer-logo-stack">
+                        <img src="images/Untitled_preview_rev_1.png" alt="Медицинска школа — лого" class="footer-logo-img">
+                        <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> 58 година традиције</span>
+                    </div>
+                    <p class="footer-description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама. Подржавамо сваког ученика кроз менторство, пројекте и реалне стручне ситуације.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Брзе везе</h4>
+                    <ul class="footer-links">
+                        <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="maturska-pitanja.html"><span>Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="ucenici-i-roditelji.html"><span>Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Документа</h4>
+                    <ul class="footer-links">
+                        <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="sekcije.html"><span>Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="politika-privatnosti.html"><span>Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html#lokacija"><span>Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Останимо у контакту</h4>
+                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+                    <div class="footer-socials social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link tiktok" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="footer-newsletter">
+                        <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
+                            <span>Пошаљи нам питање</span>
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </a>
+                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
+                <div class="developer-credit">
+                    <span>Израда и одржавање</span>
+                    <img src="images/pansoft-logo.png" alt="Pansoft">
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="politika-privatnosti.html">Политика приватности</a>
+                    <span>•</span>
+                    <a href="#">Услови коришћења</a>
+                    <span>•</span>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" title="Назад на врх" aria-label="Скролуј на врх стране">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- WCAG Badge -->
+    <div class="wcag-badge" role="img" aria-label="Сајт је прилагођен WCAG 2.1 стандардима приступачности">
+        <div class="wcag-icon">
+            <i class="fas fa-universal-access" aria-hidden="true"></i>
+        </div>
+        <div class="wcag-tooltip" role="tooltip">
+            <strong>WCAG 2.1</strong>
+            <span>Приступачан садржај</span>
+        </div>
+    </div>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher" id="language-switcher" aria-label="Избор језика">
+        <button class="lang-btn active" data-lang="sr" aria-pressed="true">СР</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+
+    <!-- GDPR Cookie Consent -->
+    <div class="cookie-consent" id="cookieConsent" role="dialog" aria-labelledby="cookieTitle" aria-modal="true" hidden>
+        <div class="cookie-consent-container">
+            <div class="cookie-consent-content">
+                <div class="cookie-consent-title" id="cookieTitle">
+                    <i class="fas fa-cookie-bite"></i>
+                    Колачићи и приватност
+                </div>
+                <p class="cookie-consent-text">
+                    На овом сајту користимо колачиће (cookies) ради бољег корисничког искуства и аналитике.
+                    За више информација погледајте <a href="politika-privatnosti.html">Политику приватности</a>.
+                </p>
+            </div>
+            <div class="cookie-consent-actions">
+                <button class="cookie-btn cookie-btn-settings" onclick="openCookieSettings()">Подешавања</button>
+                <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Одбиј</button>
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Прихвати</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div class="cookie-settings-modal" id="cookieSettingsModal" hidden>
+        <div class="cookie-settings-content" role="dialog" aria-modal="true" aria-labelledby="cookieSettingsTitle">
+            <div class="cookie-settings-header">
+                <h3 class="cookie-settings-title" id="cookieSettingsTitle">Подешавања колачића</h3>
+                <button class="cookie-close-btn" onclick="closeCookieSettings()" aria-label="Затвори">&times;</button>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Неопходни колачићи</h4>
+                    <label class="cookie-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    Ови колачићи су неопходни за правилан рад сајта и не могу се искључити.
+                </p>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Аналитички колачићи</h4>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="analyticsCookies">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    Помаже нам да разумемо како користите сајт и да унапредимо садржај.
+                </p>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h4 class="cookie-category-title">Маркетиншки колачићи</h4>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="marketingCookies">
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-description">
+                    Омогућавају персонализоване садржаје и оглашавање.
+                </p>
+            </div>
+
+            <div class="cookie-consent-actions" style="margin-top: 20px; justify-content: center;">
+                <button class="cookie-btn cookie-btn-decline" onclick="saveAndCloseCookieSettings(false)">Сачувај без ових</button>
+                <button class="cookie-btn cookie-btn-accept" onclick="saveAndCloseCookieSettings(true)">Сачувај подешавања</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script>
+// Gallery data
+const galleryData = {
+    objekti: Array.from({length: 20}, (_, i) => ({src: `images/gallery/objekti/objekat-${i+1}.jpg`, title: `Објекат ${i+1}`})),
+    praktikum: Array.from({length: 20}, (_, i) => ({src: `images/gallery/praktikum/praktikum-${i+1}.jpg`, title: `Практикум ${i+1}`})),
+    aktivnosti: Array.from({length: 19}, (_, i) => ({src: `images/gallery/aktivnosti/aktivnost-${i+1}.jpg`, title: `Активност ${i+1}`})),
+    sport: [
+        ...Array.from({length: 16}, (_, i) => ({src: `images/gallery/sport/sport-${i+1}.jpg`, title: `Спорт ${i+1}`})),
+        {src: 'images/gallery/sport/sport-17.jpeg', title: 'Спорт 17'},
+        ...Array.from({length: 11}, (_, i) => ({src: `images/gallery/sport/sport-${i+18}.jpg`, title: `Спорт ${i+18}`}))
+    ],
+    dogadjaji: Array.from({length: 16}, (_, i) => ({src: `images/gallery/dogadjaji/dogadjaj-${i+1}.jpg`, title: `Догађај ${i+1}`})),
+    manifestacije: Array.from({length: 18}, (_, i) => ({src: `images/gallery/manifestacije/manifestacija-${i+1}.jpg`, title: `Манифестација ${i+1}`})),
+    humanitarne: [
+        {src: 'images/gallery/humanitarne/humanitarna-2.jpg', title: 'Хуманитарна акција 1'},
+        {src: 'images/gallery/humanitarne/humanitarna-3.jpg', title: 'Хуманитарна акција 2'},
+        {src: 'images/gallery/humanitarne/humanitarna-7.jpg', title: 'Хуманитарна акција 3'},
+        {src: 'images/gallery/humanitarne/humanitarna-9.jpg', title: 'Хуманитарна акција 4'},
+        {src: 'images/gallery/humanitarne/humanitarna-10.png', title: 'Хуманитарна акција 5'},
+        {src: 'images/gallery/humanitarne/humanitarna-11.png', title: 'Хуманитарна акција 6'},
+        {src: 'images/gallery/humanitarne/humanitarna-12.jpg', title: 'Хуманитарна акција 7'},
+        {src: 'images/gallery/humanitarne/humanitarna-13.jpg', title: 'Хуманитарна акција 8'},
+        {src: 'images/gallery/humanitarne/humanitarna-14.jpg', title: 'Хуманитарна акција 9'},
+        {src: 'images/gallery/humanitarne/humanitarna-15.jpg', title: 'Хуманитарна акција 10'},
+        {src: 'images/gallery/humanitarne/humanitarna-16.jpg', title: 'Хуманитарна акција 11'},
+        {src: 'images/gallery/humanitarne/humanitarna-17.jpg', title: 'Хуманитарна акција 12'},
+        {src: 'images/gallery/humanitarne/humanitarna-18.jpg', title: 'Хуманитарна акција 13'},
+        {src: 'images/gallery/humanitarne/humanitarna-19.jpg', title: 'Хуманитарна акција 14'},
+        {src: 'images/gallery/humanitarne/humanitarna-20.jpg', title: 'Хуманитарна акција 15'}
+    ]
+};
+
+// Render section
+function renderSection(sectionName, initialCount = 6) {
+    const grid = document.querySelector(`[data-section="${sectionName}"]`);
+    const loadMoreBtn = document.querySelector(`button[data-section="${sectionName}"]`);
+    const images = galleryData[sectionName];
+    if (!grid || !images) return;
+    
+    grid.innerHTML = '';
+    images.forEach((img, index) => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        if (index >= initialCount) item.classList.add('hidden-items');
+        item.innerHTML = `<img src="${img.src}" alt="${img.title}" loading="lazy"><div class="gallery-item-overlay"><div class="gallery-item-title">${img.title}</div></div>`;
+        item.addEventListener('click', () => openLightbox(sectionName, index));
+        grid.appendChild(item);
+    });
+    
+    if (loadMoreBtn && images.length > initialCount) loadMoreBtn.classList.add('visible');
+}
+
+// Load more
+document.querySelectorAll('.load-more-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const section = this.getAttribute('data-section');
+        const grid = document.querySelector(`[data-section="${section}"]`);
+        grid.querySelectorAll('.hidden-items').forEach(item => item.classList.remove('hidden-items'));
+        this.style.display = 'none';
+    });
+});
+
+// Lightbox
+let currentSection = '';
+let currentIndex = 0;
+
+function openLightbox(section, index) {
+    currentSection = section;
+    currentIndex = index;
+    updateLightboxImage();
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function updateLightboxImage() {
+    const img = document.getElementById('lightbox-img');
+    const images = galleryData[currentSection];
+    if (images && images[currentIndex]) {
+        img.src = images[currentIndex].src;
+        img.alt = images[currentIndex].title;
+    }
+}
+
+function navigateLightbox(direction) {
+    const images = galleryData[currentSection];
+    if (direction === 'next') {
+        currentIndex = (currentIndex + 1) % images.length;
+    } else {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+    }
+    updateLightboxImage();
+}
+
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox-prev').addEventListener('click', () => navigateLightbox('prev'));
+document.getElementById('lightbox-next').addEventListener('click', () => navigateLightbox('next'));
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigateLightbox('prev');
+    if (e.key === 'ArrowRight') navigateLightbox('next');
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+    Object.keys(galleryData).forEach(section => renderSection(section));
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > ((document.documentElement.scrollHeight - window.innerHeight) / 2)) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+    <!-- Савет: проверите у DevTools -> Network -> Headers да server враћа Content-Type: text/html; charset=UTF-8 -->
+    <script>        // Language Switcher - prikaÅ¾i samo u Hero/Page Header sekciji
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageSwitcher = document.getElementById('language-switcher');
+            const heroSection = document.querySelector('.hero, .page-header');
+            
+            if (languageSwitcher && heroSection) {
+                window.addEventListener('scroll', function() {
+                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    const scrollPosition = window.scrollY;
+                    
+                    if (scrollPosition < heroBottom) {
+                        languageSwitcher.style.opacity = '1';
+                        languageSwitcher.style.visibility = 'visible';
+                    } else {
+                        languageSwitcher.style.opacity = '0';
+                        languageSwitcher.style.visibility = 'hidden';
+                    }
+                });
+            }
+            
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > ((document.documentElement.scrollHeight - window.innerHeight) / 2)) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

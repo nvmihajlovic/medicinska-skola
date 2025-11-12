@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О школи – Медицинска школа „Стевица Јовановић“</title>
+
+    <!-- Opis stranice -->
+    <meta name="description" content="О школи, историјат, мисија и вредности Медицинске школе „Стевица Јовановић" у Панчеву. Подаци о настави, ученицима и постигнућима.">
+
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
+    <!-- CSS -->
+    <link rel="preload" href="style.css?v=2" as="style">
+    <link rel="preload" href="pages.css?v=2" as="style">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="pages.css?v=2">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/images_preview_rev_1.png" alt="Медицинска школа — лого" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="dropdown">
+                    <a href="o-nama.html" class="nav-link">О школи <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-nama.html"><i class="fas fa-school"></i> О нама</a></li>
+                        <li><a href="zaposleni.html"><i class="fas fa-users"></i> Запослени</a></li>
+                        <li><a href="dokumentacija.html"><i class="fas fa-file-alt"></i> Документација</a></li>
+                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends"></i> Стручни тимови</a></li>
+                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line"></i> Јавне набавке и фин. извештаји</a></li>
+                        <li><a href="sekcije.html"><i class="fas fa-star"></i> Секције</a></li>
+                    </ul>
+                </li>
+                <li><a href="obrazovni-profili.html" class="nav-link">Образовни профили</a></li>
+                <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
+                <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
+                <li><a href="galerija.html" class="nav-link">Галерија</a></li>
+                <li><a href="#" class="nav-link">Еразмус+ пројекти</a></li>
+                <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger" aria-label="Мени">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <div class="breadcrumb" aria-label="Путања">
+                <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Почетна</a>
+                <span class="breadcrumb-separator" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <span class="current-page" aria-current="page">О школи</span>
+            </div>
+            <h1 class="page-title">О школи</h1>
+            <p class="page-subtitle">Историјат, мисија и вредности наше образовне установе</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- About Section -->
+            <section class="content-section">
+                <div class="section-grid">
+                    <div class="content-left">
+                        <div class="content-block">
+                            <h2 class="section-title">Ко смо</h2>
+                            <p class="section-text">
+                                Медицинска школа „Стевица Јовановић“ основана је 1965. године и данас је
+                                савремена, акредитована средња стручна школа. Наши ђаци стичу теоријска знања
+                                и практичне вештине у сарадњи са здравственим установама у Панчеву и региону.
+                            </p>
+                            <p class="section-text">
+                                Наша настава обједињује савремене програме, рад у кабинетима и вежбе у реалном
+                                окружењу, што ученицима омогућава да по завршетку школе брзо нађу запослење или
+                                успешно наставе образовање.
+                            </p>
+                        </div>
+
+                        <div class="content-block">
+                            <h2 class="section-title">Мисија</h2>
+                            <p class="section-text">
+                                Наша мисија је развој компетентних и хуманих здравствених радника, уз неговање
+                                професионалне етике, одговорности и тимског духа. Посвећени смо квалитету наставе,
+                                индивидуалној подршци и континуираном унапређењу.
+                            </p>
+                        </div>
+
+                        <div class="content-block">
+                            <h2 class="section-title">Зашто изабрати нас</h2>
+                            <div class="reasons-list">
+                                <div class="reason-item">
+                                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                                    <span>Вертификовани програми</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-user-friends" aria-hidden="true"></i>
+                                    <span>Подршка ментора</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-laptop-medical" aria-hidden="true"></i>
+                                    <span>Савремени кабинети</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-briefcase-medical" aria-hidden="true"></i>
+                                    <span>Пракса у установама</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-right">
+                        <div class="stats-card" aria-label="Основна статистика">
+                            <h3 class="stats-title">У бројкама</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-number">58</div>
+                                    <div class="stat-label">година рада</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">5000+</div>
+                                    <div class="stat-label">алумни</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">95%</div>
+                                    <div class="stat-label">запошљивост</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">25</div>
+                                    <div class="stat-label">партнера</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon" aria-hidden="true">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3 class="info-title">Постигнућа</h3>
+                            <p class="info-text">
+                                Ученици редовно освајају награде на такмичењима и успешно реализују пројекте
+                                из области струке, превенције и јавног здравља.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values Section -->
+            <section class="values-section">
+                <div class="section-header">
+                    <h2 class="section-title centered">Наше вредности</h2>
+                    <p class="section-subtitle">Воде нас хуманост, знање и одговорност</p>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="value-title">Хуманост</h3>
+                        <p class="value-text">
+                            Негујемо емпатију и поштовање према пацијентима и заједници.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3 class="value-title">Стручност</h3>
+                        <p class="value-text">
+                            Унапредјујемо знање и праксу кроз лабораторијске и клиничке вежбе.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="value-title">Образовање</h3>
+                        <p class="value-text">
+                            Подстичемо критичко мишљење и континуирано учење.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="value-title">Сарадња</h3>
+                        <p class="value-text">
+                            Радимо у партнерству са здравственим установама и локалном заједницом.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="team-section">
+                <div class="section-header">
+                    <h2 class="section-title centered">Руководство школе</h2>
+                    <p class="section-subtitle">Посвећен тим који води школу и брине о квалитету наставе</p>
+                </div>
+
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo" aria-hidden="true">
+                            <div class="member-icon female">
+                                <i class="fas fa-user-circle"></i>
+                                <div class="hover-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Јелена Петровић</h3>
+                            <p class="member-position">Директор школе</p>
+                            <p class="member-bio">
+                                Више од 20 година у образовању; фокус на квалитету наставе и развоју ученика.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo" aria-hidden="true">
+                            <div class="member-icon male">
+                                <i class="fas fa-user-circle"></i>
+                                <div class="hover-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Милан Јованов</h3>
+                            <p class="member-position">Помоћник директора</p>
+                            <p class="member-bio">
+                                Зadužen за наставу и сарадњу са установама здравствене заштите.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo" aria-hidden="true">
+                            <div class="member-icon male">
+                                <i class="fas fa-user-circle"></i>
+                                <div class="hover-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Марко Ивић</h3>
+                            <p class="member-position">Педагог</p>
+                            <p class="member-bio">
+                                Ради саветодавни рад са ученицима и родитељима, прати напредак и мотивацију.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo" aria-hidden="true">
+                            <div class="member-icon female">
+                                <i class="fas fa-user-circle"></i>
+                                <div class="hover-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Снежана Павлов</h3>
+                            <p class="member-position">Психолог</p>
+                            <p class="member-bio">
+                                Пружа психолошку подршку и спроводи програме развоја социјалних вештина.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Медицинска школа „Стевица Јовановић"</h3>
+                <p>Средња стручна школа са више од 75 година традиције и савременим образовним програмима.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Брзе везе</h4>
+                <div class="footer-contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Гундулићева 2, 26000 Панчево</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span>013/351-349</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>info@medicinskapancevo.edu.rs</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <span>Понедељак – Петак: 07:30–15:30</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Брзе везе</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Почетна</a></li>
+                    <li><a href="o-nama.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> О школи</a></li>
+                    <li><a href="obrazovni-profili.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Образовни профили</a></li>
+                    <li><a href="raspored-ispita.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Распоред испита</a></li>
+                    <li><a href="galerija.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Галерија</a></li>
+                    <li><a href="kontakt.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Контакт</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Документи</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-file-pdf" aria-hidden="true"></i> Школски програм</a></li>
+                    <li><a href="#"><i class="fas fa-calendar" aria-hidden="true"></i> Годишњи календар</a></li>
+                    <li><a href="#"><i class="fas fa-table" aria-hidden="true"></i> Распоред часова</a></li>
+                    <li><a href="#"><i class="fas fa-book" aria-hidden="true"></i> Образовни профили</a></li>
+                    <li><a href="#"><i class="fas fa-certificate" aria-hidden="true"></i> Обрасци</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle" aria-hidden="true"></i> Јавне набавке</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Пратите нас</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook" title="Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link instagram" title="Instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link linkedin" title="LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="social-link tiktok" title="TikTok">
+                        <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић“ Панчево. Сва права задржана.</p>
+                <div class="footer-bottom-links">
+                    <a href="politika-privatnosti.html">Политика приватности</a>
+                    <span>|</span>
+                    <a href="#">Услови коришћења</a>
+                    <span>|</span>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Назад на врх">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Language Switcher -->
+    <div id="language-switcher" class="language-switcher" aria-label="Одабир језика">
+        <button class="lang-btn active" data-lang="sr" aria-pressed="true">SR</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Tekuća godina (ako već nije у script.js)
+        (function(){var y=document.getElementById('current-year'); if(y) y.textContent=new Date().getFullYear();})();
+        
+        // Language Switcher - prikaži samo u Hero/Page Header sekciji
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageSwitcher = document.getElementById('language-switcher') || document.querySelector('.language-switcher');
+            const heroSection = document.querySelector('.hero') || document.querySelector('.page-header');
+            
+            if (languageSwitcher && heroSection) {
+                window.addEventListener('scroll', function() {
+                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    const scrollPosition = window.scrollY;
+                    
+                    if (scrollPosition < heroBottom) {
+                        languageSwitcher.style.opacity = '1';
+                        languageSwitcher.style.visibility = 'visible';
+                    } else {
+                        languageSwitcher.style.opacity = '0';
+                        languageSwitcher.style.visibility = 'hidden';
+                    }
+                });
+            }
+            
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > ((document.documentElement.scrollHeight - window.innerHeight) / 2)) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

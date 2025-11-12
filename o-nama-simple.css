@@ -1,0 +1,321 @@
+/* ========================================
+   O NAMA SUBMENU - Simple & Consistent Styles
+   All pages use existing .section-card styles from pages.css
+   ======================================== */
+
+/* Keep existing section-card styles from pages.css */
+/* Just add minimal specific adjustments */
+
+/* Team cards - simple style matching site */
+.team-card {
+    background: white;
+    border-radius: 16px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 30px rgba(74, 144, 226, 0.08);
+    border: 1px solid rgba(74, 144, 226, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.15);
+}
+
+.team-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.team-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.team-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+/* Team grid cards */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.team-grid-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(74, 144, 226, 0.08);
+    border: 1px solid rgba(74, 144, 226, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-grid-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.15);
+}
+
+.team-grid-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.team-grid-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.team-grid-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+/* Section title & subtitle */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Sekcije specific styles - matching pages.css patterns */
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.section-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(74, 144, 226, 0.08);
+    border: 1px solid rgba(74, 144, 226, 0.1);
+    transition: all 0.3s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.15);
+}
+
+.section-header {
+    padding: 15px 20px;
+    background: #f8f9fa;
+}
+
+.section-category {
+    display: inline-block;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.red-category {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.purple-category {
+    background: linear-gradient(135deg, #6f42c1, #5a32a3);
+}
+
+.section-image-placeholder {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: white;
+}
+
+.blue-gradient {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+}
+
+.red-gradient {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.purple-gradient {
+    background: linear-gradient(135deg, #6f42c1, #5a32a3);
+}
+
+.section-image-placeholder i {
+    font-size: 3rem;
+    opacity: 0.9;
+}
+
+.section-image-placeholder h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.section-content {
+    padding: 30px;
+}
+
+.section-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blue-icon {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+}
+
+.red-icon {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.purple-icon {
+    background: linear-gradient(135deg, #6f42c1, #5a32a3);
+}
+
+.section-content h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.section-content p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.section-meta {
+    margin-bottom: 20px;
+}
+
+.section-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.section-meta-item:last-child {
+    border-bottom: none;
+}
+
+.section-meta-item i {
+    color: var(--primary-blue);
+    font-size: 0.95rem;
+    width: 18px;
+}
+
+.btn-join-section {
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-join-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.3);
+}
+
+.blue-btn {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+}
+
+.red-btn {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+}
+
+.purple-btn {
+    background: linear-gradient(135deg, #6f42c1, #5a32a3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .teams-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sections-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-card,
+    .section-card {
+        padding: 25px;
+    }
+    
+    .section-title {
+        font-size: 1.7rem;
+    }
+    
+    .section-content {
+        padding: 20px;
+    }
+}
+

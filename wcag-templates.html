@@ -1,0 +1,61 @@
+﻿<!-- WCAG ELEMENTS - HTML TEMPLATES -->
+
+<!-- 1. WCAG BADGE (staviti pre </body>) -->
+<div class="wcag-badge" role="img" aria-label="Сајт је прилагођен WCAG 2.1 стандардима приступачности">
+    <div class="wcag-icon">
+        <i class="fas fa-universal-access" aria-hidden="true"></i>
+    </div>
+    <div class="wcag-tooltip" role="tooltip">
+        <strong>WCAG 2.1</strong>
+        <span>Приступачан садржај</span>
+    </div>
+</div>
+
+<!-- 2. SECTION DIVIDER (staviti između sekcija) -->
+<div class="section-divider" role="separator" aria-hidden="true">
+    <div class="divider-line"></div>
+    <div class="divider-icon">
+        <i class="fas fa-star"></i>
+    </div>
+    <div class="divider-line"></div>
+</div>
+
+<!-- 3. PAGE ENDING CTA (staviti iznad footera - prilagoditi tekst i linkove po stranici) -->
+<section class="page-ending-section" aria-labelledby="cta-title">
+    <div class="ending-content">
+        <div class="ending-icon-group" aria-hidden="true">
+            <div class="ending-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="ending-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="ending-icon">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+        <h2 class="ending-title" id="cta-title">[PRILAGODITI NASLOV PO STRANICI]</h2>
+        <p class="ending-description">[PRILAGODITI OPIS PO STRANICI]</p>
+        <div class="ending-actions">
+            <a href="kontakt.html" class="ending-btn ending-btn-primary" aria-label="[PRILAGODITI ARIA LABEL]">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                Контактирајте нас
+            </a>
+            <a href="index.html" class="ending-btn ending-btn-secondary" aria-label="[PRILAGODITI ARIA LABEL]">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                На почетну
+            </a>
+        </div>
+    </div>
+    <div class="ending-decoration" aria-hidden="true">
+        <div class="decoration-circle decoration-circle-1"></div>
+        <div class="decoration-circle decoration-circle-2"></div>
+        <div class="decoration-circle decoration-circle-3"></div>
+    </div>
+</section>
+
+<!-- 4. U <head> dodati: -->
+<link rel="stylesheet" href="wcag-elements.css">
+
+<!-- 5. Pre </body> dodati: -->
+<script src="wcag-badge.js"></script>
