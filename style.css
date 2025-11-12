@@ -476,7 +476,7 @@ p, li, span {
 }
 
 .navbar.scrolled .logo-img {
-    filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3)) brightness(1.15);
+    filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3));
 }
 
 .nav-menu {

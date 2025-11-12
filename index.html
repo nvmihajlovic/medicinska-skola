@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="wcag-elements.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="i18n.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -21,23 +22,23 @@
             </div>
             <ul class="nav-menu" id="nav-menu" role="menubar">
                 <li class="dropdown" role="menuitem">
-                    <a href="o-nama.html" class="nav-link" aria-haspopup="true" aria-expanded="false">О школи <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+                    <a href="o-nama.html" class="nav-link" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.about">О школи</span> <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu" role="menu" aria-label="О школи подмени">
-                        <li role="menuitem"><a href="o-nama.html"><i class="fas fa-school" aria-hidden="true"></i> О нама</a></li>
-                        <li role="menuitem"><a href="zaposleni.html"><i class="fas fa-users" aria-hidden="true"></i> Запослени</a></li>
-                        <li role="menuitem"><a href="dokumentacija.html"><i class="fas fa-file-alt" aria-hidden="true"></i> Документација</a></li>
-                        <li role="menuitem"><a href="strucni-timovi.html"><i class="fas fa-user-friends" aria-hidden="true"></i> Стручни тимови</a></li>
-                        <li role="menuitem"><a href="javne-nabavke.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Јавне набавке и фин. извештаји</a></li>
-                        <li role="menuitem"><a href="sekcije.html"><i class="fas fa-star" aria-hidden="true"></i> Секције</a></li>
+                        <li role="menuitem"><a href="o-nama.html"><i class="fas fa-school" aria-hidden="true"></i> <span data-i18n="nav.about_us">О нама</span></a></li>
+                        <li role="menuitem"><a href="zaposleni.html"><i class="fas fa-users" aria-hidden="true"></i> <span data-i18n="nav.employees">Запослени</span></a></li>
+                        <li role="menuitem"><a href="dokumentacija.html"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="nav.documentation">Документација</span></a></li>
+                        <li role="menuitem"><a href="strucni-timovi.html"><i class="fas fa-user-friends" aria-hidden="true"></i> <span data-i18n="nav.professional_teams">Стручни тимови</span></a></li>
+                        <li role="menuitem"><a href="javne-nabavke.html"><i class="fas fa-chart-line" aria-hidden="true"></i> <span data-i18n="nav.public_procurement">Јавне набавке и фин. извештаји</span></a></li>
+                        <li role="menuitem"><a href="sekcije.html"><i class="fas fa-star" aria-hidden="true"></i> <span data-i18n="nav.sections">Секције</span></a></li>
                     </ul>
                 </li>
-                <li role="menuitem"><a href="obrazovni-profili.html" class="nav-link">Образовни профили</a></li>
-                <li role="menuitem"><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
-                <li role="menuitem"><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
-                <li role="menuitem"><a href="galerija.html" class="nav-link">Галерија</a></li>
-                <li role="menuitem"><a href="arhiva.html" class="nav-link">Архива</a></li>
-                <li role="menuitem"><a href="erasmus-projekti.html" class="nav-link">Еразмус+ пројекти</a></li>
-                <li role="menuitem"><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
+                <li role="menuitem"><a href="obrazovni-profili.html" class="nav-link"><span data-i18n="nav.educational_profiles">Образовни профили</span></a></li>
+                <li role="menuitem"><a href="maturska-pitanja.html" class="nav-link"><span data-i18n="nav.graduation_questions">Матурска питања</span></a></li>
+                <li role="menuitem"><a href="ucenici-i-roditelji.html" class="nav-link"><span data-i18n="nav.students_parents">Ученици и родитељи</span></a></li>
+                <li role="menuitem"><a href="galerija.html" class="nav-link"><span data-i18n="nav.gallery">Галерија</span></a></li>
+                <li role="menuitem"><a href="arhiva.html" class="nav-link"><span data-i18n="nav.archive">Архива</span></a></li>
+                <li role="menuitem"><a href="erasmus-projekti.html" class="nav-link"><span data-i18n="nav.erasmus">Еразмус+ пројекти</span></a></li>
+                <li role="menuitem"><a href="kontakt.html" class="nav-link contact-btn"><span data-i18n="nav.contact">Контакт</span></a></li>
             </ul>
 
             <div class="hamburger" id="hamburger" role="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Мени" tabindex="0">
