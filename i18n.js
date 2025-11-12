@@ -8,16 +8,32 @@ class I18n {
         this.currentLang = localStorage.getItem('selectedLanguage') || 'sr';
         this.translations = {};
         this.fallbackLang = 'sr';
+        this.isReady = false;
+        this.readyPromise = null;
     }
 
     /**
      * Initialize i18n system
      */
     async init() {
-        await this.loadTranslations(this.currentLang);
+        console.log('[i18n] Initializing i18n system...');
+        this.readyPromise = this.loadTranslations(this.currentLang);
+        await this.readyPromise;
+        this.isReady = true;
         this.updatePageLanguage();
         this.translatePage();
         this.initLanguageSwitcher();
+        console.log('[i18n] i18n system ready!');
+    }
+
+    /**
+     * Wait for i18n to be ready
+     */
+    async waitForReady() {
+        if (this.isReady) return;
+        if (this.readyPromise) {
+            await this.readyPromise;
+        }
     }
 
     /**
@@ -25,14 +41,17 @@ class I18n {
      */
     async loadTranslations(lang) {
         try {
+            console.log(`[i18n] Loading translations for: ${lang}`);
             const response = await fetch(`translations-${lang}.json`);
-            if (!response.ok) throw new Error(`Failed to load ${lang} translations`);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
             this.translations = await response.json();
+            console.log(`[i18n] Loaded ${Object.keys(this.translations).length} translation categories`);
             return true;
         } catch (error) {
-            console.error(`Error loading translations for ${lang}:`, error);
+            console.error(`[i18n] Error loading translations for ${lang}:`, error);
             // Load fallback language
             if (lang !== this.fallbackLang) {
+                console.log(`[i18n] Trying fallback language: ${this.fallbackLang}`);
                 const fallbackResponse = await fetch(`translations-${this.fallbackLang}.json`);
                 this.translations = await fallbackResponse.json();
             }
@@ -63,6 +82,9 @@ class I18n {
      * Translate all elements with data-i18n attribute
      */
     translatePage() {
+        console.log('[i18n] Translating page elements...');
+        let translatedCount = 0;
+        
         // Translate text content
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
@@ -70,8 +92,11 @@ class I18n {
             
             if (translation && translation !== key) {
                 element.textContent = translation;
+                translatedCount++;
             }
         });
+
+        console.log(`[i18n] Translated ${translatedCount} elements`);
 
         // Translate attributes (placeholder, aria-label, title, alt)
         document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
@@ -110,8 +135,12 @@ class I18n {
      * Switch to a different language
      */
     async switchLanguage(lang) {
-        if (lang === this.currentLang) return;
+        if (lang === this.currentLang) {
+            console.log(`[i18n] Already using language: ${lang}`);
+            return;
+        }
         
+        console.log(`[i18n] Switching language from ${this.currentLang} to ${lang}`);
         const success = await this.loadTranslations(lang);
         if (success) {
             this.currentLang = lang;
@@ -189,12 +218,26 @@ class I18n {
 // Create global instance
 const i18n = new I18n();
 
-// Initialize when DOM is ready
+// Initialize when DOM is ready - with proper timing
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => i18n.init());
+    document.addEventListener('DOMContentLoaded', async () => {
+        console.log('[i18n] DOM loaded, initializing...');
+        await i18n.init();
+    });
 } else {
+    console.log('[i18n] DOM already loaded, initializing immediately...');
     i18n.init();
 }
 
 // Export for use in other scripts
 window.i18n = i18n;
+
+// Debug: Log when translations are loaded
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        console.log('[i18n] Page fully loaded');
+        console.log('[i18n] Current language:', i18n.getCurrentLanguage());
+        console.log('[i18n] Translations loaded:', Object.keys(i18n.translations).length > 0);
+        console.log('[i18n] Elements with data-i18n:', document.querySelectorAll('[data-i18n]').length);
+    }, 100);
+});
