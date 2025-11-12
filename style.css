@@ -957,7 +957,7 @@ html {
     align-items: center;
     justify-content: center;
     text-align: center;
-    touch-action: auto;
+    touch-action: manipulation;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -4400,8 +4400,9 @@ html {
         max-height: 100vh;
         overflow: visible;
         position: relative;
-        touch-action: pan-y !important;
+        touch-action: manipulation !important;
         pointer-events: none;
+        isolation: isolate;
     }
     
     .hero-carousel {
@@ -4420,9 +4421,12 @@ html {
         width: 100% !important;
         height: 100% !important;
         background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center !important;
         opacity: 0 !important;
         z-index: 0;
         pointer-events: none !important;
+        will-change: opacity;
     }
     
     .carousel-slide.active {
