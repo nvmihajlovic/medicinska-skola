@@ -1029,7 +1029,7 @@ html {
                 rgba(60, 120, 200, 0.58), 
                 rgba(40, 100, 170, 0.65));
     z-index: 1;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 /* Carousel Indicators */
@@ -1082,7 +1082,7 @@ html {
     flex-direction: column;
     align-items: center;
     gap: clamp(20px, 3.5vw, 36px);
-    pointer-events: auto;
+    pointer-events: none;
 }
 
 .hero-subtitle {
@@ -1119,6 +1119,7 @@ html {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     text-decoration: none;
     white-space: nowrap;
+    pointer-events: auto;
 }
 
 .cta-button:hover {
@@ -4425,7 +4426,7 @@ html {
         overflow: visible;
         position: relative;
         touch-action: manipulation !important;
-        pointer-events: none;
+        pointer-events: auto;
         isolation: isolate;
     }
     
@@ -4435,7 +4436,8 @@ html {
         left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: none !important;
+        pointer-events: auto !important;
+        z-index: 0;
     }
     
     .carousel-slide {
@@ -4449,7 +4451,7 @@ html {
         background-position: center !important;
         opacity: 0 !important;
         z-index: 0;
-        pointer-events: none !important;
+        pointer-events: auto !important;
         will-change: opacity;
     }
     
@@ -4457,14 +4459,18 @@ html {
         opacity: 1 !important;
         transform: scale(1) !important;
         z-index: 1;
+        pointer-events: auto !important;
     }
     
     .hero-content {
         pointer-events: auto !important;
+        position: relative;
+        z-index: 10;
     }
     
     .carousel-indicators {
         pointer-events: auto !important;
+        z-index: 10;
     }
 
     .hero-title {

@@ -42,19 +42,43 @@ class I18n {
     async loadTranslations(lang) {
         try {
             console.log(`[i18n] Loading translations for: ${lang}`);
-            const response = await fetch(`translations-${lang}.json`);
+            
+            // Try to fetch JSON file
+            const response = await fetch(`translations-${lang}.json?v=${Date.now()}`);
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            this.translations = await response.json();
+            
+            const data = await response.json();
+            
+            // Verify data is valid
+            if (!data || typeof data !== 'object') {
+                throw new Error('Invalid JSON data');
+            }
+            
+            this.translations = data;
             console.log(`[i18n] Loaded ${Object.keys(this.translations).length} translation categories`);
             return true;
+            
         } catch (error) {
             console.error(`[i18n] Error loading translations for ${lang}:`, error);
-            // Load fallback language
+            
+            // Try fallback language if not already trying it
             if (lang !== this.fallbackLang) {
                 console.log(`[i18n] Trying fallback language: ${this.fallbackLang}`);
-                const fallbackResponse = await fetch(`translations-${this.fallbackLang}.json`);
-                this.translations = await fallbackResponse.json();
+                try {
+                    const fallbackResponse = await fetch(`translations-${this.fallbackLang}.json?v=${Date.now()}`);
+                    if (fallbackResponse.ok) {
+                        this.translations = await fallbackResponse.json();
+                        console.log(`[i18n] Loaded fallback translations`);
+                        return true;
+                    }
+                } catch (fallbackError) {
+                    console.error(`[i18n] Fallback also failed:`, fallbackError);
+                }
             }
+            
+            // If all else fails, use empty translations
+            console.warn(`[i18n] Using empty translations`);
+            this.translations = {};
             return false;
         }
     }
