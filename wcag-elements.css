@@ -232,12 +232,7 @@
 
 /* WCAG Accessibility Badge */
 .wcag-badge {
-    position: fixed;
-    top: 120px;
-    right: 20px;
-    z-index: 999;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    display: none !important;
 }
 
 .wcag-icon {
