@@ -418,6 +418,10 @@
             border-color: transparent;
             box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
         }
+        .pagination-container {
+            text-align: center;
+            margin-top: 50px;
+        }
         @media (max-width: 768px) {
             .page-header {
                 padding: 130px 20px 60px;
@@ -684,13 +688,11 @@
             </article>
         </div>
 
-        <div class="pagination">
-            <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i> Претходна</button>
-            <button class="pagination-btn active">1</button>
-            <button class="pagination-btn">2</button>
-            <button class="pagination-btn">3</button>
-            <button class="pagination-btn">4</button>
-            <button class="pagination-btn">Следећа <i class="fas fa-chevron-right"></i></button>
+        <div class="pagination-container">
+            <div class="pagination" role="navigation" aria-label="Странице">
+                <button class="pagination-btn active" data-page="1">1</button>
+                <button class="pagination-btn" data-page="2">2</button>
+            </div>
         </div>
     </div>
 
@@ -699,61 +701,82 @@
         <p class="ending-text">Медицинска школа „Стевица Јовановић" Панчево</p>
     </div>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="footer-main">
             <div class="footer-content">
                 <div class="footer-column footer-brand">
                     <div class="footer-logo-stack">
                         <img src="images/Untitled_preview_rev_1.png" alt="Медицинска школа — лого" class="footer-logo-img">
-                        <span class="footer-badge"><i class="fas fa-star"></i> 58 година традиције</span>
+                        <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> 58 година традиције</span>
                     </div>
-                    <p class="footer-description">Средња стручна школа са савременим програмима и нагласком на практичној настави.</p>
+                    <p class="footer-description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама. Подржавамо сваког ученика кроз менторство, пројекте и реалне стручне ситуације.</p>
                 </div>
+
                 <div class="footer-column">
                     <h4>Брзе везе</h4>
                     <ul class="footer-links">
-                        <li><a href="o-nama.html"><i class="fas fa-angle-right"></i> О школи</a></li>
-                        <li><a href="obrazovni-profili.html"><i class="fas fa-angle-right"></i> Образовни профили</a></li>
-                        <li><a href="zaposleni.html"><i class="fas fa-angle-right"></i> Запослени</a></li>
-                        <li><a href="dokumentacija.html"><i class="fas fa-angle-right"></i> Документација</a></li>
-                        <li><a href="javne-nabavke.html"><i class="fas fa-angle-right"></i> Јавне набавке</a></li>
-                        <li><a href="arhiva.html"><i class="fas fa-angle-right"></i> Архива вести</a></li>
+                        <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="maturska-pitanja.html"><span>Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="ucenici-i-roditelji.html"><span>Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="erasmus-projekti.html"><span>Erasmus+ пројекти</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
+
                 <div class="footer-column">
-                    <h4>За ученике</h4>
+                    <h4>Документа</h4>
                     <ul class="footer-links">
-                        <li><a href="ucenici-i-roditelji.html"><i class="fas fa-angle-right"></i> Распоред часова</a></li>
-                        <li><a href="maturska-pitanja.html"><i class="fas fa-angle-right"></i> Матурска питања</a></li>
-                        <li><a href="sekcije.html"><i class="fas fa-angle-right"></i> Секције</a></li>
-                        <li><a href="galerija.html"><i class="fas fa-angle-right"></i> Галерија</a></li>
+                        <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="arhiva.html"><span>Архива</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="sekcije.html"><span>Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="politika-privatnosti.html"><span>Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html#lokacija"><span>Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
+
                 <div class="footer-column">
-                    <h4>Контакт</h4>
-                    <div class="footer-contact">
-                        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Панчево, Светог Саве 14</span></div>
-                        <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+381123456789">013/123-456</a></div>
-                        <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@medicinska-skola.edu.rs">info@medicinska-skola.edu.rs</a></div>
+                    <h4>Останимо у контакту</h4>
+                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+                    <div class="footer-socials social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link tiktok" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
                     </div>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <div class="footer-newsletter">
+                        <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
+                            <span>Пошаљи нам питање</span>
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </a>
+                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="footer-divider"></div>
+
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p>&copy; 2025 Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
-                <div class="footer-legal">
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
+                <div class="developer-credit">
+                    <span>Израда и одржавање</span>
+                    <img src="images/pansoft-logo.png" alt="Pansoft">
+                </div>
+                <div class="footer-bottom-links">
                     <a href="politika-privatnosti.html">Политика приватности</a>
-                    <span class="separator">|</span>
-                    <a href="#">Услови коришћења</a>
+                    <span>•</span>
+                    <a href="uslovi-koristenja.html">Услови коришћења</a>
+                    <span>•</span>
+                    <a href="sitemap.html">Мапа сајта</a>
                 </div>
             </div>
         </div>
+
     </footer>
 
     <script src="script.js"></script>
