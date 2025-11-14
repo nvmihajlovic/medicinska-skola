@@ -9,39 +9,57 @@
     <link rel="stylesheet" href="pages.css?v=2">
     <link rel="stylesheet" href="wcag-elements.css?v=2">
     <style>
-        .archive-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 100px 20px 60px;
+        .page-header {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.95), rgba(53, 122, 189, 0.95)), 
+                        url('images/hero-bg.jpg') center/cover;
+            padding: 160px 20px 80px;
             text-align: center;
             color: white;
             position: relative;
             overflow: hidden;
         }
-        .archive-hero::before {
-            content: '';
+        .page-header-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="2" height="2" x="0" y="0" fill="rgba(255,255,255,0.1)"/></svg>');
-            opacity: 0.3;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
         }
-        .archive-hero-content {
+        .page-header-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        .archive-hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .breadcrumb a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb a:hover {
+            color: white;
+        }
+        .page-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
             font-weight: 700;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
         }
-        .archive-hero p {
+        .page-subtitle {
             font-size: clamp(1rem, 2vw, 1.2rem);
             opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         .archive-stats {
             display: grid;
@@ -68,7 +86,7 @@
             width: 60px;
             height: 60px;
             margin: 0 auto 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2, #357abd);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -128,15 +146,15 @@
             font-family: inherit;
         }
         .search-input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
         }
         .search-btn {
             position: absolute;
             right: 8px;
             top: 50%;
             transform: translateY(-50%);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2, #357abd);
             color: white;
             border: none;
             padding: 12px 25px;
@@ -144,9 +162,11 @@
             cursor: pointer;
             font-size: 1rem;
             transition: transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
         }
         .search-btn:hover {
             transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
         }
         .search-filters {
             display: flex;
@@ -168,14 +188,15 @@
             gap: 8px;
         }
         .filter-btn:hover {
-            border-color: #667eea;
-            color: #667eea;
-            background: rgba(102, 126, 234, 0.05);
+            border-color: #4a90e2;
+            color: #4a90e2;
+            background: rgba(74, 144, 226, 0.05);
         }
         .filter-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2, #357abd);
             color: white;
             border-color: transparent;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
         }
         .year-timeline {
             margin-bottom: 60px;
@@ -203,7 +224,7 @@
             border-radius: 10px;
         }
         .timeline-years::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2, #357abd);
             border-radius: 10px;
         }
         .year-card {
@@ -219,12 +240,14 @@
         }
         .year-card:hover {
             transform: translateY(-5px);
-            border-color: #667eea;
+            border-color: #4a90e2;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
         }
         .year-card.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2, #357abd);
             color: white;
             border-color: transparent;
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.35);
         }
         .year-number {
             font-size: 2rem;
@@ -251,7 +274,7 @@
             gap: 10px;
         }
         .result-count {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2, #357abd);
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
@@ -282,13 +305,13 @@
             border: 2px solid transparent;
         }
         .article-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            border-color: #667eea;
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.25), 0 5px 15px rgba(0,0,0,0.1);
+            border-color: rgba(74, 144, 226, 0.3);
         }
         .article-image {
             height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2, #357abd);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -301,12 +324,13 @@
             top: 15px;
             left: 15px;
             background: white;
-            color: #667eea;
+            color: #4a90e2;
             padding: 6px 15px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
             z-index: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         .article-content {
             padding: 25px;
@@ -351,8 +375,9 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            color: #667eea;
+            color: #4a90e2;
             font-size: 0.85rem;
+            font-weight: 500;
         }
         .article-views {
             display: flex;
@@ -379,21 +404,23 @@
             color: #666;
         }
         .pagination-btn:hover:not(:disabled) {
-            border-color: #667eea;
-            color: #667eea;
+            border-color: #4a90e2;
+            color: #4a90e2;
+            background: rgba(74, 144, 226, 0.05);
         }
         .pagination-btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
         .pagination-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2, #357abd);
             color: white;
             border-color: transparent;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
         }
         @media (max-width: 768px) {
-            .archive-hero {
-                padding: 80px 20px 40px;
+            .page-header {
+                padding: 130px 20px 60px;
             }
             .archive-stats {
                 grid-template-columns: 1fr;
@@ -459,10 +486,16 @@
         </div>
     </nav>
 
-    <section class="archive-hero">
-        <div class="archive-hero-content">
-            <h1><i class="fas fa-archive"></i> Архива вести</h1>
-            <p>Претражите и истражите све објављене вести и догађаје из школског живота</p>
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Почетна</a>
+                <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+                <span>Архива вести</span>
+            </div>
+            <h1 class="page-title">Архива вести</h1>
+            <p class="page-subtitle">Претражите и истражите све објављене вести и догађаје из школског живота</p>
         </div>
     </section>
 
