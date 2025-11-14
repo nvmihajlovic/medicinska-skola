@@ -2027,10 +2027,63 @@ html {
 
 @media (max-width: 768px) {
     .news-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: clamp(20px, 4vw, 30px);
         padding: 0 clamp(15px, 4vw, 25px);
         max-width: 100%;
+    }
+    
+    .news-card {
+        border-radius: 14px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .news-content {
+        padding: clamp(22px, 5vw, 30px) clamp(18px, 4vw, 25px);
+    }
+    
+    .news-content h3 {
+        font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+        margin-bottom: 12px;
+        line-height: 1.35;
+    }
+    
+    .news-divider {
+        width: 45px;
+        margin-bottom: 15px;
+    }
+    
+    .news-date {
+        font-size: 12px;
+        margin-bottom: 14px;
+    }
+    
+    .news-excerpt {
+        font-size: 14px;
+        line-height: 1.65;
+        margin-bottom: 16px;
+    }
+    
+    .read-more-btn {
+        padding: 9px 18px;
+        font-size: 13px;
+    }
+    
+    .news-image-frame {
+        padding: 7px;
+        margin-bottom: 18px;
+        border-radius: 12px;
+    }
+    
+    .image-placeholder {
+        height: 160px;
+        font-size: 14px;
+    }
+    
+    .image-placeholder span {
+        padding: 9px 16px;
+        font-size: 14px;
     }
 }
 
@@ -2069,25 +2122,12 @@ html {
     z-index: 2;
 }
 
-@media (max-width: 768px) {
-    .news-content {
-        padding: clamp(20px, 5vw, 35px) clamp(20px, 4vw, 30px);
-    }
-}
-
 .news-content h3 {
     font-size: 1.5rem;
     color: #357abd;
     margin-bottom: 15px;
     line-height: 1.3;
     font-weight: 700;
-}
-
-@media (max-width: 768px) {
-    .news-content h3 {
-        font-size: 1.3rem;
-        margin-bottom: 12px;
-    }
 }
 
 .news-divider {
@@ -2161,14 +2201,6 @@ html {
     border: 2px solid rgba(74, 144, 226, 0.15);
 }
 
-@media (max-width: 768px) {
-    .news-image-frame {
-        padding: 8px;
-        margin-bottom: 20px;
-        border-radius: 12px;
-    }
-}
-
 .news-image-frame::before {
     content: '';
     position: absolute;
@@ -2205,13 +2237,6 @@ html {
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
-}
-
-@media (max-width: 768px) {
-    .image-placeholder {
-        height: 150px;
-        font-size: 14px;
-    }
 }
 
 .image-placeholder.blue {
@@ -4549,6 +4574,68 @@ html {
 
     .news-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 5px;
+    }
+    
+    .news-card {
+        margin: 0;
+        border-radius: 10px;
+    }
+    
+    .news-content {
+        padding: 18px 12px;
+    }
+    
+    .news-content h3 {
+        font-size: 1.1rem;
+        line-height: 1.35;
+        margin-bottom: 8px;
+    }
+    
+    .news-divider {
+        width: 35px;
+        height: 2px;
+        margin-bottom: 12px;
+    }
+    
+    .news-date {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .news-excerpt {
+        font-size: 13px;
+        line-height: 1.55;
+        margin-bottom: 12px;
+    }
+    
+    .read-more-btn {
+        padding: 7px 14px;
+        font-size: 12px;
+        border-radius: 18px;
+    }
+    
+    .read-more-btn i {
+        font-size: 11px;
+    }
+    
+    .news-image-frame {
+        padding: 5px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+    }
+    
+    .image-placeholder {
+        height: 120px;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+    
+    .image-placeholder span {
+        padding: 6px 12px;
+        font-size: 12px;
+        border-radius: 5px;
     }
 
     .footer-content {
@@ -4564,6 +4651,22 @@ html {
     .footer-right {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+    
+    .pagination-container {
+        padding: 35px 0 15px 0;
+        margin-top: 30px;
+    }
+    
+    .pagination {
+        padding: 10px 15px;
+        gap: 8px;
+    }
+    
+    .pagination-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
     }
 }
 
@@ -4585,10 +4688,71 @@ html {
     .news-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        padding: 0 10px;
     }
 
     .news-card {
-        margin: 0 10px;
+        margin: 0;
+        border-radius: 12px;
+    }
+    
+    .news-content {
+        padding: 20px 15px;
+    }
+    
+    .news-content h3 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    
+    .news-divider {
+        width: 40px;
+        height: 2px;
+        margin-bottom: 15px;
+    }
+    
+    .news-date {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+    
+    .news-excerpt {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    .read-more-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+        border-radius: 20px;
+    }
+    
+    .news-image-frame {
+        padding: 6px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+    
+    .news-image-frame::before {
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+        border-radius: 8px;
+    }
+    
+    .image-placeholder {
+        height: 140px;
+        font-size: 13px;
+        border-radius: 6px;
+    }
+    
+    .image-placeholder span {
+        padding: 8px 15px;
+        font-size: 13px;
+        border-radius: 6px;
     }
 }
 
