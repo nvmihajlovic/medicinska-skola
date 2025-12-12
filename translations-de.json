@@ -22,7 +22,16 @@
     "welcome": "Willkommen auf der Website der Medizinischen Schule \"Stevica Jovanović\" in Pančevo",
     "apply_today": "Jetzt bewerben",
     "learn_more": "Mehr erfahren",
-    "our_school": "Unsere Schule"
+    "our_school": "Unsere Schule",
+    "slide1_title": "Willkommen in der Medizinischen Schule \"Stevica Jovanović\"",
+    "slide1_subtitle": "Mit über 58 Jahren Tradition in der Gesundheitsausbildung",
+    "slide1_cta": "Mehr erfahren",
+    "slide2_title": "Moderne Programme und Praxis",
+    "slide2_subtitle": "Praktische Ausbildung in führenden Gesundheitseinrichtungen der Region",
+    "slide2_cta": "Programm ansehen",
+    "slide3_title": "Die Zukunft beginnt hier",
+    "slide3_subtitle": "Werden Sie Teil einer neuen Generation von Gesundheitsfachkräften",
+    "slide3_cta": "Jetzt bewerben"
   },
   "stats": {
     "years_tradition": "58 Jahre Tradition",
@@ -37,7 +46,24 @@
     "students": "Schüler",
     "latest_news": "Neueste Nachrichten",
     "view_all": "Alle ansehen",
-    "read_more": "Weiterlesen"
+    "read_more": "Weiterlesen",
+    "educational_profiles": "Bildungsprofile",
+    "profiles_intro": "Die Medizinische Schule \"Stevica Jovanović\" in Pančevo bildet Fachkräfte für die Arbeit im Gesundheitswesen und Sozialschutz in folgenden Profilen aus:",
+    "mission_text": "Unsere Mission ist es, jungen Menschen qualitativ hochwertige Bildung auf der Grundlage moderner Lehrmethoden und praktischer Ausbildung zu bieten (Schulkabinett, Gesundheitszentrum, Gesundheitseinrichtungen...). Wir widmen uns der Entwicklung von Fähigkeiten, Wissen und professioneller Ethik im Einklang mit den Bedürfnissen der Gemeinschaft und des Arbeitsmarktes.",
+    "about_school_title": "Über die Schule",
+    "about_us": "Über uns",
+    "about_us_text": "Die Medizinische Schule \"Stevica Jovanović\" ist eine moderne Bildungseinrichtung mit langer Tradition. Unser Lehrpersonal pflegt einen hohen Standard der Unterrichtsqualität und Zusammenarbeit mit Gesundheitseinrichtungen.",
+    "history": "Schulgeschichte",
+    "history_text": "Die 1946 gegründete Schule hat sich zu einem bedeutenden regionalen Zentrum für medizinische Sekundarbildung entwickelt. Wir bauen Tradition durch berufliche Entwicklung und kontinuierliche Verbesserung der Lehrarbeit auf.",
+    "teaching_process": "Lehrprozess",
+    "teaching_process_text": "Wir kombinieren theoretischen Unterricht mit praktischen Übungen in einer realen Umgebung. Die Schüler erwerben Kompetenzen, die für die direkte Arbeit und Weiterbildung erforderlich sind.",
+    "values_mission": "Werte und Mission",
+    "values_mission_text": "Wir pflegen Verantwortung, Menschlichkeit und Professionalität. Unsere Schüler lernen, Menschen zu helfen und die Prinzipien der medizinischen Ethik in jedem Kontext zu respektieren.",
+    "our_goals": "Unsere Ziele",
+    "our_goals_text": "Wir entwickeln Schlüsselkompetenzen, fördern Teamarbeit und kritisches Denken. Wir bereiten Schüler auf erfolgreiche Beschäftigung und Weiterbildung vor.",
+    "our_vision": "Unsere Vision",
+    "our_vision_text": "Eine anerkannte Schule zu sein, die kompetente und engagierte Gesundheitsfachkräfte ausbildet, die bereit sind, auf die Herausforderungen der modernen Praxis zu reagieren.",
+    "news_events": "Nachrichten und Veranstaltungen"
   },
   "footer": {
     "about_school": "Über die Schule",
@@ -57,7 +83,11 @@
     "financial_reports": "Finanzberichte",
     "development_plan": "Entwicklungsplan",
     "rules_of_procedure": "Geschäftsordnung",
-    "code_of_conduct": "Verhaltenskodex"
+    "code_of_conduct": "Verhaltenskodex",
+    "social_text": "Wir verfolgen die Erfolge unserer Schüler und teilen Neuigkeiten aus der Gesundheitspraxis. Folgen Sie uns in den sozialen Medien und schreiben Sie uns, wenn Sie weitere Informationen benötigen.",
+    "send_question": "Senden Sie uns eine Frage",
+    "response_time": "Wir antworten innerhalb von 24 Stunden.",
+    "copyright": "Medizinische Schule \"Stevica Jovanović\" Pančevo. Alle Rechte vorbehalten."
   },
   "contact": {
     "title": "Kontakt",
@@ -71,6 +101,12 @@
     "subject": "Betreff",
     "message": "Nachricht",
     "send": "Senden"
+  },
+  "profiles": {
+    "nurse_technician": "Krankenschwester - Techniker",
+    "nurse_educator": "Krankenschwester - Erzieher",
+    "health_caregiver": "Gesundheitspfleger",
+    "midwife": "Gynäkologisch-geburtshilfliche Schwester"
   },
   "accessibility": {
     "wcag_tools": "WCAG Werkzeuge",
@@ -153,5 +189,57 @@
     "sections_count": "8 Sektionen",
     "profiles_count": "4 Profile",
     "info_items": "100+ Informationen"
+  },
+  "pages": {
+    "about_us": {
+      "title": "Über die Schule",
+      "subtitle": "Geschichte, Mission und Werte unserer Bildungseinrichtung",
+      "breadcrumb": "Über die Schule"
+    },
+    "employees": {
+      "title": "Mitarbeiter",
+      "subtitle": "Lernen Sie unser professionelles Team kennen",
+      "breadcrumb": "Mitarbeiter"
+    },
+    "documentation": {
+      "title": "Dokumentation",
+      "subtitle": "Offizielle Dokumente und Vorschriften",
+      "breadcrumb": "Dokumentation"
+    },
+    "professional_teams": {
+      "title": "Professionelle Teams",
+      "subtitle": "Unsere spezialisierten Arbeitsgruppen",
+      "breadcrumb": "Professionelle Teams"
+    },
+    "public_procurement": {
+      "title": "Öffentliche Beschaffung",
+      "subtitle": "Finanzberichte und Beschaffung",
+      "breadcrumb": "Öffentliche Beschaffung"
+    },
+    "sections": {
+      "title": "Sektionen",
+      "subtitle": "Außerschulische Aktivitäten",
+      "breadcrumb": "Sektionen"
+    },
+    "educational_profiles": {
+      "title": "Bildungsprofile",
+      "subtitle": "Studienprogramme und Spezialisierungen",
+      "breadcrumb": "Bildungsprofile"
+    },
+    "gallery": {
+      "title": "Galerie",
+      "subtitle": "Fotos aus dem Schulleben",
+      "breadcrumb": "Galerie"
+    },
+    "erasmus": {
+      "title": "Erasmus+ Projekte",
+      "subtitle": "Internationale Zusammenarbeit und Mobilität",
+      "breadcrumb": "Erasmus+ Projekte"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Nehmen Sie Kontakt mit uns auf",
+      "breadcrumb": "Kontakt"
+    }
   }
 }

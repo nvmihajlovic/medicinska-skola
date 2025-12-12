@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Донација крви – Медицинска школа</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=2">
-    <link rel="stylesheet" href="pages.css?v=2">
+    <link rel="stylesheet" href="style.css?v=113">
+    <link rel="stylesheet" href="pages.css?v=17">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -33,11 +33,11 @@
                 <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
                 <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
                 <li><a href="galerija.html" class="nav-link">Галерија</a></li>
-                <li><a href="#" class="nav-link">Еразмус+ пројекти</a></li>
+                <li><a href="erasmus-projekti.html" class="nav-link">Еразмус+ пројекти</a></li>
                 <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
             </ul>
 
-                        <div class="hamburger" id="hamburger" aria-label="Мени">
+            <div class="hamburger" id="hamburger" aria-label="Мени">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -70,9 +70,12 @@
                     <div class="article-meta">
                         <span class="meta-item"><i class="far fa-calendar"></i> 15. март 2025.</span>
                         <span class="meta-item"><i class="fas fa-tag"></i> Донација крви</span>
-                        <span class="meta-item"><i class="far fa-eye"></i> 245 прегледа</span>
+                        <span class="meta-item"><i class="far fa-eye"></i> <span class="views-count">0</span> прегледа</span>
+                        <span class="meta-item"><i class="fas fa-heart"></i> <span class="likes-count">0</span> свиђања</span>
                     </div>
                 </div>
+
+                <!-- Engagement Panel -->
 
                 <!-- Истакнута слика -->
                 <div class="featured-image">
@@ -142,6 +145,16 @@
                             <a href="#" class="tag">Здравље</a>
                             <a href="#" class="tag">Црвени крст</a>
                         </div>
+                    </div>
+
+                    <!-- Like Action -->
+                    <div class="article-like-section">
+                        <button class="like-btn" aria-label="Лајкуј овај чланак">
+                            <i class="far fa-heart"></i>
+                            Свиђа ми се овај чланак
+                        </button>
+                    </div>
+                </div>
 
                 <!-- Повезане вести -->
                 <div class="related-news">
@@ -150,31 +163,42 @@
                         <article class="related-card" onclick="window.location.href='dan-planete.html'">
                             <div class="related-image green-placeholder" role="img" aria-label="Дан планете Земље">
                                 <i class="fas fa-globe"></i>
-                                <p>Дан планете</p>
                             </div>
                             <div class="related-content">
                                 <span class="related-badge badge-green">Школске активности</span>
                                 <h3>Обележавање Дана планете</h3>
-                                <p class="related-date"><i class="far fa-calendar"></i> 5. април 2025.</p>
+                                <div class="related-meta">
+                                    <span class="related-date"><i class="far fa-calendar"></i> 5. април 2025.</span>
+                                    <span class="related-stats">
+                                        <span><i class="far fa-eye"></i> 0</span>
+                                        <span><i class="fas fa-heart"></i> 0</span>
+                                    </span>
+                                </div>
                             </div>
                         </article>
 
                         <article class="related-card" onclick="window.location.href='strucna-praksa.html'">
                             <div class="related-image blue-placeholder" role="img" aria-label="Стручна пракса">
                                 <i class="fas fa-hospital"></i>
-                                <p>Стручна пракса</p>
                             </div>
                             <div class="related-content">
                                 <span class="related-badge badge-blue">Настава</span>
                                 <h3>Стручна пракса у болници</h3>
-                                <p class="related-date"><i class="far fa-calendar"></i> 15. септембар 2024.</p>
+                                <div class="related-meta">
+                                    <span class="related-date"><i class="far fa-calendar"></i> 15. септембар 2024.</span>
+                                    <span class="related-stats">
+                                        <span><i class="far fa-eye"></i> 0</span>
+                                        <span><i class="fas fa-heart"></i> 0</span>
+                                    </span>
+                                </div>
                             </div>
                         </article>
                     </div>
             </article>
         </div>
-    </main>    <!-- Footer -->
-    <footer class="footer">
+    </main>    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="footer-main">
             <div class="footer-content">
                 <div class="footer-column footer-brand">
@@ -186,22 +210,24 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4>Брзе везе</h4>
+                    <h4 data-i18n="footer.quick_links">Брзе везе</h4>
                     <ul class="footer-links">
                         <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="maturska-pitanja.html"><span>Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="ucenici-i-roditelji.html"><span>Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="erasmus-projekti.html"><span>Erasmus+ пројекти</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Документа</h4>
+                    <h4 data-i18n="footer.documents">Документа</h4>
                     <ul class="footer-links">
                         <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="arhiva.html"><span>Архива</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="sekcije.html"><span>Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="politika-privatnosti.html"><span>Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="kontakt.html#lokacija"><span>Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
@@ -209,8 +235,8 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4>Останимо у контакту</h4>
-                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+                    <h4 data-i18n="footer.stay_connected">Останимо у контакту</h4>
+                    <p class="footer-small-text" data-i18n="footer.social_text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
                     <div class="footer-socials social-links">
                         <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                         <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -219,10 +245,10 @@
                     </div>
                     <div class="footer-newsletter">
                         <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
-                            <span>Пошаљи нам питање</span>
+                            <span data-i18n="footer.send_question">Пошаљи нам питање</span>
                             <i class="fas fa-paper-plane" aria-hidden="true"></i>
                         </a>
-                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
+                        <span class="footer-form-hint" data-i18n="footer.response_time">Одговарамо у року од 24 часа.</span>
                     </div>
                 </div>
             </div>
@@ -232,20 +258,21 @@
 
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић” Панчево. Сва права задржана.</p>
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> <span data-i18n="footer.copyright">Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</span></p>
                 <div class="developer-credit">
-                    <span>Израда и одржавање</span>
+                    <span>Развој и одржавање</span>
                     <img src="images/pansoft-logo.png" alt="Pansoft">
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="politika-privatnosti.html">Политика приватности</a>
+                    <a href="politika-privatnosti.html" data-i18n="footer.privacy_policy">Политика приватности</a>
                     <span>•</span>
-                    <a href="#">Услови коришћења</a>
+                    <a href="uslovi-koristenja.html" data-i18n="footer.terms_of_use">Услови коришћења</a>
                     <span>•</span>
-                    <a href="#">Sitemap</a>
+                    <a href="sitemap.html" data-i18n="footer.sitemap">Мапа сајта</a>
                 </div>
             </div>
         </div>
+
     </footer>
 
     <!-- Back to Top Button -->
@@ -374,6 +401,13 @@
                     });
                 });
             }
+        });
+    </script>
+    <script src="js/engagement.js"></script>
+    <script>
+        // Иницијализација engagement tracker-а
+        document.addEventListener('DOMContentLoaded', function() {
+            new EngagementTracker('donacija-krvi');
         });
     </script>
     <!-- Савет: проверите у DevTools -> Network -> Headers да server враћа Content-Type: text/html; charset=UTF-8 -->

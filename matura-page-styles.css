@@ -1,0 +1,404 @@
+/* ========================================
+   MATURA PAGE - PREMIUM REDESIGN
+   Namespaced styles - only for maturska-pitanja.html
+   ======================================== */
+
+/* Intro Section */
+.matura-page-intro {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid #4a90e2;
+}
+
+.matura-intro-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin: 0;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Section Styling */
+.matura-page-section {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.matura-page-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(74, 144, 226, 0.15);
+}
+
+/* Section Header */
+.matura-section-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 3px solid #e3f2fd;
+    position: relative;
+}
+
+.matura-section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #4a90e2 0%, #5ba3f5 100%);
+}
+
+.matura-header-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #4a90e2 0%, #5ba3f5 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    flex-shrink: 0;
+}
+
+.matura-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Questions Grid */
+.matura-questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 35px;
+}
+
+@media (max-width: 992px) {
+    .matura-questions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Question Category */
+.matura-question-category {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 30px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.matura-question-category:hover {
+    border-color: #4a90e2;
+    background: #ffffff;
+}
+
+.matura-category-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 25px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #dee2e6;
+    position: relative;
+}
+
+.matura-category-title::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: #4a90e2;
+}
+
+/* PDF List */
+.matura-pdf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.matura-pdf-item {
+    transition: transform 0.2s ease;
+}
+
+.matura-pdf-item:hover {
+    transform: translateX(8px);
+}
+
+.matura-pdf-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 20px;
+    background: #ffffff;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.matura-pdf-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #4a90e2;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.matura-pdf-link:hover {
+    border-color: #4a90e2;
+    background: #f0f7ff;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.15);
+    color: #357abd;
+}
+
+.matura-pdf-link:hover::before {
+    transform: scaleY(1);
+}
+
+.pdf-icon {
+    font-size: 1.6rem;
+    color: #dc3545;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.matura-pdf-link:hover .pdf-icon {
+    transform: scale(1.15);
+    color: #c82333;
+}
+
+.pdf-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+.pdf-arrow {
+    font-size: 1.2rem;
+    color: #4a90e2;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.matura-pdf-link:hover .pdf-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Info Section */
+.matura-info-section {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
+    border-radius: 20px;
+    padding: 45px;
+    margin-top: 50px;
+    box-shadow: 0 4px 20px rgba(74, 144, 226, 0.12);
+}
+
+.matura-info-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.matura-info-icon {
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ffffff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.matura-info-content {
+    flex: 1;
+}
+
+.matura-info-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1565c0;
+    margin: 0 0 20px 0;
+}
+
+.matura-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.matura-info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #2c3e50;
+    padding-left: 0;
+}
+
+.matura-info-list li::before {
+    content: '\f058';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #4a90e2;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .matura-page-intro {
+        padding: 30px 25px;
+    }
+
+    .matura-intro-text {
+        font-size: 1.05rem;
+    }
+
+    .matura-page-section {
+        padding: 35px 25px;
+        margin-bottom: 30px;
+    }
+
+    .matura-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .matura-header-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem;
+    }
+
+    .matura-section-title {
+        font-size: 1.6rem;
+    }
+
+    .matura-questions-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .matura-question-category {
+        padding: 25px 20px;
+    }
+
+    .matura-category-title {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+    }
+
+    .matura-pdf-link {
+        padding: 15px 18px;
+        font-size: 1rem;
+        gap: 12px;
+    }
+
+    .pdf-icon {
+        font-size: 1.4rem;
+    }
+
+    .pdf-arrow {
+        font-size: 1.1rem;
+    }
+
+    .matura-info-section {
+        padding: 30px 25px;
+        margin-top: 40px;
+    }
+
+    .matura-info-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .matura-info-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.75rem;
+    }
+
+    .matura-info-title {
+        font-size: 1.5rem;
+    }
+
+    .matura-info-list li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .matura-page-section {
+        border-radius: 12px;
+    }
+
+    .matura-section-title {
+        font-size: 1.4rem;
+    }
+
+    .matura-pdf-link {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+    }
+
+    .matura-question-category {
+        padding: 20px 15px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .matura-page-section {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+
+    .matura-pdf-link {
+        border: 1px solid #dee2e6;
+    }
+
+    .matura-info-section {
+        page-break-before: always;
+    }
+}

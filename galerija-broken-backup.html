@@ -1,0 +1,965 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерија – Медицинска школа „Стевица Јовановић"</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="gallery-page-styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="images/images_preview_rev_1.png" alt="Медицинска школа — лого" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="dropdown">
+                    <a href="o-nama.html" class="nav-link">О школи <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="o-nama.html"><i class="fas fa-school"></i> О нама</a></li>
+                        <li><a href="zaposleni.html"><i class="fas fa-users"></i> Запослени</a></li>
+                        <li><a href="dokumentacija.html"><i class="fas fa-file-alt"></i> Документација</a></li>
+                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends"></i> Стручни тимови</a></li>
+                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line"></i> Јавне набавке и фин. извештаји</a></li>
+                        <li><a href="sekcije.html"><i class="fas fa-star"></i> Секције</a></li>
+                    </ul>
+                </li>
+                <li><a href="obrazovni-profili.html" class="nav-link">Образовни профили</a></li>
+                <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
+                <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
+                <li><a href="galerija.html" class="nav-link">Галерија</a></li>
+                <li><a href="erasmus-projekti.html" class="nav-link">Еразмус+ пројекти</a></li>
+                <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger" aria-label="Мени">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Заглавље странице -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <div class="breadcrumb" aria-label="Путања">
+                <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Почетна</a>
+                <span class="breadcrumb-separator" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                <span class="current-page" aria-current="page">Галерија</span>
+            </div>
+            <h1 class="page-title">Галерија</h1>
+            <p class="page-subtitle">Фотографије догађаја, активности и свакодневног живота наше школе</p>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th"></i>
+            <span>Све</span>
+        </button>
+        <button class="filter-btn" data-filter="objekti">
+            <i class="fas fa-building"></i>
+            <span>Објекти</span>
+        </button>
+        <button class="filter-btn" data-filter="praktikum">
+            <i class="fas fa-stethoscope"></i>
+            <span>Практикум</span>
+        </button>
+        <button class="filter-btn" data-filter="aktivnosti">
+            <i class="fas fa-book"></i>
+            <span>Активности</span>
+        </button>
+        <button class="filter-btn" data-filter="sport">
+            <i class="fas fa-futbol"></i>
+            <span>Спорт</span>
+        </button>
+        <button class="filter-btn" data-filter="dogadjaji">
+            <i class="fas fa-users"></i>
+            <span>Догађаји</span>
+        </button>
+        <button class="filter-btn" data-filter="manifestacije">
+            <i class="fas fa-star"></i>
+            <span>Манифестације</span>
+        </button>
+        <button class="filter-btn" data-filter="humanitarne">
+            <i class="fas fa-hand-holding-heart"></i>
+            <span>Хуманитарне акције</span>
+        </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-container">
+        <div class="gallery-grid">
+            <!-- Objekti -->
+            <div class="gallery-card" data-category="objekti">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/objekti/objekat-1.jpg" alt="Школски објекат" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="objekti">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/objekti/objekat-2.jpg" alt="Школски објекат" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="objekti">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/objekti/objekat-3.jpg" alt="Школски објекат" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="objekti">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/objekti/objekat-4.jpg" alt="Школски објекат" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="objekti">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/objekti/objekat-5.jpg" alt="Школски објекат" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="objekti">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/objekti/objekat-6.jpg" alt="Школски објекат" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Praktikum -->
+            <div class="gallery-card" data-category="praktikum">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/praktikum/praktikum-1.jpg" alt="Практична настава" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="praktikum">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/praktikum/praktikum-2.jpg" alt="Практична настава" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="praktikum">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/praktikum/praktikum-3.jpg" alt="Практична настава" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="praktikum">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/praktikum/praktikum-4.jpg" alt="Практична настава" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aktivnosti -->
+            <div class="gallery-card" data-category="aktivnosti">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/aktivnosti/aktivnost-1.jpg" alt="Школске активности" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="aktivnosti">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/aktivnosti/aktivnost-2.jpg" alt="Школске активности" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="aktivnosti">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/aktivnosti/aktivnost-3.jpg" alt="Школске активности" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sport -->
+            <div class="gallery-card" data-category="sport">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/sport/sport-1.jpg" alt="Спортске активности" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="sport">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/sport/sport-2.jpg" alt="Спортске активности" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dogadjaji -->
+            <div class="gallery-card" data-category="dogadjaji">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/dogadjaji/dogadjaj-1.jpg" alt="Догађаји" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="dogadjaji">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/dogadjaji/dogadjaj-2.jpg" alt="Догађаји" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="dogadjaji">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/dogadjaji/dogadjaj-3.jpg" alt="Догађаји" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manifestacije -->
+            <div class="gallery-card" data-category="manifestacije">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/manifestacije/manifestacija-1.jpg" alt="Манифестације" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="manifestacije">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/manifestacije/manifestacija-2.jpg" alt="Манифестације" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Humanitarne -->
+            <div class="gallery-card" data-category="humanitarne">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/humanitarne/humanitarna-1.jpg" alt="Хуманитарне акције" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card" data-category="humanitarne">
+                <div class="gallery-card-image">
+                    <img src="images/gallery/humanitarne/humanitarna-2.jpg" alt="Хуманитарне акције" loading="lazy">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-content">
+                <div class="footer-column footer-brand">
+                    <div class="footer-logo-stack">
+                        <img src="images/Untitled_preview_rev_1.png" alt="Медицинска школа — лого" class="footer-logo-img">
+                        <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> 58 година традиције</span>
+                    </div>
+                    <p class="footer-description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама. Подржавамо сваког ученика кроз менторство, пројекте и реалне стручне ситуације.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Брзе везе</h4>
+                    <ul class="footer-links">
+                        <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="maturska-pitanja.html"><span>Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="ucenici-i-roditelji.html"><span>Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Документа</h4>
+                    <ul class="footer-links">
+                        <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="sekcije.html"><span>Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="politika-privatnosti.html"><span>Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html#lokacija"><span>Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Останимо у контакту</h4>
+                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+                    <div class="footer-socials social-links">
+                        <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link tiktok" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="footer-newsletter">
+                        <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
+                            <span>Пошаљи нам питање</span>
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                        </a>
+                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
+                <div class="developer-credit">
+                    <span>Израда и одржавање</span>
+                    <img src="images/pansoft-logo.png" alt="Pansoft">
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="politika-privatnosti.html">Политика приватности</a>
+                    <span>•</span>
+                    <a href="#">Услови коришћења</a>
+                    <span>•</span>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" title="Назад на врх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" style="display: none;">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Затвори">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Претходна">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Следећа">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-counter" id="lightboxCounter">1 / 1</div>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="i18n.js"></script>
+    <script>
+        // Gallery filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryCards = document.querySelectorAll('.gallery-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                // Show/hide cards based on filter
+                galleryCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        let currentIndex = 0;
+        let currentCategory = 'all';
+        let filteredImages = [];
+
+        function updateFilteredImages() {
+            filteredImages = Array.from(galleryCards).filter(card => {
+                if (currentCategory === 'all') return true;
+                return card.getAttribute('data-category') === currentCategory;
+            });
+        }
+
+        function openLightbox(index, category) {
+            currentCategory = category;
+            updateFilteredImages();
+            currentIndex = index;
+            
+            const modal = document.getElementById('lightboxModal');
+            const img = filteredImages[currentIndex].querySelector('img');
+            
+            document.getElementById('lightboxImage').src = img.src;
+            document.getElementById('lightboxImage').alt = img.alt;
+            document.getElementById('lightboxCounter').textContent = `${currentIndex + 1} / ${filteredImages.length}`;
+            
+            modal.style.display = 'flex';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.style.display = 'none';
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % filteredImages.length;
+            const img = filteredImages[currentIndex].querySelector('img');
+            document.getElementById('lightboxImage').src = img.src;
+            document.getElementById('lightboxImage').alt = img.alt;
+            document.getElementById('lightboxCounter').textContent = `${currentIndex + 1} / ${filteredImages.length}`;
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
+            const img = filteredImages[currentIndex].querySelector('img');
+            document.getElementById('lightboxImage').src = img.src;
+            document.getElementById('lightboxImage').alt = img.alt;
+            document.getElementById('lightboxCounter').textContent = `${currentIndex + 1} / ${filteredImages.length}`;
+        }
+
+        // Add click events to gallery cards
+        galleryCards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                const category = card.getAttribute('data-category');
+                const visibleCards = Array.from(galleryCards).filter(c => {
+                    const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                    if (activeFilter === 'all') return true;
+                    return c.getAttribute('data-category') === activeFilter;
+                });
+                const visibleIndex = visibleCards.indexOf(card);
+                openLightbox(visibleIndex, document.querySelector('.filter-btn.active').getAttribute('data-filter'));
+            });
+        });
+
+        // Lightbox controls
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.getElementById('lightboxNext').addEventListener('click', nextImage);
+        document.getElementById('lightboxPrev').addEventListener('click', prevImage);
+
+        document.getElementById('lightboxModal').addEventListener('click', (e) => {
+            if (e.target.id === 'lightboxModal') closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('lightboxModal');
+            if (!modal.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Initialize
+        updateFilteredImages();
+    </script>
+</body>
+</html>
+            { category: 'objekti', title: 'Школски објекат', image: 'images/gallery/objekti/objekat-1.jpg', date: '2024', views: 245 },
+            { category: 'objekti', title: 'Школски објекат', image: 'images/gallery/objekti/objekat-2.jpg', date: '2024', views: 189 },
+            { category: 'objekti', title: 'Школски објекат', image: 'images/gallery/objekti/objekat-3.jpg', date: '2024', views: 167 },
+            { category: 'objekti', title: 'Школски објекат', image: 'images/gallery/objekti/objekat-4.jpg', date: '2023', views: 203 },
+            { category: 'objekti', title: 'Школски објекат', image: 'images/gallery/objekti/objekat-5.jpg', date: '2023', views: 156 },
+            { category: 'objekti', title: 'Школски објекат', image: 'images/gallery/objekti/objekat-6.jpg', date: '2023', views: 134 },
+            
+            // Praktikum
+            { category: 'praktikum', title: 'Практична настава', image: 'images/gallery/praktikum/praktikum-1.jpg', date: '2024', views: 312 },
+            { category: 'praktikum', title: 'Практична настава', image: 'images/gallery/praktikum/praktikum-2.jpg', date: '2024', views: 287 },
+            { category: 'praktikum', title: 'Практична настава', image: 'images/gallery/praktikum/praktikum-3.jpg', date: '2024', views: 298 },
+            { category: 'praktikum', title: 'Практична настава', image: 'images/gallery/praktikum/praktikum-4.jpg', date: '2023', views: 245 },
+            { category: 'praktikum', title: 'Практична настава', image: 'images/gallery/praktikum/praktikum-5.jpg', date: '2023', views: 267 },
+            { category: 'praktikum', title: 'Практична настава', image: 'images/gallery/praktikum/praktikum-6.jpg', date: '2023', views: 234 },
+            
+            // Aktivnosti
+            { category: 'aktivnosti', title: 'Школске активности', image: 'images/gallery/aktivnosti/aktivnost-1.jpg', date: '2024', views: 198 },
+            { category: 'aktivnosti', title: 'Школске активности', image: 'images/gallery/aktivnosti/aktivnost-2.jpg', date: '2024', views: 176 },
+            { category: 'aktivnosti', title: 'Школске активности', image: 'images/gallery/aktivnosti/aktivnost-3.jpg', date: '2024', views: 189 },
+            { category: 'aktivnosti', title: 'Школске активности', image: 'images/gallery/aktivnosti/aktivnost-4.jpg', date: '2023', views: 223 },
+            { category: 'aktivnosti', title: 'Школске активности', image: 'images/gallery/aktivnosti/aktivnost-5.jpg', date: '2023', views: 210 },
+            { category: 'aktivnosti', title: 'Школске активности', image: 'images/gallery/aktivnosti/aktivnost-6.jpg', date: '2023', views: 267 },
+            
+            // Sport
+            { category: 'sport', title: 'Спортске активности', image: 'images/gallery/sport/sport-1.jpg', date: '2024', views: 189 },
+            { category: 'sport', title: 'Спортске активности', image: 'images/gallery/sport/sport-2.jpg', date: '2024', views: 234 },
+            { category: 'sport', title: 'Спортске активности', image: 'images/gallery/sport/sport-3.jpg', date: '2024', views: 198 },
+            { category: 'sport', title: 'Спортске активности', image: 'images/gallery/sport/sport-4.jpg', date: '2023', views: 212 },
+            { category: 'sport', title: 'Спортске активности', image: 'images/gallery/sport/sport-5.jpg', date: '2023', views: 167 },
+            { category: 'sport', title: 'Спортске активности', image: 'images/gallery/sport/sport-6.jpg', date: '2023', views: 245 },
+            
+            // Dogadjaji
+            { category: 'dogadjaji', title: 'Школски догађаји', image: 'images/gallery/dogadjaji/dogadjaj-1.jpg', date: '2024', views: 298 },
+            { category: 'dogadjaji', title: 'Школски догађаји', image: 'images/gallery/dogadjaji/dogadjaj-2.jpg', date: '2024', views: 356 },
+            { category: 'dogadjaji', title: 'Школски догађаји', image: 'images/gallery/dogadjaji/dogadjaj-3.jpg', date: '2024', views: 267 },
+            { category: 'dogadjaji', title: 'Школски догађаји', image: 'images/gallery/dogadjaji/dogadjaj-4.jpg', date: '2023', views: 234 },
+            { category: 'dogadjaji', title: 'Школски догађаји', image: 'images/gallery/dogadjaji/dogadjaj-5.jpg', date: '2023', views: 289 },
+            { category: 'dogadjaji', title: 'Школски догађаји', image: 'images/gallery/dogadjaji/dogadjaj-6.jpg', date: '2023', views: 245 },
+            
+            // Manifestacije
+            { category: 'manifestacije', title: 'Манифестације', image: 'images/gallery/manifestacije/manifestacija-1.jpg', date: '2024', views: 278 },
+            { category: 'manifestacije', title: 'Манифестације', image: 'images/gallery/manifestacije/manifestacija-2.jpg', date: '2024', views: 198 },
+            { category: 'manifestacije', title: 'Манифестације', image: 'images/gallery/manifestacije/manifestacija-3.jpg', date: '2024', views: 312 },
+            { category: 'manifestacije', title: 'Манифестације', image: 'images/gallery/manifestacije/manifestacija-4.jpg', date: '2023', views: 289 },
+            { category: 'manifestacije', title: 'Манифестације', image: 'images/gallery/manifestacije/manifestacija-5.jpg', date: '2023', views: 223 },
+            { category: 'manifestacije', title: 'Манифестације', image: 'images/gallery/manifestacije/manifestacija-6.jpg', date: '2023', views: 267 },
+            
+            // Humanitarne akcije
+            { category: 'humanitarne', title: 'Хуманитарне акције', image: 'images/gallery/humanitarne/humanitarna-2.jpg', date: '2024', views: 345 },
+            { category: 'humanitarne', title: 'Хуманитарне акције', image: 'images/gallery/humanitarne/humanitarna-3.jpg', date: '2024', views: 312 },
+            { category: 'humanitarne', title: 'Хуманитарне акције', image: 'images/gallery/humanitarne/humanitarna-4.jpg', date: '2024', views: 298 },
+            { category: 'humanitarne', title: 'Хуманитарне акције', image: 'images/gallery/humanitarne/humanitarna-5.jpg', date: '2023', views: 289 },
+            { category: 'humanitarne', title: 'Хуманитарне акције', image: 'images/gallery/humanitarne/humanitarna-6.jpg', date: '2023', views: 267 },
+            { category: 'humanitarne', title: 'Хуманитарне акције', image: 'images/gallery/humanitarne/humanitarna-7.jpg', date: '2023', views: 234 }
+        ];
+
+        // Category labels and intro data
+        const categoryLabels = {
+            'objekti': 'Објекти',
+            'praktikum': 'Практикум',
+            'aktivnosti': 'Активности',
+            'sport': 'Спорт',
+            'dogadjaji': 'Догађаји',
+            'manifestacije': 'Манифестације',
+            'humanitarne': 'Хуманитарне акције'
+        };
+
+        const categoryIntros = {
+            'objekti': {
+                icon: 'fas fa-building',
+                title: 'Где теорија среће праксу',
+                text: 'Простор школе је уређен тако да подржи наставу и свакодневни рад ученика. Библиотека је намењена учењу, истраживању и припреми наставе, док спортска сала омогућава различите активности које доприносе развоју здравих навика и тимског духа. Кабинети за стручне предмете опремљени су наставним средствима и дидактичким моделима који омогућавају практичну наставу и боље разумевање градива. Учионице су функционалне, прилагођене мањим групама и осмишљене тако да обезбеде несметан рад на часовима. Лабораторијски простор омогућава ученицима да теоријска знања примене у пракси, што је од великог значаја за медицинска занимања. Сви простори су осмишљени тако да подстакну радне навике, дисциплину и сарадњу међу ученицима. На овај начин ствара се окружење у ком се стичу знања и вештине потребне за будуће занимање, уз подршку наставника и савремених наставних метода.'
+            },
+            'praktikum': {
+                icon: 'fas fa-stethoscope',
+                title: 'Дидактички материјали',
+                text: 'Настава у школи није ограничена само на теоријско знање већ се велики део активности одвија кроз практичне вежбе. Ученици имају прилику да на моделима и симулаторима увежбавају поступке који ће им бити потребни у будућем раду. Рад у мањим групама омогућава сваком ученику да активно учествује и стекне потребно искуство. Кроз овакве вежбе ученици савладавају основе здравствене неге, уче правилно руковање инструментима и упознају се са процедурама које ће примењивати у здравственим установама. Наставници их воде кроз сваки корак, како би поступци били изведени стручно и безбедно. Оваква настава доприноси развоју сигурности у раду, одговорности и професионалног односа према будућем занимању. Практичне активности су важан део школовања јер повезују стечена знања са стварним ситуацијама које их очекују у професионалном окружењу.'
+            },
+            'aktivnosti': {
+                icon: 'fas fa-heart-pulse',
+                title: 'Прва помоћ',
+                text: 'Образовање у нашој школи обухвата и практичне активности из области прве помоћи. Ученици кроз вежбе стичу основна знања и вештине неопходне за пружање хитне медицинске помоћи у различитим ситуацијама. Рад се организује у тимовима, што доприноси развоју сарадње, одговорности и сналажљивости. Вежбе обухватају поступке збрињавања повреда, имобилизације, реанимације и припреме за евакуацију повређених. Наставници и инструктори воде ученике кроз све кораке, како би се поступци изводили правилно и у складу са медицинским протоколима. Овакве активности имају велики значај, јер ученици на практичан начин увежбавају ситуације са којима се могу сусрести у свакодневном животу и будућем раду. Стечено знање и сигурност у извођењу поступака представљају важан темељ за њихову професионалну каријеру у здравству.'
+            },
+            'sport': {
+                icon: 'fas fa-trophy',
+                title: 'Такмичења',
+                text: 'Ученици наше школе активно учествују на различитим такмичењима, како у области стручних предмета, тако и у спорту и другим ваннаставним активностима. Ови догађаји представљају прилику да се стекну нова искуства, провери знање и вештине, али и да се развије тимски дух и такмичарска мотивација. Било да је реч о спортским утакмицама, шаховским турнирима, такмичењима у струци или креативним изазовима, ученици показују залагање и спремност да представе школу на најбољи начин. Успеси које постижу резултат су рада, дисциплине и подршке наставника који их усмеравају и мотивишу. Такмичења имају посебан значај јер омогућавају ученицима да своја знања и способности ставе у реалан контекст и упореде са вршњацима из других школа. Осим резултата и освојених награда, важна је и атмосфера заједништва и поноса што су део тима. На тај начин, ученици стичу драгоцено искуство које им помаже да граде самопоуздање и да се спремају за будуће професионалне и животне изазове.'
+            },
+            'dogadjaji': {
+                icon: 'fas fa-graduation-cap',
+                title: 'Матурантска парада',
+                text: 'Матурaнтска парада је један од најсвечанијих тренутака у школској години, када ученици завршних разреда заједно обележавају крај свог средњошколског образовања. Уз музичку пратњу и кореографију, матуранти корачају улицама града и шаљу поруку јединства, младости и заједништва. Овај догађај окупља велики број ученика и наставника, али и грађане који их подржавају и поздрављају. Поред свечаног карактера, парада носи и симболичну тежину – она представља прелазак у ново животно раздобље и корак ка професионалном и личном развоју. Учешће у оваkvој манифестацији оставља снажан утисак на ученике и ствара успомене које ће памтити дуго након завршетка школе. Истовремено, парада је и прилика да се покаже дух заједништва и понос што су део генерације која корача у будућност.'
+            },
+            'manifestacije': {
+                icon: 'fas fa-graduation-cap',
+                title: 'Сајам образовања',
+                text: 'Ученици наше школе редовно учествују на Сајму образовања, где имају прилику да представе своје знање и вештине широј јавности. Ово је важан догађај који омогућава младима да прикажу практичне поступке и начин рада у здравственој струци. Кроз различите демонстрације ученици показују како изгледају поступци из прве помоћи, здравствене неге и других стручних области. Посетиоци имају прилику да се упознају са наставним програмом, али и да стекну јаснију слику о томе како изгледа школовање у медицинској школи. Сајам је уједно и прилика за размену искустава са вршњацима из других школа и стручњацима из области здравства. За ученике он представља важно искуство које доприноси њиховом самопоуздању, јавном наступу и професионалном развоју. На овај начин школа се приближава будућим генерацијама, али и широј заједници којој су будући здравствени радници потребни.'
+            },
+            'humanitarne': {
+                icon: 'fas fa-hand-holding-heart',
+                title: 'Добровољно давање крви',
+                text: 'Добровољно давалаштво крви је једна од најзначајнијих хуманитарних активности у којој учествују наши ученици. Ова акција има за циљ развијање свести о значају солидарности и помоћи другима, као и промоцију здравих животних навика. Ученици имају прилику да се упознају са поступком давања крви, као и са значајем који тај чин има за спасавање живота. Акције се одвијају у сарадњи са здравственим установама и организацијама, што доприноси њиховом практичном искуству и бољем разумевању професионалне одговорности. Осим што учествују као добровољни даваоци или помоћници, ученици овим чином показују зрелост, хуманост и спремност да допринесу заједници. На тај начин, школа негује вредности које су темељ здравствене струке – бригу о другима, солидарност и одговорност.'
+            }
+        };
+
+        // Helper function to format long text into readable paragraphs
+        function formatTextWithParagraphs(text) {
+            // Split by sentence endings and rejoin with line breaks for better readability
+            const sentences = text.match(/[^\.!?]+[\.!?]+/g) || [text];
+            let formatted = '';
+            let currentParagraph = '';
+            
+            sentences.forEach((sentence, index) => {
+                currentParagraph += sentence;
+                // Add paragraph break after ~250 characters or every 3 sentences
+                if (currentParagraph.length > 250 || (index + 1) % 3 === 0) {
+                    formatted += currentParagraph.trim();
+                    if (index < sentences.length - 1) {
+                        formatted += '<br><br>';
+                    }
+                    currentParagraph = '';
+                }
+            });
+            
+            // Add remaining text
+            if (currentParagraph.trim()) {
+                formatted += currentParagraph.trim();
+            }
+            
+            return formatted;
+        }
+
+        // Show loading, then render gallery with intro sections
+        function renderGallery(filter = 'all') {
+            const grid = document.getElementById('galleryGrid');
+            const loading = document.getElementById('galleryLoading');
+            
+            if (!grid) return;
+            
+            // Show loading
+            loading.style.display = 'flex';
+            loading.classList.add('active');
+            grid.style.opacity = '0';
+
+            setTimeout(() => {
+                grid.innerHTML = '';
+
+                if (filter === 'all') {
+                    // Create grid container
+                    const sectionsGrid = document.createElement('div');
+                    sectionsGrid.className = 'gallery-sections-grid';
+                    
+                    const categories = ['objekti', 'praktikum', 'aktivnosti', 'sport', 'dogadjaji', 'manifestacije', 'humanitarne'];
+                    
+                    categories.forEach((category, catIndex) => {
+                        // Create section card
+                        const sectionCard = document.createElement('div');
+                        sectionCard.className = 'gallery-section-card';
+                        sectionCard.dataset.category = category;
+                        
+                        // Card header with icon and title
+                        const intro = categoryIntros[category];
+                        const cardHeader = document.createElement('div');
+                        cardHeader.className = 'section-card-header';
+                        cardHeader.innerHTML = `
+                            <div class="section-card-icon">
+                                <i class="${intro.icon}"></i>
+                            </div>
+                            <h2 class="section-card-title">${intro.title}</h2>
+                        `;
+                        sectionCard.appendChild(cardHeader);
+                        
+                        // Card content wrapper (flex-grow)
+                        const cardContent = document.createElement('div');
+                        cardContent.className = 'section-card-content';
+                        
+                        // Info box with text
+                        const cardInfo = document.createElement('div');
+                        cardInfo.className = 'section-card-info';
+                        cardInfo.innerHTML = `<p class="section-card-text">${formatTextWithParagraphs(intro.text)}</p>`;
+                        cardContent.appendChild(cardInfo);
+                        
+                        // Mini gallery (initially show 4 images)
+                        const categoryData = galleryData.filter(item => item.category === category);
+                        const cardGallery = document.createElement('div');
+                        cardGallery.className = 'section-card-gallery';
+                        
+                        // Show first 4 images
+                        const initialCount = 4;
+                        categoryData.slice(0, initialCount).forEach((item, index) => {
+                            const card = createGalleryCard(item, catIndex * 6 + index);
+                            cardGallery.appendChild(card);
+                        });
+                        
+                        // Store hidden images
+                        const hiddenImages = categoryData.slice(initialCount);
+                        hiddenImages.forEach((item, index) => {
+                            const card = createGalleryCard(item, catIndex * 6 + initialCount + index);
+                            card.style.display = 'none';
+                            card.classList.add('hidden-gallery-item');
+                            cardGallery.appendChild(card);
+                        });
+                        
+                        cardContent.appendChild(cardGallery);
+                        sectionCard.appendChild(cardContent);
+                        
+                        // Card footer wrapper (margin-top: auto)
+                        // Load More button (only if there are hidden images)
+                        if (hiddenImages.length > 0) {
+                            const cardFooter = document.createElement('div');
+                            cardFooter.className = 'section-card-footer';
+                            
+                            const loadMoreBtn = document.createElement('button');
+                            loadMoreBtn.className = 'section-load-more';
+                            loadMoreBtn.innerHTML = `Учитај још <i class="fas fa-chevron-down"></i>`;
+                            loadMoreBtn.onclick = function() {
+                                const cardContentEl = this.closest('.gallery-section-card').querySelector('.section-card-content');
+                                const gallery = cardContentEl.querySelector('.section-card-gallery');
+                                const hiddenItems = gallery.querySelectorAll('.hidden-gallery-item');
+                                const isExpanded = gallery.classList.contains('expanded');
+                                
+                                if (isExpanded) {
+                                    // Collapse
+                                    hiddenItems.forEach(item => {
+                                        item.style.display = 'none';
+                                    });
+                                    gallery.classList.remove('expanded');
+                                    this.innerHTML = `Учитај још <i class="fas fa-chevron-down"></i>`;
+                                } else {
+                                    // Expand
+                                    hiddenItems.forEach(item => {
+                                        item.style.display = 'block';
+                                    });
+                                    gallery.classList.add('expanded');
+                                    this.innerHTML = `Сакриј <i class="fas fa-chevron-up"></i>`;
+                                }
+                            };
+                            
+                            cardFooter.appendChild(loadMoreBtn);
+                            sectionCard.appendChild(cardFooter);
+                        }
+                        
+                        sectionsGrid.appendChild(sectionCard);
+                    });
+                    
+                    grid.appendChild(sectionsGrid);
+                } else {
+                    // Single category view - same card structure
+                    const sectionsGrid = document.createElement('div');
+                    sectionsGrid.className = 'gallery-sections-grid';
+                    
+                    const sectionCard = document.createElement('div');
+                    sectionCard.className = 'gallery-section-card';
+                    sectionCard.dataset.category = filter;
+                    
+                    const intro = categoryIntros[filter];
+                    const cardHeader = document.createElement('div');
+                    cardHeader.className = 'section-card-header';
+                    cardHeader.innerHTML = `
+                        <div class="section-card-icon">
+                            <i class="${intro.icon}"></i>
+                        </div>
+                        <h2 class="section-card-title">${intro.title}</h2>
+                    `;
+                    sectionCard.appendChild(cardHeader);
+                    
+                    const cardContent = document.createElement('div');
+                    cardContent.className = 'section-card-content';
+                    
+                    const cardInfo = document.createElement('div');
+                    cardInfo.className = 'section-card-info';
+                    cardInfo.innerHTML = `<p class="section-card-text">${formatTextWithParagraphs(intro.text)}</p>`;
+                    cardContent.appendChild(cardInfo);
+                    
+                    const categoryData = galleryData.filter(item => item.category === filter);
+                    const cardGallery = document.createElement('div');
+                    cardGallery.className = 'section-card-gallery expanded';
+                    
+                    // Show all images for single category
+                    categoryData.forEach((item, index) => {
+                        const card = createGalleryCard(item, index);
+                        cardGallery.appendChild(card);
+                    });
+                    
+                    cardContent.appendChild(cardGallery);
+                    sectionCard.appendChild(cardContent);
+                    sectionsGrid.appendChild(sectionCard);
+                    grid.appendChild(sectionsGrid);
+                }
+
+                // Hide loading, show grid
+                loading.classList.remove('active');
+                loading.style.display = 'none';
+                grid.style.opacity = '1';
+            }, 600);
+        }
+
+        function createGalleryCard(item, index) {
+            const card = document.createElement('div');
+            card.className = 'gallery-card';
+            
+            card.innerHTML = `
+                <div class="gallery-card-image">
+                    <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400/4a90e2/ffffff?text=Фото'">
+                    <div class="gallery-card-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            `;
+            
+            // Add click event to open lightbox with the actual item
+            card.addEventListener('click', () => {
+                console.log('Card clicked, item:', item);
+                openLightbox(item);
+            });
+
+            return card;
+        }
+
+
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderGallery(btn.dataset.filter);
+            });
+        });
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderGallery();
+        });
+
+        // Update year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Language Switcher - prikaži samo u Hero/Page Header sekciji
+        const languageSwitcher = document.getElementById('language-switcher');
+        const heroSection = document.querySelector('.hero, .page-header');
+        
+        if (languageSwitcher && heroSection) {
+            window.addEventListener('scroll', function() {
+                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                const scrollPosition = window.scrollY;
+                
+                if (scrollPosition > heroBottom - 100) {
+                    languageSwitcher.classList.add('visible');
+                } else {
+                    languageSwitcher.classList.remove('visible');
+                }
+            });
+        }
+
+        // Back to Top Button - prikazuje se kada se skroluje više od polovine stranice
+        const backToTopBtn = document.getElementById('back-to-top');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                const scrollHeight = document.documentElement.scrollHeight;
+                const innerHeight = window.innerHeight;
+                
+                if (window.pageYOffset > ((scrollHeight - innerHeight) / 2)) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Modern Lightbox Functionality
+        let currentLightboxCategory = '';
+        let currentLightboxIndex = 0;
+        let currentLightboxImages = [];
+
+        function openLightbox(clickedItem) {
+            console.log('openLightbox called with:', clickedItem);
+            currentLightboxCategory = clickedItem.category;
+            currentLightboxImages = galleryData.filter(item => item.category === clickedItem.category);
+            console.log('Filtered images:', currentLightboxImages.length);
+            
+            // Find the index of the clicked item in the filtered array
+            currentLightboxIndex = currentLightboxImages.findIndex(item => item.image === clickedItem.image);
+            if (currentLightboxIndex === -1) currentLightboxIndex = 0;
+            console.log('Current index:', currentLightboxIndex);
+            
+            updateLightboxImage();
+            
+            const modal = document.getElementById('lightboxModal');
+            console.log('Modal element:', modal);
+            if (modal) {
+                modal.style.display = 'flex';
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                console.log('Modal should be visible now');
+            } else {
+                console.error('Modal element not found!');
+            }
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.remove('active');
+            modal.style.display = 'none';  // Set back to none
+            document.body.style.overflow = '';
+        }
+
+        function updateLightboxImage() {
+            const image = document.getElementById('lightboxImage');
+            const counter = document.getElementById('lightboxCounter');
+            
+            if (currentLightboxImages.length > 0) {
+                const currentImage = currentLightboxImages[currentLightboxIndex];
+                image.src = currentImage.image;
+                image.alt = currentImage.title;
+                counter.textContent = `${currentLightboxIndex + 1} / ${currentLightboxImages.length}`;
+            }
+        }
+
+        function nextLightboxImage() {
+            currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
+            updateLightboxImage();
+        }
+
+        function prevLightboxImage() {
+            currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
+            updateLightboxImage();
+        }
+
+        // Lightbox event listeners
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.getElementById('lightboxNext').addEventListener('click', nextLightboxImage);
+        document.getElementById('lightboxPrev').addEventListener('click', prevLightboxImage);
+
+        // Close on background click
+        document.getElementById('lightboxModal').addEventListener('click', (e) => {
+            if (e.target.id === 'lightboxModal') {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('lightboxModal');
+            if (!modal.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextLightboxImage();
+            if (e.key === 'ArrowLeft') prevLightboxImage();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+/* Strucni Timovi Page - Layout & Visual Balance Optimization */
+/* Professional, clean, modern institutional design */
+
+/* ===========================
+   1. PAGE HEADER IMPROVEMENTS
+   =========================== */
+
+/* Add breathing space between title and subtitle */
+.page-header-content .page-title {
+    margin-bottom: var(--space-4);
+}
+
+.page-header-content .page-subtitle {
+    margin-top: 0;
+}
+
+/* ===========================
+   2. SECTION SPACING OPTIMIZATION
+   =========================== */
+
+/* Reduce excessive vertical spacing between major sections */
+.teams-section {
+    margin-top: var(--space-20);
+    margin-bottom: var(--space-20);
+}
+
+/* First section after intro */
+.teams-section:first-of-type {
+    margin-top: var(--space-16);
+}
+
+/* Last section before footer */
+.teams-section:last-of-type {
+    margin-bottom: var(--space-12);
+}
+
+/* Section headers - tighter spacing */
+.section-header {
+    margin-bottom: var(--space-12);
+    text-align: center;
+}
+
+.section-header .section-title {
+    margin-bottom: var(--space-5);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.section-header .section-subtitle {
+    margin-top: 0;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* ===========================
+   3. SINGLE CARD OPTIMIZATION
+   =========================== */
+
+/* Center and constrain single-card sections for better visual balance */
+.teams-section .teams-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    max-width: 100%;
+}
+
+/* When section contains only 1 card, center it with max-width */
+.teams-section .teams-container:has(.team-card:only-child) {
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fallback for browsers that don't support :has() */
+@supports not (selector(:has(*))) {
+    /* For "Тим за заштиту од насиља" section (last section with single card) */
+    .teams-section:last-of-type .teams-container {
+        max-width: 740px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* For "Тимови за развој квалитета" section - check if it has 3 single cards */
+    #kvalitet .teams-container {
+        max-width: 740px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ===========================
+   4. CARD READABILITY IMPROVEMENTS
+   =========================== */
+
+/* Improve text darkness and line-height for better readability */
+.team-card p.team-desc,
+.team-grid-card p {
+    color: #333333;
+    line-height: 1.5;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: var(--space-4);
+}
+
+/* Team member lists - better readability */
+.team-members {
+    line-height: var(--leading-relaxed);
+}
+
+.team-members li {
+    color: #333333;
+    padding: var(--space-2) 0;
+}
+
+/* ===========================
+   MODERN MEMBER BADGES DESIGN
+   =========================== */
+
+/* Grid layout for member badges */
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+}
+
+/* Individual member badge */
+.member-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--primary-blue);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-xs);
+}
+
+.member-badge:hover {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    border-left-color: var(--secondary-blue);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-blue-sm);
+}
+
+/* Badge icon */
+.member-badge i {
+    font-size: var(--text-lg);
+    color: var(--primary-blue);
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Badge text */
+.member-badge span {
+    font-size: var(--text-sm);
+    color: #333333;
+    font-weight: var(--font-medium);
+    line-height: var(--leading-snug);
+}
+
+/* ===========================
+   5. CARD CONSISTENCY
+   =========================== */
+
+/* Ensure consistent card styling across the site */
+.team-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-10);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Grid cards consistency */
+.team-grid-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-10) var(--space-8);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.team-grid-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ===========================
+   6. GRID LAYOUT OPTIMIZATION
+   =========================== */
+
+/* Teams grid - responsive and balanced */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-10);
+}
+
+/* ===========================
+   7. INTRO SECTION
+   =========================== */
+
+.intro-section {
+    margin-bottom: var(--space-16);
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--space-10) var(--space-12);
+    box-shadow: 0 4px 16px rgba(26, 115, 232, 0.08);
+    border-left: 4px solid var(--primary-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(26, 115, 232, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(40%, -40%);
+}
+
+.intro-text {
+    color: #1e293b;
+    line-height: 1.7;
+    font-size: 17px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ===========================
+   8. TYPOGRAPHY REFINEMENTS
+   =========================== */
+
+/* Card headers */
+.team-card-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.28;
+    margin: 0;
+}
+
+.team-grid-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin: var(--space-4) 0 var(--space-3);
+}
+
+/* Meta information styling */
+.team-meta {
+    margin: var(--space-5) 0 var(--space-4);
+}
+
+.meta-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--primary-blue);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.team-count {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid #e2e8f0;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* ===========================
+   9. ICON STYLING
+   =========================== */
+
+.team-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    color: white;
+    margin-bottom: var(--space-6);
+    box-shadow: var(--shadow-blue-lg);
+}
+
+.team-grid-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    color: white;
+    margin: 0 auto var(--space-4);
+    box-shadow: var(--shadow-blue-lg);
+}
+
+/* ===========================
+   10. PAGE ENDING
+   =========================== */
+
+.page-ending {
+    padding: var(--space-12) var(--space-5) var(--space-10);
+    margin-top: var(--space-16);
+}
+
+/* ===========================
+   11. RESPONSIVE ADJUSTMENTS
+   =========================== */
+
+@media screen and (max-width: 1024px) {
+    .teams-section {
+        margin-top: var(--space-12);
+        margin-bottom: var(--space-12);
+    }
+    
+    .section-header {
+        margin-bottom: var(--space-10);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Reduce spacing on mobile */
+    .teams-section {
+        margin-top: var(--space-10);
+        margin-bottom: var(--space-10);
+    }
+    
+    .section-header {
+        margin-bottom: var(--space-8);
+    }
+    
+    /* Single card max-width adjustments */
+    .teams-section .teams-container:has(.team-card:only-child),
+    #kvalitet .teams-container {
+        max-width: 100%;
+    }
+    
+    /* Card padding adjustments */
+    .team-card {
+        padding: var(--space-8) var(--space-6);
+        border-radius: var(--radius-lg);
+    }
+    
+    .team-grid-card {
+        padding: var(--space-6) var(--space-5);
+        border-radius: var(--radius-lg);
+    }
+    
+    /* Grid adjustments */
+    .teams-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    /* Member badges responsive */
+    .team-members-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+    
+    .page-ending {
+        margin-top: var(--space-12);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .teams-section {
+        margin-top: var(--space-8);
+        margin-bottom: var(--space-8);
+    }
+    
+    .section-header {
+        margin-bottom: var(--space-8);
+    }
+    
+    .team-card {
+        padding: var(--space-6) var(--space-5);
+        border-radius: var(--radius-md);
+    }
+    
+    .team-grid-card {
+        padding: var(--space-5) var(--space-4);
+        border-radius: var(--radius-md);
+    }
+    
+    .team-icon {
+        width: 52px;
+        height: 52px;
+        font-size: var(--text-lg);
+    }
+    
+    .team-grid-icon {
+        width: 48px;
+        height: 48px;
+        font-size: var(--text-lg);
+    }
+    
+    /* Member badges mobile */
+    .member-badge {
+        padding: var(--space-3) var(--space-3);
+        font-size: var(--text-sm);
+    }
+    
+    .member-badge i {
+        font-size: var(--text-base);
+    }
+    
+    .member-badge span {
+        font-size: var(--text-sm);
+    }
+    
+    .page-ending {
+        margin-top: var(--space-10);
+        padding: var(--space-10) var(--space-5) var(--space-8);
+    }
+}
+
+/* ===========================
+   12. ACCESSIBILITY & POLISH
+   =========================== */
+
+/* Focus states for keyboard navigation */
+.team-card:focus-within {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 4px;
+}
+
+/* Smooth transitions */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Print styles */
+@media print {
+    .team-card,
+    .team-grid-card {
+        box-shadow: none;
+        border: 1px solid #e2e8f0;
+        page-break-inside: avoid;
+    }
+    
+    .teams-section {
+        margin-top: var(--space-8);
+        margin-bottom: var(--space-8);
+    }
+}

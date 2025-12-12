@@ -22,7 +22,16 @@
     "welcome": "Welcome to the website of Medical School \"Stevica Jovanović\" in Pančevo",
     "apply_today": "Apply Today",
     "learn_more": "Learn More",
-    "our_school": "Our School"
+    "our_school": "Our School",
+    "slide1_title": "Welcome to Medical School \"Stevica Jovanović\"",
+    "slide1_subtitle": "With over 58 years of tradition in healthcare education",
+    "slide1_cta": "Learn More",
+    "slide2_title": "Modern Programs and Practice",
+    "slide2_subtitle": "Practical training in leading healthcare institutions of the region",
+    "slide2_cta": "View Program",
+    "slide3_title": "The Future Starts Here",
+    "slide3_subtitle": "Become part of a new generation of healthcare workers",
+    "slide3_cta": "Apply Now"
   },
   "stats": {
     "years_tradition": "58 years of tradition",
@@ -37,7 +46,24 @@
     "students": "Students",
     "latest_news": "Latest News",
     "view_all": "View All",
-    "read_more": "Read More"
+    "read_more": "Read More",
+    "educational_profiles": "Educational Profiles",
+    "profiles_intro": "Medical School \"Stevica Jovanović\" in Pančevo trains professionals for work in healthcare and social protection in the following profiles:",
+    "mission_text": "Our mission is to provide young people with quality education based on modern teaching methods and practical training (school cabinet, health center, healthcare institutions...). We are dedicated to developing skills, knowledge and professional ethics, in accordance with the needs of the community and the labor market.",
+    "about_school_title": "About School",
+    "about_us": "About Us",
+    "about_us_text": "Medical School \"Stevica Jovanović\" is a modern educational institution with a long tradition. Our teaching staff maintains a high standard of teaching quality and cooperation with healthcare institutions.",
+    "history": "School History",
+    "history_text": "Founded in 1946, the school has grown into a significant regional center for secondary medical education. We build tradition through professional development and continuous improvement of teaching work.",
+    "teaching_process": "Teaching Process",
+    "teaching_process_text": "We combine theoretical teaching with practical exercises in a real environment. Students acquire competencies necessary for direct work and further education.",
+    "values_mission": "Values and Mission",
+    "values_mission_text": "We cultivate responsibility, humanity and professionalism. Our students learn to help people and respect the principles of medical ethics in every context.",
+    "our_goals": "Our Goals",
+    "our_goals_text": "We develop key competencies, encourage teamwork and critical thinking. We prepare students for successful employment and continuation of education.",
+    "our_vision": "Our Vision",
+    "our_vision_text": "To be a recognizable school that educates competent and dedicated healthcare workers, ready to respond to the challenges of modern practice.",
+    "news_events": "News and Events"
   },
   "footer": {
     "about_school": "About School",
@@ -57,7 +83,11 @@
     "financial_reports": "Financial Reports",
     "development_plan": "Development Plan",
     "rules_of_procedure": "Rules of Procedure",
-    "code_of_conduct": "Code of Conduct"
+    "code_of_conduct": "Code of Conduct",
+    "social_text": "We follow the successes of our students and share news from healthcare practice. Join us on social media and write to us if you need additional information.",
+    "send_question": "Send us a question",
+    "response_time": "We respond within 24 hours.",
+    "copyright": "Medical School \"Stevica Jovanović\" Pančevo. All rights reserved."
   },
   "contact": {
     "title": "Contact",
@@ -71,6 +101,12 @@
     "subject": "Subject",
     "message": "Message",
     "send": "Send"
+  },
+  "profiles": {
+    "nurse_technician": "Nurse - Technician",
+    "nurse_educator": "Nurse - Educator",
+    "health_caregiver": "Health Caregiver",
+    "midwife": "Gynecological-Obstetric Nurse"
   },
   "accessibility": {
     "wcag_tools": "WCAG Tools",
@@ -153,5 +189,57 @@
     "sections_count": "8 sections",
     "profiles_count": "4 profiles",
     "info_items": "100+ info items"
+  },
+  "pages": {
+    "about_us": {
+      "title": "About School",
+      "subtitle": "History, mission and values of our educational institution",
+      "breadcrumb": "About School"
+    },
+    "employees": {
+      "title": "Staff",
+      "subtitle": "Meet our professional team",
+      "breadcrumb": "Staff"
+    },
+    "documentation": {
+      "title": "Documentation",
+      "subtitle": "Official documents and regulations",
+      "breadcrumb": "Documentation"
+    },
+    "professional_teams": {
+      "title": "Professional Teams",
+      "subtitle": "Our specialized work groups",
+      "breadcrumb": "Professional Teams"
+    },
+    "public_procurement": {
+      "title": "Public Procurement",
+      "subtitle": "Financial reports and procurement",
+      "breadcrumb": "Public Procurement"
+    },
+    "sections": {
+      "title": "Sections",
+      "subtitle": "Extracurricular activities",
+      "breadcrumb": "Sections"
+    },
+    "educational_profiles": {
+      "title": "Educational Profiles",
+      "subtitle": "Study programs and specializations",
+      "breadcrumb": "Educational Profiles"
+    },
+    "gallery": {
+      "title": "Gallery",
+      "subtitle": "Photos from school life",
+      "breadcrumb": "Gallery"
+    },
+    "erasmus": {
+      "title": "Erasmus+ Projects",
+      "subtitle": "International cooperation and mobility",
+      "breadcrumb": "Erasmus+ Projects"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Get in touch with us",
+      "breadcrumb": "Contact"
+    }
   }
 }

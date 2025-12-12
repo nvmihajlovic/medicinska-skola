@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Engagement System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .test-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .test-card h2 {
+            color: #667eea;
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+        }
+        
+        .test-card p {
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .test-card .slug {
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 16px;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .stat {
+            flex: 1;
+            background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+        
+        .stat-value {
+            color: #667eea;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 12px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-like {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+        
+        .btn-like:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231,76,60,0.3);
+        }
+        
+        .btn-refresh {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-refresh:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
+        }
+        
+        .btn-visit {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+        }
+        
+        .btn-visit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39,174,96,0.3);
+        }
+        
+        .status {
+            margin-top: 12px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .global-stats {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+        
+        .global-stats h2 {
+            color: #667eea;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .global-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .global-stat {
+            background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .global-stat h3 {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .global-stat p {
+            color: #667eea;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Test Engagement System</h1>
+        
+        <div class="global-stats">
+            <h2>Укупна статистика</h2>
+            <div class="global-grid">
+                <div class="global-stat">
+                    <h3>Укупно прегледа</h3>
+                    <p id="total-views">0</p>
+                </div>
+                <div class="global-stat">
+                    <h3>Укупно лајкова</h3>
+                    <p id="total-likes">0</p>
+                </div>
+                <div class="global-stat">
+                    <h3>Просек прегледа</h3>
+                    <p id="avg-views">0</p>
+                </div>
+                <div class="global-stat">
+                    <h3>Најпопуларнији</h3>
+                    <p id="most-popular" style="font-size: 1rem;">-</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-grid" id="articles-grid"></div>
+    </div>
+    
+    <script>
+        const articles = [
+            { slug: 'donacija-krvi', title: 'Донација крви', file: 'donacija-krvi.html' },
+            { slug: 'dan-planete', title: 'Дан планете', file: 'dan-planete.html' },
+            { slug: 'fruska-gora-maraton', title: 'Фрушкогорски маратон', file: 'fruska-gora-maraton.html' },
+            { slug: 'humanitarna-akcija', title: 'Хуманитарна акција', file: 'humanitarna-akcija.html' },
+            { slug: 'svetski-dan-poezije', title: 'Светски дан поезије', file: 'svetski-dan-poezije.html' },
+            { slug: 'strucna-praksa', title: 'Стручна пракса', file: 'strucna-praksa.html' }
+        ];
+        
+        async function fetchStats(slug) {
+            try {
+                const response = await fetch(`api/engagement.php?action=get&article=${slug}`);
+                return await response.json();
+            } catch (error) {
+                return { views: 0, likes: 0, liked: false, error: true };
+            }
+        }
+        
+        async function toggleLike(slug) {
+            try {
+                const response = await fetch(`api/engagement.php?action=like&article=${slug}`);
+                return await response.json();
+            } catch (error) {
+                return { error: true };
+            }
+        }
+        
+        function createArticleCard(article) {
+            const card = document.createElement('div');
+            card.className = 'test-card';
+            card.id = `card-${article.slug}`;
+            
+            card.innerHTML = `
+                <h2>${article.title}</h2>
+                <div class="slug">${article.slug}</div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-label">Прегледи</div>
+                        <div class="stat-value" id="views-${article.slug}">-</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">Лајкови</div>
+                        <div class="stat-value" id="likes-${article.slug}">-</div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn-like" onclick="handleLike('${article.slug}')">
+                        ❤️ Лајкуј
+                    </button>
+                    <button class="btn-refresh" onclick="refreshStats('${article.slug}')">
+                        🔄 Refresh
+                    </button>
+                </div>
+                <button class="btn-visit" onclick="window.open('${article.file}', '_blank')" style="margin-top: 12px; width: 100%;">
+                    🔗 Отвори страницу
+                </button>
+                <div class="status info" id="status-${article.slug}">Учитавање...</div>
+            `;
+            
+            return card;
+        }
+        
+        async function refreshStats(slug) {
+            const statusEl = document.getElementById(`status-${slug}`);
+            statusEl.textContent = 'Освежавање...';
+            statusEl.className = 'status info';
+            
+            const data = await fetchStats(slug);
+            
+            if (data.error) {
+                statusEl.textContent = '❌ Грешка при учитавању';
+                statusEl.className = 'status error';
+                return;
+            }
+            
+            document.getElementById(`views-${slug}`).textContent = data.views || 0;
+            document.getElementById(`likes-${slug}`).textContent = data.likes || 0;
+            
+            statusEl.textContent = data.liked ? '✅ Лајковано' : '✅ Учитано';
+            statusEl.className = 'status success';
+            
+            updateGlobalStats();
+        }
+        
+        async function handleLike(slug) {
+            const statusEl = document.getElementById(`status-${slug}`);
+            statusEl.textContent = 'Процесирање лајка...';
+            statusEl.className = 'status info';
+            
+            const data = await toggleLike(slug);
+            
+            if (data.error) {
+                statusEl.textContent = '❌ Грешка при лајковању';
+                statusEl.className = 'status error';
+                return;
+            }
+            
+            document.getElementById(`views-${slug}`).textContent = data.views || 0;
+            document.getElementById(`likes-${slug}`).textContent = data.likes || 0;
+            
+            statusEl.textContent = data.liked ? '❤️ Лајковано!' : '💔 Лајк уклоњен';
+            statusEl.className = 'status success';
+            
+            updateGlobalStats();
+        }
+        
+        async function updateGlobalStats() {
+            let totalViews = 0;
+            let totalLikes = 0;
+            let maxViews = 0;
+            let mostPopular = '-';
+            
+            for (const article of articles) {
+                const data = await fetchStats(article.slug);
+                if (!data.error) {
+                    totalViews += data.views || 0;
+                    totalLikes += data.likes || 0;
+                    
+                    if (data.views > maxViews) {
+                        maxViews = data.views;
+                        mostPopular = article.title;
+                    }
+                }
+            }
+            
+            document.getElementById('total-views').textContent = totalViews;
+            document.getElementById('total-likes').textContent = totalLikes;
+            document.getElementById('avg-views').textContent = Math.round(totalViews / articles.length);
+            document.getElementById('most-popular').textContent = mostPopular;
+        }
+        
+        // Initialize
+        async function init() {
+            const grid = document.getElementById('articles-grid');
+            
+            for (const article of articles) {
+                grid.appendChild(createArticleCard(article));
+                await refreshStats(article.slug);
+            }
+        }
+        
+        init();
+    </script>
+</body>
+</html>

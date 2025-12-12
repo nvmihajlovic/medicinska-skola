@@ -5,7 +5,7 @@
 
 class I18n {
     constructor() {
-        this.currentLang = localStorage.getItem('selectedLanguage') || 'sr';
+        this.currentLang = 'sr';
         this.translations = {};
         this.fallbackLang = 'sr';
         this.isReady = false;
@@ -22,6 +22,7 @@ class I18n {
         this.isReady = true;
         this.updatePageLanguage();
         this.translatePage();
+        this.filterMenuByLanguage();
         this.initLanguageSwitcher();
         console.log('[i18n] i18n system ready!');
     }
@@ -142,6 +143,88 @@ class I18n {
             const key = element.getAttribute('data-i18n-alt');
             element.alt = this.t(key);
         });
+        
+        // Filter menu based on language
+        this.filterMenuByLanguage();
+    }
+
+    /**
+     * Filter menu items based on current language
+     * Only show translated pages on EN/DE, show all pages on SR
+     */
+    filterMenuByLanguage() {
+        console.log(`[i18n] Filtering menu for language: ${this.currentLang}`);
+        
+        // Pages available in all languages (translated)
+        const translatedPages = [
+            'o-nama.html',
+            'zaposleni.html', 
+            'dokumentacija.html',
+            'strucni-timovi.html',
+            'javne-nabavke.html',
+            'sekcije.html',
+            'obrazovni-profili.html',
+            'galerija.html',
+            'erasmus-projekti.html',
+            'kontakt.html',
+            'index.html'
+        ];
+
+        // If not Serbian, hide untranslated menu items
+        if (this.currentLang !== 'sr') {
+            console.log('[i18n] Hiding untranslated pages for EN/DE');
+            
+            // Hide/show top-level non-dropdown items
+            const navItems = document.querySelectorAll('.nav-menu > li:not(.dropdown)');
+            navItems.forEach(li => {
+                const link = li.querySelector('a');
+                if (link) {
+                    const href = link.getAttribute('href');
+                    if (href && !translatedPages.includes(href)) {
+                        li.style.display = 'none';
+                    } else {
+                        li.style.display = 'block';
+                    }
+                }
+            });
+
+            // Hide/show dropdown submenu items
+            const dropdownItems = document.querySelectorAll('.dropdown-menu li');
+            dropdownItems.forEach(li => {
+                const link = li.querySelector('a');
+                if (link) {
+                    const href = link.getAttribute('href');
+                    if (href && !translatedPages.includes(href)) {
+                        li.style.display = 'none';
+                    } else {
+                        li.style.display = 'block';
+                    }
+                }
+            });
+
+            // Hide in footer
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            footerLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && !translatedPages.includes(href)) {
+                    const parentLi = link.closest('li');
+                    if (parentLi) parentLi.style.display = 'none';
+                }
+            });
+        } else {
+            console.log('[i18n] Showing all pages for Serbian');
+            
+            // Show all items on Serbian - use block instead of empty string
+            document.querySelectorAll('.nav-menu > li').forEach(li => {
+                li.style.display = 'block';
+                console.log('[i18n] Showing nav item:', li.textContent.trim().substring(0, 30));
+            });
+            document.querySelectorAll('.dropdown-menu li').forEach(li => {
+                li.style.display = 'block';
+                console.log('[i18n] Showing dropdown item:', li.textContent.trim().substring(0, 30));
+            });
+            document.querySelectorAll('.footer-links li').forEach(li => li.style.display = 'block');
+        }
     }
 
     /**
@@ -168,9 +251,9 @@ class I18n {
         const success = await this.loadTranslations(lang);
         if (success) {
             this.currentLang = lang;
-            localStorage.setItem('selectedLanguage', lang);
             this.updatePageLanguage();
             this.translatePage();
+            this.filterMenuByLanguage();
             this.updateLanguageSwitcherButtons();
             
             // Dispatch custom event for other scripts to react

@@ -23,40 +23,20 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Mobile Menu Toggle with overlay
+// Mobile Menu Toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
-
-// Create overlay if it doesn't exist
-let menuOverlay = document.querySelector('.menu-overlay');
-if (!menuOverlay) {
-    menuOverlay = document.createElement('div');
-    menuOverlay.className = 'menu-overlay';
-    document.body.appendChild(menuOverlay);
-}
 
 hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
-    menuOverlay.classList.toggle('active');
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
 });
 
-// Close menu when clicking overlay
-menuOverlay.addEventListener('click', function() {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-    menuOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-});
-
-// Close mobile menu when clicking on a link (except dropdown toggles)
-document.querySelectorAll('.nav-link:not(.dropdown > .nav-link)').forEach(link => {
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
-        menuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
     });
 });
 
@@ -65,7 +45,6 @@ document.querySelectorAll('.dropdown > .nav-link').forEach(dropdownLink => {
     dropdownLink.addEventListener('click', function(e) {
         if (window.innerWidth <= 1300) {
             e.preventDefault();
-            e.stopPropagation(); // Prevent event from bubbling up
             const dropdown = this.parentElement;
             const dropdownMenu = dropdown.querySelector('.dropdown-menu');
             
@@ -82,19 +61,13 @@ document.querySelectorAll('.dropdown > .nav-link').forEach(dropdownLink => {
     });
 });
 
-// Close dropdowns and mobile menu when clicking dropdown items on mobile
+// Close dropdowns when clicking dropdown items on mobile
 document.querySelectorAll('.dropdown-menu a').forEach(link => {
     link.addEventListener('click', () => {
         if (window.innerWidth <= 1300) {
-            // Close all dropdowns
             document.querySelectorAll('.dropdown-menu').forEach(menu => {
                 menu.classList.remove('show');
             });
-            // Close mobile menu
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
         }
     });
 });
@@ -181,12 +154,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Hero button scroll to profiles section
-document.querySelector('.cta-button').addEventListener('click', function() {
-    document.querySelector('.profiles-section').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+const ctaButton = document.querySelector('.cta-button');
+if (ctaButton) {
+    ctaButton.addEventListener('click', function() {
+        const profilesSection = document.querySelector('.profiles-section');
+        if (profilesSection) {
+            profilesSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
-});
+}
 
 // Animate elements on scroll
 const observerOptions = {
@@ -761,8 +740,7 @@ function initBackToTop() {
     if (backToTopBtn) {
         // Show/hide button based on scroll position
         window.addEventListener('scroll', () => {
-            const halfScrollableHeight = (document.documentElement.scrollHeight - window.innerHeight) / 2;
-            if (window.pageYOffset > halfScrollableHeight) {
+            if (window.pageYOffset > 300) {
                 backToTopBtn.classList.add('visible');
             } else {
                 backToTopBtn.classList.remove('visible');
@@ -929,6 +907,7 @@ class CookieConsent {
     
     showCookieConsent() {
         if (this.cookieConsent) {
+            this.cookieConsent.removeAttribute('hidden');
             this.cookieConsent.classList.add('show');
         }
     }
@@ -936,6 +915,9 @@ class CookieConsent {
     hideCookieConsent() {
         if (this.cookieConsent) {
             this.cookieConsent.classList.remove('show');
+            setTimeout(() => {
+                this.cookieConsent.setAttribute('hidden', '');
+            }, 400);
         }
     }
     
@@ -1379,64 +1361,6 @@ window.addEventListener('scroll', () => {
 // ACCORDION FOR EDUCATION PROFILES (MOBILE)
 // ============================================
 
-// ============================================
-// TABS FOR EDUCATION PROFILES - ENHANCED ANIMATIONS
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    console.log('Tab buttons found:', tabButtons.length);
-    
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Tab clicked:', this.getAttribute('data-tab'));
-            
-            const targetTab = this.getAttribute('data-tab');
-            const tabsContainer = this.closest('.subjects-tabs');
-            
-            if (!tabsContainer) {
-                console.error('Tabs container not found!');
-                return;
-            }
-            
-            // Find currently active panel
-            const currentPanel = tabsContainer.querySelector('.tab-panel.active');
-            const targetPanel = document.getElementById(targetTab);
-            
-            if (!targetPanel) {
-                console.error('Target panel not found:', targetTab);
-                return;
-            }
-            
-            // Skip if clicking on already active tab
-            if (currentPanel === targetPanel) {
-                return;
-            }
-            
-            // Add fade-out animation to current panel
-            if (currentPanel) {
-                currentPanel.classList.add('fade-out');
-                
-                // Wait for fade-out animation to complete
-                setTimeout(() => {
-                    currentPanel.classList.remove('active', 'fade-out');
-                    
-                    // Show new panel with fade-in animation
-                    targetPanel.classList.add('active');
-                }, 400); // Match CSS animation duration
-            } else {
-                // No current panel, just show the target
-                targetPanel.classList.add('active');
-            }
-            
-            // Update button states
-            tabsContainer.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            console.log('Active panel:', targetTab);
-        });
-    });
-});
 
 // Console log for development
-console.log('Medicinska Škola website loaded successfully with enhanced UI/UX animations!');
+console.log('Medicinska Škola website loaded successfully with UI/UX enhancements!');

@@ -911,7 +911,7 @@
 
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић” Панчево. Сва права задржана.</p>
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
                 <div class="developer-credit">
                     <span>Израда и одржавање</span>
                     <img src="images/pansoft-logo.png" alt="Pansoft">
@@ -927,134 +927,268 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+    <!-- Back to Top -->
     <button class="back-to-top" id="back-to-top" title="Назад на врх">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Language Switcher -->
-    <div class="language-switcher" id="language-switcher" aria-label="Промена језика">
-        <button class="lang-btn active" data-lang="sr" aria-pressed="true">СР</button>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        <button class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
-    </div>
-
-    <!-- GDPR Cookie Consent -->
-    <div class="cookie-consent" id="cookieConsent" role="dialog" aria-labelledby="cookieTitle" aria-modal="true" hidden>
-        <div class="cookie-consent-container">
-            <div class="cookie-consent-content">
-                <div class="cookie-consent-title" id="cookieTitle">
-                    <i class="fas fa-cookie-bite"></i>
-                    Колачићи и приватност
+    <!-- Premium Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <button class="lightbox-close" id="lightboxClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-counter" id="lightboxCounter">1 / 36</div>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+            <div class="lightbox-info">
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <div class="lightbox-meta">
+                    <span>
+                        <i class="fas fa-tag"></i>
+                        <span id="lightboxCategory"></span>
+                    </span>
+                    <span>
+                        <i class="far fa-calendar"></i>
+                        <span id="lightboxDate"></span>
+                    </span>
+                    <span>
+                        <i class="fas fa-eye"></i>
+                        <span id="lightboxViews"></span>
+                    </span>
                 </div>
-                <p class="cookie-consent-text">
-                    На овом сајту користимо колачиће (cookies) ради бољег корисничког искуства и аналитике.
-                    За више информација погледајте <a href="politika-privatnosti.html">Политику приватности</a>.
-                </p>
-            </div>
-            <div class="cookie-consent-actions">
-                <button class="cookie-btn cookie-btn-settings" onclick="openCookieSettings()">Подешавања</button>
-                <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Одбиј</button>
-                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Прихвати</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cookie Settings Modal -->
-    <div class="cookie-settings-modal" id="cookieSettingsModal" hidden>
-        <div class="cookie-settings-content" role="dialog" aria-modal="true" aria-labelledby="cookieSettingsTitle">
-            <div class="cookie-settings-header">
-                <h3 class="cookie-settings-title" id="cookieSettingsTitle">Подешавања колачића</h3>
-                <button class="cookie-close-btn" onclick="closeCookieSettings()" aria-label="Затвори">&times;</button>
-            </div>
-
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Неопходни колачићи</h4>
-                    <label class="cookie-switch">
-                        <input type="checkbox" checked disabled>
-                        <span class="cookie-slider"></span>
-                    </label>
-                </div>
-                <p class="cookie-category-description">
-                    Ови колачићи су неопходни за правилан рад сајта и не могу се искључити.
-                </p>
-            </div>
-
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Аналитички колачићи</h4>
-                    <label class="cookie-switch">
-                        <input type="checkbox" id="analyticsCookies">
-                        <span class="cookie-slider"></span>
-                    </label>
-                </div>
-                <p class="cookie-category-description">
-                    Помаже нам да разумемо како користите сајт и да унапредимо садржај.
-                </p>
-            </div>
-
-            <div class="cookie-category">
-                <div class="cookie-category-header">
-                    <h4 class="cookie-category-title">Маркетиншки колачићи</h4>
-                    <label class="cookie-switch">
-                        <input type="checkbox" id="marketingCookies">
-                        <span class="cookie-slider"></span>
-                    </label>
-                </div>
-                <p class="cookie-category-description">
-                    Омогућавају персонализоване садржаје и оглашавање.
-                </p>
-            </div>
-
-            <div class="cookie-consent-actions" style="margin-top: 20px; justify-content: center;">
-                <button class="cookie-btn cookie-btn-decline" onclick="saveAndCloseCookieSettings(false)">Сачувај без ових</button>
-                <button class="cookie-btn cookie-btn-accept" onclick="saveAndCloseCookieSettings(true)">Сачувај подешавања</button>
             </div>
         </div>
     </div>
 
     <script src="script.js" defer></script>
-    <script>        // Language Switcher - prikaÅ¾i samo u Hero/Page Header sekciji
-        document.addEventListener('DOMContentLoaded', function() {
-            const languageSwitcher = document.getElementById('language-switcher');
-            const heroSection = document.querySelector('.hero, .page-header');
+    <script>
+        // Premium Gallery data with view counts
+        const galleryData = [
+            // Objekti
+            { category: 'objekti', title: 'Учионица - главна', image: 'images/gallery/objects/classroom-1.jpg', date: '2024', views: 245 },
+            { category: 'objekti', title: 'Мултимедијална учионица', image: 'images/gallery/objects/classroom-2.jpg', date: '2024', views: 189 },
+            { category: 'objekti', title: 'Кабинет за наставу', image: 'images/gallery/objects/classroom-3.jpg', date: '2024', views: 167 },
+            { category: 'objekti', title: 'Практични кабинет', image: 'images/gallery/objects/classroom-4.jpg', date: '2023', views: 203 },
+            { category: 'objekti', title: 'Школска библиотека', image: 'images/gallery/objects/library.jpg', date: '2023', views: 156 },
+            { category: 'objekti', title: 'Хол и ходник', image: 'images/gallery/objects/hallway.jpg', date: '2023', views: 134 },
             
-            if (languageSwitcher && heroSection) {
-                window.addEventListener('scroll', function() {
-                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-                    const scrollPosition = window.scrollY;
+            // Praktikum
+            { category: 'praktikum', title: 'Медицинске вежбе', image: 'images/gallery/medical/practice-1.jpg', date: '2024', views: 312 },
+            { category: 'praktikum', title: 'Опрема за обуку', image: 'images/gallery/medical/practice-2.jpg', date: '2024', views: 287 },
+            { category: 'praktikum', title: 'Симулација процедура', image: 'images/gallery/medical/practice-3.jpg', date: '2024', views: 298 },
+            { category: 'praktikum', title: 'Клиничке вежбе', image: 'images/gallery/medical/practice-4.jpg', date: '2023', views: 245 },
+            { category: 'praktikum', title: 'Наставна демонстрација', image: 'images/gallery/medical/practice-5.jpg', date: '2023', views: 267 },
+            { category: 'praktikum', title: 'Медицински инструменти', image: 'images/gallery/medical/practice-6.jpg', date: '2023', views: 234 },
+            
+            // Aktivnosti
+            { category: 'aktivnosti', title: 'Пројектни рад', image: 'images/gallery/activities/class-1.jpg', date: '2024', views: 198 },
+            { category: 'aktivnosti', title: 'Креативна радионица', image: 'images/gallery/activities/class-2.jpg', date: '2024', views: 176 },
+            { category: 'aktivnosti', title: 'Изложба радова', image: 'images/gallery/activities/class-3.jpg', date: '2024', views: 189 },
+            { category: 'aktivnosti', title: 'Школска приредба', image: 'images/gallery/activities/class-4.jpg', date: '2023', views: 223 },
+            { category: 'aktivnosti', title: 'Додела награда', image: 'images/gallery/activities/class-5.jpg', date: '2023', views: 210 },
+            { category: 'aktivnosti', title: 'Дан школе', image: 'images/gallery/activities/class-6.jpg', date: '2023', views: 267 },
+            
+            // Sport
+            { category: 'sport', title: 'Школски турнир', image: 'images/gallery/sports/sport-1.jpg', date: '2024', views: 189 },
+            { category: 'sport', title: 'Фудбалски меч', image: 'images/gallery/sports/sport-2.jpg', date: '2024', views: 234 },
+            { category: 'sport', title: 'Одбојка', image: 'images/gallery/sports/sport-3.jpg', date: '2024', views: 198 },
+            { category: 'sport', title: 'Кошарка', image: 'images/gallery/sports/sport-4.jpg', date: '2023', views: 212 },
+            { category: 'sport', title: 'Атлетика', image: 'images/gallery/sports/sport-5.jpg', date: '2023', views: 167 },
+            { category: 'sport', title: 'Трофеји', image: 'images/gallery/sports/sport-6.jpg', date: '2023', views: 245 },
+            
+            // Dogadjaji
+            { category: 'dogadjaji', title: 'Свечана академија', image: 'images/gallery/events/event-1.jpg', date: '2024', views: 298 },
+            { category: 'dogadjaji', title: 'Матурска вечер', image: 'images/gallery/events/event-2.jpg', date: '2024', views: 356 },
+            { category: 'dogadjaji', title: 'Хуманитарна акција', image: 'images/gallery/events/event-3.jpg', date: '2024', views: 267 },
+            { category: 'dogadjaji', title: 'Културна вечер', image: 'images/gallery/events/event-4.jpg', date: '2023', views: 234 },
+            { category: 'dogadjaji', title: 'Екскурзија', image: 'images/gallery/events/event-5.jpg', date: '2023', views: 289 },
+            { category: 'dogadjaji', title: 'Отворена врата', image: 'images/gallery/events/event-6.jpg', date: '2023', views: 245 },
+            
+            // Manifestacije
+            { category: 'manifestacije', title: 'Школски сајам', image: 'images/gallery/manifestations/manifest-1.jpg', date: '2024', views: 278 },
+            { category: 'manifestacije', title: 'Панел дискусија', image: 'images/gallery/manifestations/manifest-2.jpg', date: '2024', views: 198 },
+            { category: 'manifestacije', title: 'Такмичење', image: 'images/gallery/manifestations/manifest-3.jpg', date: '2024', views: 312 },
+            { category: 'manifestacije', title: 'Прослава дана школе', image: 'images/gallery/manifestations/manifest-4.jpg', date: '2023', views: 289 },
+            { category: 'manifestacije', title: 'Гостујуће предавање', image: 'images/gallery/manifestations/manifest-5.jpg', date: '2023', views: 223 },
+            { category: 'manifestacije', title: 'Добродошлица првацима', image: 'images/gallery/manifestations/manifest-6.jpg', date: '2023', views: 267 }
+        ];
+
+        // Category labels
+        const categoryLabels = {
+            'objekti': 'Објекти',
+            'praktikum': 'Практикум',
+            'aktivnosti': 'Активности',
+            'sport': 'Спорт',
+            'dogadjaji': 'Догађаји',
+            'manifestacije': 'Манифестације'
+        };
+
+        // Show loading, then render gallery
+        function renderGallery(filter = 'all') {
+            const grid = document.getElementById('galleryGrid');
+            const loading = document.getElementById('galleryLoading');
+            
+            // Show loading
+            loading.classList.add('active');
+            grid.style.opacity = '0';
+
+            setTimeout(() => {
+                grid.innerHTML = '';
+
+                const filteredData = filter === 'all' 
+                    ? galleryData 
+                    : galleryData.filter(item => item.category === filter);
+
+                filteredData.forEach((item, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'gallery-card';
+                    card.style.animationDelay = `${index * 0.08}s`;
                     
-                    if (scrollPosition < heroBottom) {
-                        languageSwitcher.style.opacity = '1';
-                        languageSwitcher.style.visibility = 'visible';
-                    } else {
-                        languageSwitcher.style.opacity = '0';
-                        languageSwitcher.style.visibility = 'hidden';
-                    }
-                });
-            }
-            
-            // Back to Top Button
-            const backToTopBtn = document.getElementById('back-to-top');
-            if (backToTopBtn) {
-                window.addEventListener('scroll', function() {
-                    if (window.pageYOffset > ((document.documentElement.scrollHeight - window.innerHeight) / 2)) {
-                        backToTopBtn.classList.add('visible');
-                    } else {
-                        backToTopBtn.classList.remove('visible');
-                    }
-                });
-                
-                backToTopBtn.addEventListener('click', function() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
+                    card.innerHTML = `
+                        <div class="gallery-card-image">
+                            <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/667eea/ffffff?text=${encodeURIComponent(item.title)}'">
+                            <div class="gallery-card-views">
+                                <i class="fas fa-eye"></i>
+                                <span>${item.views}</span>
+                            </div>
+                            <div class="gallery-card-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span class="gallery-overlay-text">Прикажи</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-info">
+                            <div class="gallery-card-category">${categoryLabels[item.category]}</div>
+                            <h3 class="gallery-card-title">${item.title}</h3>
+                            <div class="gallery-card-date">
+                                <i class="far fa-calendar"></i>
+                                <span>${item.date}</span>
+                            </div>
+                        </div>
+                    `;
+
+                    card.addEventListener('click', () => {
+                        openLightbox(index, filteredData);
                     });
+
+                    grid.appendChild(card);
                 });
+
+                // Hide loading, show grid
+                loading.classList.remove('active');
+                grid.style.opacity = '1';
+            }, 600);
+        }
+
+        // Premium Lightbox functionality
+        let currentLightboxIndex = 0;
+        let currentLightboxData = [];
+
+        function openLightbox(index, data) {
+            currentLightboxIndex = index;
+            currentLightboxData = data;
+            updateLightbox();
+            document.getElementById('lightboxModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightbox() {
+            const item = currentLightboxData[currentLightboxIndex];
+            document.getElementById('lightboxImage').src = item.image;
+            document.getElementById('lightboxTitle').textContent = item.title;
+            document.getElementById('lightboxCategory').textContent = categoryLabels[item.category];
+            document.getElementById('lightboxDate').textContent = item.date;
+            document.getElementById('lightboxViews').textContent = item.views;
+            document.getElementById('lightboxCounter').textContent = `${currentLightboxIndex + 1} / ${currentLightboxData.length}`;
+        }
+
+        function nextImage() {
+            currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxData.length;
+            updateLightbox();
+        }
+
+        function prevImage() {
+            currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxData.length) % currentLightboxData.length;
+            updateLightbox();
+        }
+
+        // Lightbox event listeners
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.getElementById('lightboxNext').addEventListener('click', nextImage);
+        document.getElementById('lightboxPrev').addEventListener('click', prevImage);
+
+        // Close on background click
+        document.getElementById('lightboxModal').addEventListener('click', (e) => {
+            if (e.target.id === 'lightboxModal') {
+                closeLightbox();
             }
         });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('lightboxModal');
+            if (!modal.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderGallery(btn.dataset.filter);
+            });
+        });
+
+        // Animate stats counter
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = parseInt(entry.target.dataset.count);
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
+                        let current = 0;
+
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            entry.target.textContent = Math.floor(current) + '+';
+                        }, 16);
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            stats.forEach(stat => observer.observe(stat));
+        }
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderGallery();
+            animateStats();
+        });
+
+        // Update year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
-    <!-- Савет: проверите у DevTools -> Network -> Headers да server враћа Content-Type: text/html; charset=UTF-8 -->
 </body>
 </html>

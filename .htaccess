@@ -1,0 +1,29 @@
+# Enable PHP Sessions
+php_flag session.auto_start On
+
+# Set default charset to UTF-8
+AddDefaultCharset UTF-8
+
+# Enable error reporting (remove in production)
+# php_flag display_errors Off
+# php_flag display_startup_errors Off
+
+# Set max upload size
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+
+# Enable CORS for API requests
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
+# Rewrite URLs (optional)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirect www to non-www (optional)
+    # RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    # RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+</IfModule>

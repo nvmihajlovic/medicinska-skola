@@ -1,86 +1,108 @@
-// JavaScript за лајкове и прегледе
+// Систем за евидентирање прегледа и лајкова - ФИНАЛНА ВЕРЗИЈА
 class EngagementTracker {
     constructor(articleSlug) {
         this.articleSlug = articleSlug;
+        this.apiUrl = 'api/engagement.php';
         this.init();
     }
     
     init() {
-        // Учитај тренутне бројеве
-        this.loadStats();
-        
-        // Региструј преглед
+        // Региструј преглед и учитај тренутне бројеве
         this.registerView();
         
-        // Додај лајк дугме
+        // Постави лајк дугме
         this.setupLikeButton();
-    }
-    
-    async loadStats() {
-        try {
-            const response = await fetch(`api/engagement.php?action=get&article=${this.articleSlug}`);
-            const data = await response.json();
-            
-            this.updateUI(data);
-        } catch (error) {
-            console.log('Грешка при учитавању статистика:', error);
-        }
     }
     
     async registerView() {
         try {
-            const response = await fetch(`api/engagement.php?action=view&article=${this.articleSlug}`);
+            const response = await fetch(`${this.apiUrl}?action=view&article=${this.articleSlug}`);
             const data = await response.json();
+            
+            if (data.error) {
+                console.error('Грешка:', data.error);
+                return;
+            }
             
             this.updateUI(data);
         } catch (error) {
-            console.log('Грешка при регистровању прегледа:', error);
+            console.error('Грешка при регистровању прегледа:', error);
         }
     }
     
     async toggleLike() {
+        const likeBtn = document.querySelector('.like-btn');
+        if (!likeBtn) return;
+        
+        // Привремено онемогући дугме
+        likeBtn.disabled = true;
+        
         try {
-            const response = await fetch(`api/engagement.php?action=like&article=${this.articleSlug}`);
+            const response = await fetch(`${this.apiUrl}?action=like&article=${this.articleSlug}`);
             const data = await response.json();
+            
+            if (data.error) {
+                console.error('Грешка:', data.error);
+                likeBtn.disabled = false;
+                return;
+            }
             
             this.updateUI(data);
             
-            // Анимација лајк дугмета
-            const likeBtn = document.querySelector('.like-btn');
+            // Анимација
             likeBtn.classList.add('liked-animation');
-            setTimeout(() => likeBtn.classList.remove('liked-animation'), 300);
+            setTimeout(() => {
+                likeBtn.classList.remove('liked-animation');
+                likeBtn.disabled = false;
+            }, 300);
             
         } catch (error) {
-            console.log('Грешка при лајковању:', error);
+            console.error('Грешка при лајковању:', error);
+            likeBtn.disabled = false;
         }
     }
     
     setupLikeButton() {
         const likeBtn = document.querySelector('.like-btn');
         if (likeBtn) {
-            likeBtn.addEventListener('click', () => this.toggleLike());
+            likeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.toggleLike();
+            });
         }
     }
     
     updateUI(data) {
-        // Ажурирај бројеве
-        const viewsElement = document.querySelector('.views-count');
-        const likesElement = document.querySelector('.likes-count');
-        const likeBtn = document.querySelector('.like-btn');
+        // Ажурирај број прегледа - СВИХ елемената (meta + engagement panel)
+        const viewsElements = document.querySelectorAll('.views-count, .views-count-large');
+        viewsElements.forEach(el => {
+            el.textContent = this.formatNumber(data.views || 0);
+        });
         
-        if (viewsElement) viewsElement.textContent = data.views || 0;
-        if (likesElement) likesElement.textContent = data.likes || 0;
+        // Ажурирај број лајкова - СВИХ елемената (meta + engagement panel)
+        const likesElements = document.querySelectorAll('.likes-count, .likes-count-large');
+        likesElements.forEach(el => {
+            el.textContent = this.formatNumber(data.likes || 0);
+        });
         
         // Ажурирај лајк дугме
+        const likeBtn = document.querySelector('.like-btn');
         if (likeBtn && data.hasOwnProperty('liked')) {
             if (data.liked) {
                 likeBtn.classList.add('liked');
-                likeBtn.innerHTML = '<i class="fas fa-heart"></i>';
+                likeBtn.querySelector('i').className = 'fas fa-heart';
             } else {
                 likeBtn.classList.remove('liked');
-                likeBtn.innerHTML = '<i class="far fa-heart"></i>';
+                likeBtn.querySelector('i').className = 'far fa-heart';
             }
         }
+    }
+    
+    formatNumber(num) {
+        if (num >= 1000) {
+            return (num / 1000).toFixed(1) + 'k';
+        }
+        return num.toString();
     }
 }
 
