@@ -1483,7 +1483,7 @@ html {
 }
 
 .page-main {
-    padding-top: 100px;
+    padding-top: 0;
 }
 
 /* Profiles Section */
@@ -4890,8 +4890,6 @@ html {
     background: transparent;
     color: #4a90e2;
     border: 2px solid #4a90e2;
-    font-size: 12px;
-    padding: 8px 16px;
 }
 
 .cookie-btn-settings:hover {
@@ -5070,6 +5068,8 @@ input:checked + .cookie-slider:before {
     
     .cookie-btn {
         width: 100%;
+        padding: 12px 20px;
+        font-size: 15px;
     }
 }
 

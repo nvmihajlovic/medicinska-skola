@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pages.css">
+    <style>
+        .policy-content {
+            padding: 60px 0;
+            background: #f8f9fa;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Typography унификација */
+        .policy-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+        
+        .policy-section h2 {
+            font-size: 28px;
+        }
+        
+        .policy-section h3 {
+            font-size: 20px;
+        }
+        
+        .policy-section h4 {
+            font-size: 18px;
+        }
+        
+        .policy-list li {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .cookie-type p {
+            font-size: 15px;
+            color: #4a5568;
+        }
+        
+        .contact-info p {
+            font-size: 16px;
+            color: #4a5568;
+        }
+        
+        @media (max-width: 768px) {
+            .policy-section h2 {
+                font-size: 22px;
+            }
+            
+            .policy-section h3 {
+                font-size: 18px;
+            }
+            
+            .policy-section h4 {
+                font-size: 16px;
+            }
+            
+            .policy-section p,
+            .policy-list li {
+                font-size: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -45,155 +107,154 @@
         </div>
     </nav>
 
-
-<!-- Садржај -->
-  <main class="page-main">
     <!-- Page Header -->
     <section class="page-header">
         <div class="page-header-overlay"></div>
-        <div class="container">
-            <div class="page-header-content">
-                <nav class="breadcrumb">
-                    <a href="index.html"><i class="fas fa-home"></i> Почетна</a>
-                    <span class="separator"><i class="fas fa-chevron-right"></i></span>
-                    <span class="current-page">Политика приватности</span>
-                </nav>
-                <h1 class="page-title">Политика приватности</h1>
-                <p class="page-subtitle">Како прикупљамо, користимо и чувамо податке</p>
-            </div>
+        <div class="page-header-content">
+            <nav class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Почетна</a>
+                <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current-page">Политика приватности</span>
+            </nav>
+            <h1 class="page-title">Политика<br>приватности</h1>
+            <p class="page-subtitle">Како прикупљамо, користимо и чувамо податке</p>
         </div>
     </section>
 
-    <div class="container">
+    <!-- Content -->
+    <main class="policy-content">
+        <div class="container">
+            <div class="page-content">
+                <!-- Метаподаци -->
+                <div class="policy-meta">
+                    <p><strong>Последње ажурирање:</strong> 8. новембар 2025.</p>
+                </div>
 
-      <div class="page-content">
-        <!-- Метаподаци -->
-        <div class="policy-meta">
-          <p><strong>Последње ажурирање:</strong> 8. новембар 2025.</p>
+                <!-- Увод -->
+                <section class="policy-section">
+                    <h2>Увод</h2>
+                    <p>
+                        Медицинска школа води рачуна о заштити ваших података о личности и поштује важеће прописе
+                        у области приватности. Овом Политиком објашњавамо које податке прикупљамо, у које сврхе,
+                        на основу ког правног основа, колико их чувамо и која су ваша права.
+                    </p>
+                </section>
+
+                <!-- Прикупљање података -->
+                <section class="policy-section">
+                    <h2>Прикупљање података</h2>
+                    <h3>Врсте података које можемо обрађивати:</h3>
+                    <ul class="policy-list">
+                        <li><strong>Идентификациони подаци:</strong> име и презиме, број телефона, мејл адреса (када их сами доставите)</li>
+                        <li><strong>Технички подаци:</strong> IP адреса, тип прегледача, подаци о уређају, време приступа</li>
+                        <li><strong>Подаци о коришћењу:</strong> странице које посећујете, кликови, навигација</li>
+                        <li><strong>Колачићи:</strong> мале датотеке које помажу у функционисању сајта и анализи посета</li>
+                    </ul>
+                </section>
+
+                <!-- Колачићи -->
+                <section class="policy-section">
+                    <h2>Колачићи (Cookies)</h2>
+                    <p>На сајту користимо следеће врсте колачића:</p>
+                    <div class="cookie-types">
+                        <div class="cookie-type">
+                            <h4><i class="fas fa-cog"></i> Неопходни колачићи</h4>
+                            <p>Потребни за основне функције сајта и правилан рад навигације.</p>
+                        </div>
+                        <div class="cookie-type">
+                            <h4><i class="fas fa-chart-line"></i> Аналитички колачићи</h4>
+                            <p>Помажу да разумемо како се сајт користи и да унапредимо корисничко искуство.</p>
+                        </div>
+                        <div class="cookie-type">
+                            <h4><i class="fas fa-bullhorn"></i> Маркетиншки колачићи</h4>
+                            <p>Користе се за приказ релевантног садржаја и мериње ефеката кампања (ако су омогућени).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Сврхе обраде -->
+                <section class="policy-section">
+                    <h2>Сврха обраде података</h2>
+                    <p>Подаци се обрађују ради:</p>
+                    <ul class="policy-list">
+                        <li>омогућавања функционисања сајта и безбедности система</li>
+                        <li>одговора на ваше упите и комуникације</li>
+                        <li>унапређења садржаја и услуга</li>
+                        <li>испуњавања законских обавеза</li>
+                        <li>вођења статистике и аналитике</li>
+                    </ul>
+                </section>
+
+                <!-- Заштита података -->
+                <section class="policy-section">
+                    <h2>Заштита података</h2>
+                    <p>Предузимамо техничке и организационе мере заштите:</p>
+                    <ul class="policy-list">
+                        <li>SSL/TLS шифровање за саобраћај ка сајту</li>
+                        <li>контролисан приступ и логовање активности</li>
+                        <li>редовно ажурирање система и сигурносних закрпа</li>
+                        <li>обука запослених о приватности и безбедности</li>
+                    </ul>
+                </section>
+
+                <!-- Ваша права -->
+                <section class="policy-section">
+                    <h2>Ваша права</h2>
+                    <p>Према важећим прописима (укљ. GDPR где је применљиво), имате право на:</p>
+                    <ul class="policy-list">
+                        <li><strong>Приступ:</strong> да затражите копију својих података</li>
+                        <li><strong>Исправку:</strong> да исправите нетачне/непотпуне податке</li>
+                        <li><strong>Брисање:</strong> да захтевате брисање у законом предвиђеним случајевима</li>
+                        <li><strong>Ограничење:</strong> да ограничите обраду у одређеним ситуацијама</li>
+                        <li><strong>Приговор:</strong> да уложите приговор на обраду засновану на легитимном интересу</li>
+                    </ul>
+                </section>
+
+                <!-- Трећа лица -->
+                <section class="policy-section">
+                    <h2>Трећа лица</h2>
+                    <p>Податке можемо делити само када је неопходно:</p>
+                    <ul class="policy-list">
+                        <li>са IT/хостинг добављачима ради одржавања система</li>
+                        <li>са органима власти ако је то законом обавезно</li>
+                        <li>са аналитичким алатима (ако су активирани) уз поштовање приватности</li>
+                        <li>са партнерима уз одговарајуће уговоре о обради података</li>
+                    </ul>
+                </section>
+
+                <!-- Рок чувања -->
+                <section class="policy-section">
+                    <h2>Рок чувања</h2>
+                    <p>
+                        Податке чувамо онолико дуго колико је неопходно за испуњење сврхе ради које су прикупљени,
+                        или колико захтевају прописи. По истеку рока, подаци се бришу или анонимизују.
+                    </p>
+                </section>
+
+                <!-- Контакт -->
+                <section class="policy-section">
+                    <h2>Контакт</h2>
+                    <p>За сва питања у вези са обрадом података, обратите нам се:</p>
+                    <div class="contact-info">
+                        <p><strong>Медицинска школа</strong></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Пастерова 2, 26000 Панчево</p>
+                        <p><i class="fas fa-phone"></i> 013/351-349</p>
+                        <p><i class="fas fa-envelope"></i> info@medicinskapancevo.edu.rs</p>
+                    </div>
+                </section>
+
+                <!-- Ажурирања -->
+                <section class="policy-section">
+                    <h2>Ажурирања политике</h2>
+                    <p>
+                        Политику можемо повремено изменити. Све измене биће објављене на овој страници уз навођење датума
+                        последње измене. Молимо вас да повремено проверите садржај.
+                    </p>
+                </section>
+            </div>
         </div>
+    </main>
 
-        <!-- Увод -->
-        <section class="policy-section">
-          <h2>Увод</h2>
-          <p>
-            Медицинска школа води рачуна о заштити ваших података о личности и поштује важеће прописе
-            у области приватности. Овом Политиком објашњавамо које податке прикупљамо, у које сврхе,
-            на основу ког правног основа, колико их чувамо и која су ваша права.
-          </p>
-        </section>
-
-        <!-- Прикупљање података -->
-        <section class="policy-section">
-          <h2>Прикупљање података</h2>
-          <h3>Врсте података које можемо обрађивати:</h3>
-          <ul class="policy-list">
-            <li><strong>Идентификациони подаци:</strong> име и презиме, број телефона, мејл адреса (када их сами доставите)</li>
-            <li><strong>Технички подаци:</strong> IP адреса, тип прегледача, подаци о уређају, време приступа</li>
-            <li><strong>Подаци о коришћењу:</strong> странице које посећујете, кликови, навигација</li>
-            <li><strong>Колачићи:</strong> мале датотеке које помажу у функционисању сајта и анализи посета</li>
-          </ul>
-        </section>
-
-        <!-- Колачићи -->
-        <section class="policy-section">
-          <h2>Колачићи (Cookies)</h2>
-          <p>На сајту користимо следеће врсте колачића:</p>
-          <div class="cookie-types">
-            <div class="cookie-type">
-              <h4><i class="fas fa-cog"></i> Неопходни колачићи</h4>
-              <p>Потребни за основне функције сајта и правилан рад навигације.</p>
-            </div>
-            <div class="cookie-type">
-              <h4><i class="fas fa-chart-line"></i> Аналитички колачићи</h4>
-              <p>Помажу да разумемо како се сајт користи и да унапредимо корисничко искуство.</p>
-            </div>
-            <div class="cookie-type">
-              <h4><i class="fas fa-bullhorn"></i> Маркетиншки колачићи</h4>
-              <p>Користе се за приказ релевантног садржаја и мериње ефеката кампања (ако су омогућени).</p>
-            </div>
-        </section>
-
-        <!-- Сврхе обраде -->
-        <section class="policy-section">
-          <h2>Сврха обраде података</h2>
-          <p>Подаци се обрађују ради:</p>
-          <ul class="policy-list">
-            <li>омогућавања функционисања сајта и безбедности система</li>
-            <li>одговора на ваше упите и комуникације</li>
-            <li>унапређења садржаја и услуга</li>
-            <li>испуњавања законских обавеза</li>
-            <li>вођења статистике и аналитике</li>
-          </ul>
-        </section>
-
-        <!-- Заштита података -->
-        <section class="policy-section">
-          <h2>Заштита података</h2>
-          <p>Предузимамо техничке и организационе мере заштите:</p>
-          <ul class="policy-list">
-            <li>SSL/TLS шифровање за саобраћај ка сајту</li>
-            <li>контролисан приступ и логовање активности</li>
-            <li>редовно ажурирање система и сигурносних закрпа</li>
-            <li>обука запослених о приватности и безбедности</li>
-          </ul>
-        </section>
-
-        <!-- Ваша права -->
-        <section class="policy-section">
-          <h2>Ваша права</h2>
-          <p>Према важећим прописима (укљ. GDPR где је применљиво), имате право на:</p>
-          <ul class="policy-list">
-            <li><strong>Приступ:</strong> да затражите копију својих података</li>
-            <li><strong>Исправку:</strong> да исправите нетачне/непотпуне податке</li>
-            <li><strong>Брисање:</strong> да захтевате брисање у законом предвиђеним случајевима</li>
-            <li><strong>Ограничење:</strong> да ограничите обраду у одређеним ситуацијама</li>
-            <li><strong>Приговор:</strong> да уложите приговор на обраду засновану на легитимном интересу</li>
-          </ul>
-        </section>
-
-        <!-- Трећа лица -->
-        <section class="policy-section">
-          <h2>Трећа лица</h2>
-          <p>Податке можемо делити само када је неопходно:</p>
-          <ul class="policy-list">
-            <li>са IT/хостинг добављачима ради одржавања система</li>
-            <li>са органима власти ако је то законом обавезно</li>
-            <li>са аналитичким алатима (ако су активирани) уз поштовање приватности</li>
-            <li>са партнерима уз одговарајуће уговоре о обради података</li>
-          </ul>
-        </section>
-
-        <!-- Рок чувања -->
-        <section class="policy-section">
-          <h2>Рок чувања</h2>
-          <p>
-            Податке чувамо онолико дуго колико је неопходно за испуњење сврхе ради које су прикупљени,
-            или колико захтевају прописи. По истеку рока, подаци се бришу или анонимизују.
-          </p>
-        </section>
-
-        <!-- Контакт -->
-        <section class="policy-section">
-          <h2>Контакт</h2>
-          <p>За сва питања у вези са обрадом података, обратите нам се:</p>
-          <div class="contact-info">
-            <p><strong>Медицинска школа</strong></p>
-            <p><i class="fas fa-map-marker-alt"></i> Пастерова 2, 26000 Панчево</p>
-            <p><i class="fas fa-phone"></i> 013/351-349</p>
-            <p><i class="fas fa-envelope"></i> info@medicinskapancevo.edu.rs</p>
-          </div>
-        </section>
-
-        <!-- Ажурирања -->
-        <section class="policy-section">
-          <h2>Ажурирања политике</h2>
-          <p>
-            Политику можемо повремено изменити. Све измене биће објављене на овој страници уз навођење датума
-            последње измене. Молимо вас да повремено проверите садржај.
-          </p>
-        </section>
-      </div>
-  </main>
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="footer-main">
@@ -207,7 +268,7 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4 data-i18n="footer.quick_links">Брзе везе</h4>
+                    <h4>Брзе везе</h4>
                     <ul class="footer-links">
                         <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
@@ -220,7 +281,7 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4 data-i18n="footer.documents">Документа</h4>
+                    <h4>Документа</h4>
                     <ul class="footer-links">
                         <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                         <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
@@ -232,8 +293,8 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4 data-i18n="footer.stay_connected">Останимо у контакту</h4>
-                    <p class="footer-small-text" data-i18n="footer.social_text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+                    <h4>Останимо у контакту</h4>
+                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
                     <div class="footer-socials social-links">
                         <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                         <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -242,10 +303,10 @@
                     </div>
                     <div class="footer-newsletter">
                         <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
-                            <span data-i18n="footer.send_question">Пошаљи нам питање</span>
+                            <span>Пошаљи нам питање</span>
                             <i class="fas fa-paper-plane" aria-hidden="true"></i>
                         </a>
-                        <span class="footer-form-hint" data-i18n="footer.response_time">Одговарамо у року од 24 часа.</span>
+                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
                     </div>
                 </div>
             </div>
@@ -255,49 +316,48 @@
 
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> <span data-i18n="footer.copyright">Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</span></p>
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
                 <div class="developer-credit">
                     <span>Развој и одржавање</span>
                     <img src="images/pansoft-logo.png" alt="Pansoft">
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="politika-privatnosti.html" data-i18n="footer.privacy_policy">Политика приватности</a>
+                    <a href="politika-privatnosti.html">Политика приватности</a>
                     <span>•</span>
-                    <a href="uslovi-koristenja.html" data-i18n="footer.terms_of_use">Услови коришћења</a>
+                    <a href="uslovi-koristenja.html">Услови коришћења</a>
                     <span>•</span>
-                    <a href="sitemap.html" data-i18n="footer.sitemap">Мапа сајта</a>
+                    <a href="sitemap.html">Мапа сајта</a>
                 </div>
             </div>
         </div>
-
     </footer>
 
-  <!-- Back to Top -->
-  <button class="back-to-top" id="back-to-top" title="Назад на врх">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" title="Назад на врх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-  <!-- Скрипт -->
-  <script src="script.js" defer></script>
-  <script>
-    // Динамична година у футеру
-    (function(){
-      var y = document.getElementById('current-year');
-      if (y) y.textContent = new Date().getFullYear();
-    })();
+    <!-- Скрипт -->
+    <script src="script.js" defer></script>
+    <script>
+        // Динамична година у футеру
+        (function(){
+            var y = document.getElementById('current-year');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
 
-    // Аутоматско означавање активне странице
-    document.addEventListener('DOMContentLoaded', function() {
-      const currentPath = window.location.pathname.split('/').pop();
-      const navLinks = document.querySelectorAll('.nav-menu > li:not(.dropdown) > .nav-link:not(.contact-btn)');
-      
-      navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        if (linkPath === currentPath) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
+        // Аутоматско означавање активне странице
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-menu > li:not(.dropdown) > .nav-link:not(.contact-btn)');
+            
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (linkPath === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
