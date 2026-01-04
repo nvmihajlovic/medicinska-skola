@@ -10,6 +10,32 @@ class I18n {
         this.fallbackLang = 'sr';
         this.isReady = false;
         this.readyPromise = null;
+        
+        // School founding year for dynamic calculation
+        this.schoolFoundingYear = 1959;
+    }
+    
+    /**
+     * Calculate years of tradition dynamically
+     */
+    getYearsOfTradition() {
+        const currentYear = new Date().getFullYear();
+        return currentYear - this.schoolFoundingYear;
+    }
+    
+    /**
+     * Replace dynamic placeholders in translation strings
+     */
+    replacePlaceholders(text) {
+        if (typeof text !== 'string') return text;
+        
+        const yearsOfTradition = this.getYearsOfTradition();
+        const currentYear = new Date().getFullYear();
+        
+        // Replace {years}, {foundingYear}, and {year} placeholders
+        return text.replace(/\{years\}/g, yearsOfTradition)
+                   .replace(/\{foundingYear\}/g, this.schoolFoundingYear)
+                   .replace(/\{year\}/g, currentYear);
     }
 
     /**
@@ -17,13 +43,19 @@ class I18n {
      */
     async init() {
         console.log('[i18n] Initializing i18n system...');
+        console.log(`[i18n] Selected language: ${this.currentLang}`);
+        
+        // Load translations for current language
         this.readyPromise = this.loadTranslations(this.currentLang);
         await this.readyPromise;
         this.isReady = true;
+        
+        // Apply translations
         this.updatePageLanguage();
         this.translatePage();
         this.initLanguageSwitcher();
-        console.log('[i18n] i18n system ready!');
+        
+        console.log(`[i18n] i18n system ready! Current language: ${this.currentLang}`);
     }
 
     /**
@@ -37,40 +69,38 @@ class I18n {
     }
 
     /**
-     * Load translation JSON file
+     * Load translation data (from preloaded script tags)
      */
     async loadTranslations(lang) {
         try {
             console.log(`[i18n] Loading translations for: ${lang}`);
             
-            // Try to fetch JSON file
-            const response = await fetch(`translations-${lang}.json?v=${Date.now()}`);
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            
-            const data = await response.json();
-            
-            // Verify data is valid
-            if (!data || typeof data !== 'object') {
-                throw new Error('Invalid JSON data');
+            // Check if translations are preloaded via script tags
+            if (window.translationData && window.translationData[lang]) {
+                const data = window.translationData[lang];
+                
+                // Verify data is valid
+                if (!data || typeof data !== 'object') {
+                    throw new Error('Invalid translation data');
+                }
+                
+                this.translations = data;
+                console.log(`[i18n] Loaded ${Object.keys(this.translations).length} translation categories`);
+                return true;
             }
             
-            this.translations = data;
-            console.log(`[i18n] Loaded ${Object.keys(this.translations).length} translation categories`);
-            return true;
+            throw new Error(`Translation data not found for: ${lang}`);
             
         } catch (error) {
             console.error(`[i18n] Error loading translations for ${lang}:`, error);
             
             // Try fallback language if not already trying it
-            if (lang !== this.fallbackLang) {
+            if (lang !== this.fallbackLang && window.translationData && window.translationData[this.fallbackLang]) {
                 console.log(`[i18n] Trying fallback language: ${this.fallbackLang}`);
                 try {
-                    const fallbackResponse = await fetch(`translations-${this.fallbackLang}.json?v=${Date.now()}`);
-                    if (fallbackResponse.ok) {
-                        this.translations = await fallbackResponse.json();
-                        console.log(`[i18n] Loaded fallback translations`);
-                        return true;
-                    }
+                    this.translations = window.translationData[this.fallbackLang];
+                    console.log(`[i18n] Loaded fallback translations`);
+                    return true;
                 } catch (fallbackError) {
                     console.error(`[i18n] Fallback also failed:`, fallbackError);
                 }
@@ -99,28 +129,66 @@ class I18n {
             }
         }
         
-        return value;
+        // Replace dynamic placeholders before returning
+        return this.replacePlaceholders(value);
     }
 
     /**
      * Translate all elements with data-i18n attribute
      */
     translatePage() {
-        console.log('[i18n] Translating page elements...');
+        console.log(`[i18n] === Translating page to: ${this.currentLang} ===`);
         let translatedCount = 0;
         
-        // Translate text content
+        // Translate ALL languages from JSON, including Serbian
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             const translation = this.t(key);
             
             if (translation && translation !== key) {
-                element.textContent = translation;
+                console.log(`[i18n] Translating "${key}" to: ${translation.substring(0, 50)}...`);
+                
+                // Check if element has child elements (like icons)
+                const hasChildElements = element.querySelector('i, img, svg, span.icon') !== null;
+                
+                if (hasChildElements) {
+                    // Preserve child elements, only replace text nodes
+                    Array.from(element.childNodes).forEach(node => {
+                        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+                            node.textContent = ' ' + translation + ' ';
+                        }
+                    });
+                } else {
+                    // Safe to replace entire content
+                    element.textContent = translation;
+                }
                 translatedCount++;
             }
         });
 
-        console.log(`[i18n] Translated ${translatedCount} elements`);
+        console.log(`[i18n] ✅ Translated ${translatedCount} elements to ${this.currentLang}`);
+
+        // Show/hide news section based on language (only show for Serbian)
+        const newsSection = document.getElementById('news-section');
+        if (newsSection) {
+            if (this.currentLang === 'sr') {
+                newsSection.style.display = 'block';
+                console.log('[i18n] News section visible (Serbian)');
+            } else {
+                newsSection.style.display = 'none';
+                console.log('[i18n] News section hidden (non-Serbian)');
+            }
+        }
+
+        // Handle elements with data-i18n-hide attribute
+        document.querySelectorAll('[data-i18n-hide]').forEach(element => {
+            const hideLangs = element.getAttribute('data-i18n-hide').split(',').map(lang => lang.trim());
+            if (hideLangs.includes(this.currentLang)) {
+                element.style.display = 'none';
+            } else {
+                element.style.display = '';
+            }
+        });
 
         // Translate attributes (placeholder, aria-label, title, alt)
         document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
@@ -153,6 +221,61 @@ class I18n {
         // Update meta tags if they exist
         const metaTags = document.querySelectorAll('meta[name="language"]');
         metaTags.forEach(tag => tag.content = this.currentLang);
+        
+        // Update page title
+        this.updatePageTitle();
+    }
+
+    /**
+     * Update page title based on current language
+     */
+    updatePageTitle() {
+        const titleElement = document.querySelector('title');
+        if (!titleElement) return;
+
+        // Store original title on first run
+        if (!titleElement.hasAttribute('data-i18n-original')) {
+            titleElement.setAttribute('data-i18n-original', titleElement.textContent);
+        }
+
+        // If Serbian, restore original title
+        if (this.currentLang === 'sr') {
+            const originalTitle = titleElement.getAttribute('data-i18n-original');
+            if (originalTitle) {
+                titleElement.textContent = originalTitle;
+                console.log('[i18n] Restored original title:', originalTitle);
+            }
+            return;
+        }
+
+        // Try to find translation key from title structure
+        const originalTitle = titleElement.getAttribute('data-i18n-original') || titleElement.textContent;
+        
+        // Map of page patterns to translation keys
+        const titleMappings = [
+            { pattern: /Образовни профили/i, section: 'education' },
+            { pattern: /Контакт/i, section: 'contact' },
+            { pattern: /О (нама|школи)/i, section: 'about' },
+            { pattern: /Галерија/i, section: 'gallery' },
+            { pattern: /Запослени/i, section: 'employees' },
+            { pattern: /Документација/i, section: 'documentation' }
+        ];
+
+        // Find matching section
+        let translatedTitle = originalTitle;
+        for (const mapping of titleMappings) {
+            if (mapping.pattern.test(originalTitle)) {
+                const sectionKey = `${mapping.section}.page_title`;
+                const pageTitle = this.t(sectionKey);
+                const schoolName = this.t('site_name') || 'Medical School "Stevica Jovanović"';
+                
+                translatedTitle = `${pageTitle} – ${schoolName}`;
+                console.log(`[i18n] Translated title: ${translatedTitle}`);
+                break;
+            }
+        }
+
+        titleElement.textContent = translatedTitle;
     }
 
     /**
