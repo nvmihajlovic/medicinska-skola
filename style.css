@@ -483,7 +483,9 @@ p, li, span {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 6px;
+    gap: 2rem;
+    justify-content: center;
+    flex: 1;
 }
 
 .nav-menu > li {

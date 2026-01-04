@@ -1440,3 +1440,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Console log for development
 console.log('Medicinska Škola website loaded successfully with enhanced UI/UX animations!');
+
+// ===========================
+// SOCIAL SHARE FUNCTIONALITY
+// ===========================
+document.addEventListener('DOMContentLoaded', function() {
+    // Share buttons functionality
+    const shareButtons = document.querySelectorAll('.share-btn');
+    
+    shareButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const platform = this.classList.contains('facebook') ? 'facebook' :
+                           this.classList.contains('twitter') ? 'twitter' :
+                           this.classList.contains('linkedin') ? 'linkedin' :
+                           this.classList.contains('whatsapp') ? 'whatsapp' :
+                           this.classList.contains('telegram') ? 'telegram' :
+                           this.classList.contains('viber') ? 'viber' :
+                           this.classList.contains('copy') ? 'copy' : null;
+            
+            if (platform) {
+                shareContent(platform);
+            }
+        });
+    });
+});
+
+function shareContent(platform) {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    
+    const shareUrls = {
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+        twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+        whatsapp: `https://wa.me/?text=${title}%20${url}`,
+        telegram: `https://t.me/share/url?url=${url}&text=${title}`,
+        viber: `viber://forward?text=${title}%20${url}`
+    };
+    
+    if (platform === 'copy') {
+        // Copy link to clipboard
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const btn = document.querySelector('.share-btn.copy');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Копирано!';
+            btn.style.background = '#27ae60';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+            alert('Не могу да копирам линк');
+        });
+    } else if (shareUrls[platform]) {
+        window.open(shareUrls[platform], '_blank', 'width=600,height=400');
+    }
+}

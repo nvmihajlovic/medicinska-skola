@@ -1,0 +1,23 @@
+<?php
+// .htaccess конфигурација за PHP сајт
+
+// Забрана приступа admin/data фолдеру
+<Files "*.json">
+    Order allow,deny
+    Deny from all
+</Files>
+
+// Основна безбедност
+Options -Indexes
+ServerSignature Off
+
+// PHP подешавања
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+// UTF-8 енкодинг
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .json .rss .atom
+?>

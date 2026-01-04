@@ -20,22 +20,22 @@
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li class="dropdown">
-                    <a href="o-nama.html" class="nav-link">О школи <i class="fas fa-chevron-down"></i></a>
+                    <a href="o-nama.html" class="nav-link"><span data-i18n="nav.about">О школи</span> <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="o-nama.html"><i class="fas fa-school"></i> О нама</a></li>
-                        <li><a href="zaposleni.html"><i class="fas fa-users"></i> Запослени</a></li>
-                        <li><a href="dokumentacija.html"><i class="fas fa-file-alt"></i> Документација</a></li>
-                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends"></i> Стручни тимови</a></li>
-                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line"></i> Јавне набавке и фин. извештаји</a></li>
-                        <li><a href="sekcije.html"><i class="fas fa-star"></i> Секције</a></li>
+                        <li><a href="o-nama.html"><i class="fas fa-school"></i> <span data-i18n="nav.about_us">О нама</span></a></li>
+                        <li><a href="zaposleni.html"><i class="fas fa-users"></i> <span data-i18n="nav.employees">Запослени</span></a></li>
+                        <li><a href="dokumentacija.html"><i class="fas fa-file-alt"></i> <span data-i18n="nav.documentation">Документација</span></a></li>
+                        <li><a href="strucni-timovi.html"><i class="fas fa-user-friends"></i> <span data-i18n="nav.professional_teams">Стручни тимови</span></a></li>
+                        <li><a href="javne-nabavke.html"><i class="fas fa-chart-line"></i> <span data-i18n="nav.public_procurement">Јавне набавке и фин. извештаји</span></a></li>
+                        <li><a href="sekcije.html"><i class="fas fa-star"></i> <span data-i18n="nav.sections">Секције</span></a></li>
                     </ul>
                 </li>
-                <li><a href="obrazovni-profili.html" class="nav-link">Образовни профили</a></li>
-                <li><a href="maturska-pitanja.html" class="nav-link">Матурска питања</a></li>
-                <li><a href="ucenici-i-roditelji.html" class="nav-link">Ученици и родитељи</a></li>
-                <li><a href="galerija.html" class="nav-link">Галерија</a></li>
-                <li><a href="erasmus-projekti.html" class="nav-link">Еразмус+ пројекти</a></li>
-                <li><a href="kontakt.html" class="nav-link contact-btn">Контакт</a></li>
+                <li><a href="obrazovni-profili.html" class="nav-link"><span data-i18n="nav.educational_profiles">Образовни профили</span></a></li>
+                <li data-i18n-hide="en,de"><a href="maturska-pitanja.html" class="nav-link"><span data-i18n="nav.graduation_questions">Матурска питања</span></a></li>
+                <li data-i18n-hide="en,de"><a href="ucenici-i-roditelji.html" class="nav-link"><span data-i18n="nav.students_parents">Ученици и родитељи</span></a></li>
+                <li><a href="galerija.html" class="nav-link"><span data-i18n="nav.gallery">Галерија</span></a></li>
+                <li><a href="erasmus-projekti.html" class="nav-link"><span data-i18n="nav.erasmus">Еразмус+ пројекти</span></a></li>
+                <li><a href="kontakt.html" class="nav-link contact-btn"><span data-i18n="nav.contact">Контакт</span></a></li>
             </ul>
 
                         <div class="hamburger" id="hamburger" aria-label="Мени">
@@ -52,12 +52,12 @@
         <div class="page-header-overlay"></div>
         <div class="page-header-content">
             <div class="breadcrumb" aria-label="Путања">
-                <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Почетна</a>
+                <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> <span data-i18n="nav.home">Почетна</span></a>
                 <span class="breadcrumb-separator" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                <span class="current-page" aria-current="page">Образовни профили</span>
+                <span class="current-page" aria-current="page" data-i18n="education.breadcrumb">Образовни профили</span>
             </div>
-            <h1 class="page-title">Образовни профили</h1>
-            <p class="page-subtitle">Кратак преглед струка и предмета по разредима</p>
+            <h1 class="page-title" data-i18n="education.page_title">Образовни профили</h1>
+            <p class="page-subtitle" data-i18n="education.page_subtitle">Кратак преглед струка и предмета по разредима</p>
         </div>
     </section>
     <!-- Садржај -->
@@ -67,8 +67,8 @@
             <section class="education-profile" id="medicinska-sestra-tehnicar">
                 <div class="profile-header">
                     <div class="profile-content">
-                        <h2 class="profile-title">Медицинска сестра – техничар</h2>
-                        <p class="profile-description">
+                        <h2 class="profile-title" data-i18n="education.nurse_title">Медицинска сестра – техничар</h2>
+                        <p class="profile-description" data-i18n="education.nurse_desc">
                             Образовни програм пружа темељно стручно и практично знање за рад у болницама, амбулантама и здравственим установама, 
                             са посебним фокусом на квалитетну негу пацијената, прецизно давање терапије и изградњу људског и професионалног односа 
                             у свакодневном контакту са пацијентима. Током школовања, посебан акценат је на развоју комуникационих вештина, емпатије, 
@@ -78,87 +78,87 @@
                         <!-- Табови: предмети по разредима -->
                         <div class="subjects-tabs">
                             <div class="tabs-header">
-                                <button class="tab-btn active" data-tab="year1-tech">I разред</button>
-                                <button class="tab-btn" data-tab="year2-tech">II разред</button>
-                                <button class="tab-btn" data-tab="year3-tech">III разред</button>
-                                <button class="tab-btn" data-tab="year4-tech">IV разред</button>
+                                <button class="tab-btn active" data-tab="year1-tech"><span data-i18n="education.year1">I разред</span></button>
+                                <button class="tab-btn" data-tab="year2-tech"><span data-i18n="education.year2">II разред</span></button>
+                                <button class="tab-btn" data-tab="year3-tech"><span data-i18n="education.year3">III разред</span></button>
+                                <button class="tab-btn" data-tab="year4-tech"><span data-i18n="education.year4">IV разред</span></button>
                             </div>
                             <div class="tabs-content">
                                 <div class="tab-panel active" id="year1-tech">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Математика</div>
-                                        <div class="subject-item">3. Енглески језик</div>
-                                        <div class="subject-item">4. Историја</div>
-                                        <div class="subject-item">5. Географија</div>
-                                        <div class="subject-item">6. Физика</div>
-                                        <div class="subject-item">7. Хемија</div>
-                                        <div class="subject-item">8. Биологија</div>
-                                        <div class="subject-item">9. Информатика</div>
-                                        <div class="subject-item">10. Устав и права грађана</div>
-                                        <div class="subject-item">11. Физичко васпитање</div>
-                                        <div class="subject-item">12. Анатомија и физиологија – основе</div>
-                                        <div class="subject-item">13. Хигијена са здравственом едукацијом</div>
-                                        <div class="subject-item">14. Психологија</div>
-                                        <div class="subject-item">15. Социологија</div>
-                                        <div class="subject-item">16. Прва помоћ</div>
-                                        <div class="subject-item">17. Основе здравствене неге</div>
-                                        <div class="subject-item">18. Практикум (кабинетске вежбе)</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.mathematics">2. Математика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.english_lang">3. Енглески језик</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.history">4. Историја</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.geography">5. Географија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physics">6. Физика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.chemistry">7. Хемија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.biology">8. Биологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.informatics">9. Информатика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.constitution">10. Устав и права грађана</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">11. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.anatomy_physiology_basic">12. Анатомија и физиологија – основе</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.hygiene_health_education">13. Хигијена са здравственом едукацијом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.psychology">14. Психологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.sociology">15. Социологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.first_aid">16. Прва помоћ</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nursing_basics">17. Основе здравствене неге</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.practicum_cabinet">18. Практикум (кабинетске вежбе)</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year2-tech">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Физичко васпитање</div>
-                                        <div class="subject-item">4. Математика</div>
-                                        <div class="subject-item">5. Физика</div>
-                                        <div class="subject-item">6. Биологија</div>
-                                        <div class="subject-item">7. Здравствена нега</div>
-                                        <div class="subject-item">8. Патологија</div>
-                                        <div class="subject-item">9. Микробиологија са епидемиологијом</div>
-                                        <div class="subject-item">10. Хигијена и здравствено васпитање</div>
-                                        <div class="subject-item">11. Здравствена психологија</div>
-                                        <div class="subject-item">12. Фармакологија</div>
-                                        <div class="subject-item">13. Изборни предмет**</div>
-                                        <div class="subject-item">14. Медицинска биохемија</div>
-                                        <div class="subject-item">15. Медицинска етика</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">3. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.mathematics">4. Математика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physics">5. Физика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.biology">6. Биологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nursing_care">7. Здравствена нега</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pathology">8. Патологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.microbiology_epidemiology">9. Микробиологија са епидемиологијом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.hygiene_health_upbringing">10. Хигијена и здравствено васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.health_psychology">11. Здравствена психологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pharmacology">12. Фармакологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_marker2">13. Изборни предмет**</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.medical_biochemistry">14. Медицинска биохемија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.medical_ethics">15. Медицинска етика</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year3-tech">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Физичко васпитање</div>
-                                        <div class="subject-item">4. Математика</div>
-                                        <div class="subject-item">5. Социологија са правима грађана</div>
-                                        <div class="subject-item">6. Здравствена нега</div>
-                                        <div class="subject-item">7. Инфектологија</div>
-                                        <div class="subject-item">8. Гинекологија и акушерство</div>
-                                        <div class="subject-item">9. Интерна медицина</div>
-                                        <div class="subject-item">10. Хирургија</div>
-                                        <div class="subject-item">11. Неурологија</div>
-                                        <div class="subject-item">12. Изборни предмет**</div>
-                                        <div class="subject-item">13. Изборни предмет***</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">3. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.mathematics">4. Математика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.sociology_civil_rights">5. Социологија са правима грађана</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nursing_care">6. Здравствена нега</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.infectology">7. Инфектологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.gynecology_obstetrics">8. Гинекологија и акушерство</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.internal_medicine">9. Интерна медицина</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.surgery">10. Хирургија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.neurology">11. Неурологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_marker2">12. Изборни предмет**</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_marker3">13. Изборни предмет***</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year4-tech">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Физичко васпитање</div>
-                                        <div class="subject-item">4. Математика</div>
-                                        <div class="subject-item">5. Здравствена нега</div>
-                                        <div class="subject-item">6. Интерна медицина</div>
-                                        <div class="subject-item">7. Хирургија</div>
-                                        <div class="subject-item">8. Педијатрија</div>
-                                        <div class="subject-item">9. Психијатрија</div>
-                                        <div class="subject-item">10. Предузетништво</div>
-                                        <div class="subject-item">11. Изборни предмет***</div>
-                                        <div class="subject-item">12. Изборни предмет**</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">3. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.mathematics">4. Математика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nursing_care">5. Здравствена нега</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.internal_medicine">6. Интерна медицина</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.surgery">7. Хирургија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pediatrics">8. Педијатрија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.psychiatry">9. Психијатрија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.entrepreneurship">10. Предузетништво</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_marker3">11. Изборни предмет***</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_marker2">12. Изборни предмет**</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -166,18 +166,18 @@
 
                         <!-- Напомене -->
                         <div class="profile-notes">
-                            <h3>Напомене:</h3>
+                            <h3><span data-i18n="education.notes_title">Напомене:</span></h3>
                             <div class="note-item">
                                 <span class="note-marker">*</span>
-                                <span class="note-text">Енглески језик, Немачки језик, Руски језик, Француски језик</span>
+                                <span class="note-text" data-i18n="education.foreign_lang_note">Енглески језик, Немачки језик, Руски језик, Француски језик</span>
                             </div>
                             <div class="note-item">
                                 <span class="note-marker">**</span>
-                                <span class="note-text">Грађанско васпитање, Верска настава</span>
+                                <span class="note-text" data-i18n="education.elective_note">Грађанско васпитање, Верска настава</span>
                             </div>
                             <div class="note-item">
                                 <span class="note-marker">***</span>
-                                <span class="note-text">Изборни предмет према програму образовног профила</span>
+                                <span class="note-text" data-i18n="education.elective_note">Изборни предмет према програму образовног профила</span>
                             </div>
                         </div>
                     </div>
@@ -188,8 +188,8 @@
             <section class="education-profile" id="ginekolosko-akuserska-sestra">
                 <div class="profile-header">
                     <div class="profile-content">
-                        <h2 class="profile-title">Гинеколошко-акушерска сестра</h2>
-                        <p class="profile-description">
+                        <h2 class="profile-title" data-i18n="education.gynecology_nurse_title">Гинеколошко-акушерска сестра</h2>
+                        <p class="profile-description" data-i18n="education.gynecology_nurse_desc">
                             Сврха овог образовног програма је да ученицима пружи свеобухватна стручна знања и практичне вештине неопходне 
                             за очување репродуктивног и гинеколошког здравља жена, као и за висококвалитетан рад са трудницама, породиљама 
                             и новорођенчадима. По окончању школовања, ученици стичу кључне компетенције за пружање целовите здравствене неге 
@@ -201,79 +201,79 @@
 
                         <div class="subjects-tabs">
                             <div class="tabs-header">
-                                <button class="tab-btn active" data-tab="year1-gin">I разред</button>
-                                <button class="tab-btn" data-tab="year2-gin">II разред</button>
-                                <button class="tab-btn" data-tab="year3-gin">III разред</button>
-                                <button class="tab-btn" data-tab="year4-gin">IV разред</button>
+                                <button class="tab-btn active" data-tab="year1-gin"><span data-i18n="education.year1">I разред</span></button>
+                                <button class="tab-btn" data-tab="year2-gin"><span data-i18n="education.year2">II разред</span></button>
+                                <button class="tab-btn" data-tab="year3-gin"><span data-i18n="education.year3">III разред</span></button>
+                                <button class="tab-btn" data-tab="year4-gin"><span data-i18n="education.year4">IV разред</span></button>
                             </div>
 
                             <div class="tabs-content">
                                 <div class="tab-panel active" id="year1-gin">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Општеобразовни предмети (Српски, Математика, Страни језик…)</div>
-                                        <div class="subject-item">2. Анатомија и физиологија</div>
-                                        <div class="subject-item">3. Основе гинекологије</div>
-                                        <div class="subject-item">4. Основе акушерства</div>
-                                        <div class="subject-item">5. Хигијена и исхрана</div>
-                                        <div class="subject-item">6. Психологија</div>
-                                        <div class="subject-item">7. Основе неонатологије</div>
-                                        <div class="subject-item">8. Прва помоћ</div>
-                                        <div class="subject-item">9. Практикум (кабинетске вежбе)</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.general_subjects">1. Општеобразовни предмети (Српски, Математика, Страни језик…)</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.anatomy_physiology">2. Анатомија и физиологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.gynecology_basics">3. Основе гинекологије</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.obstetrics_basics">4. Основе акушерства</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.hygiene_nutrition">5. Хигијена и исхрана</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.psychology">6. Психологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.neonatology_basics">7. Основе неонатологије</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.first_aid">8. Прва помоћ</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.practicum_cabinet">9. Практикум (кабинетске вежбе)</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year2-gin">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Историја</div>
-                                        <div class="subject-item">4. Физичко васпитање</div>
-                                        <div class="subject-item">5. Математика</div>
-                                        <div class="subject-item">6. Физика</div>
-                                        <div class="subject-item">7. Хемија</div>
-                                        <div class="subject-item">8. Здравствена нега</div>
-                                        <div class="subject-item">9. Хигијена са здравственим васпитањем</div>
-                                        <div class="subject-item">10. Микробиологија са епидемиологијом</div>
-                                        <div class="subject-item">11. Патологија</div>
-                                        <div class="subject-item">12. Биологија</div>
-                                        <div class="subject-item">13. Фармакологија</div>
-                                        <div class="subject-item">14. Психологија</div>
-                                        <div class="subject-item">15. Изборни предмет**</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.history">3. Историја</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">4. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.mathematics">5. Математика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physics">6. Физика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.chemistry">7. Хемија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nursing_care">8. Здравствена нега</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.hygiene_health_education">9. Хигијена са здравственим васпитањем</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.microbiology_epidemiology">10. Микробиологија са епидемиологијом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pathology">11. Патологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.biology">12. Биологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pharmacology">13. Фармакологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.psychology">14. Психологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject2">15. Изборни предмет**</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year3-gin">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Социологија са правима грађана</div>
-                                        <div class="subject-item">4. Физичко васпитање</div>
-                                        <div class="subject-item">5. Педијатрија са негом и практикумом</div>
-                                        <div class="subject-item">6. Акушерство са негом и практикумом</div>
-                                        <div class="subject-item">7. Хирургија са негом и практикумом</div>
-                                        <div class="subject-item">8. Заштита животне средине</div>
-                                        <div class="subject-item">9. Здравствена психологија и етика</div>
-                                        <div class="subject-item">10. Блок настава</div>
-                                        <div class="subject-item">11. Изборни предмет**</div>
-                                        <div class="subject-item">12. Изборни предмет***</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.sociology_rights">3. Социологија са правима грађана</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">4. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pediatrics_with_care">5. Педијатрија са негом и практикумом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.obstetrics_with_care">6. Акушерство са негом и практикумом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.surgery_with_care">7. Хирургија са негом и практикумом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.environmental_protection">8. Заштита животне средине</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.health_psychology_ethics">9. Здравствена психологија и етика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.block_teaching">10. Блок настава</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject2">11. Изборни предмет**</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject3">12. Изборни предмет***</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year4-gin">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Филозофија</div>
-                                        <div class="subject-item">4. Устав и права грађана</div>
-                                        <div class="subject-item">5. Физичко васпитање</div>
-                                        <div class="subject-item">6. Медицинска биохемија са клиничком медицином</div>
-                                        <div class="subject-item">7. Интерна медицина са негом и практикумом</div>
-                                        <div class="subject-item">8. Гинекологија са негом и практикумом</div>
-                                        <div class="subject-item">9. Акушерство са негом и практикумом</div>
-                                        <div class="subject-item">10. Инфектологија са негом</div>
-                                        <div class="subject-item">11. Блок настава</div>
-                                        <div class="subject-item">12. Изборни предмет**</div>
-                                        <div class="subject-item">13. Изборни предмет***</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.philosophy">3. Филозофија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.constitution">4. Устав и права грађана</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">5. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.medical_biochemistry_clinical">6. Медицинска биохемија са клиничком медицином</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.internal_medicine_care">7. Интерна медицина са негом и практикумом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.gynecology_with_care">8. Гинекологија са негом и практикумом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.obstetrics_with_care">9. Акушерство са негом и практикумом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.infectology_with_care">10. Инфектологија са негом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.block_teaching">11. Блок настава</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject2">12. Изборни предмет**</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject3">13. Изборни предмет***</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -298,8 +298,8 @@
             <section class="education-profile" id="medicinska-sestra-vaspitac">
                 <div class="profile-header">
                     <div class="profile-content">
-                        <h2 class="profile-title">Медицинска сестра – васпитач</h2>
-                        <p class="profile-description">
+                        <h2 class="profile-title" data-i18n="education.nurse_educator_title">Медицинска сестра – васпитач</h2>
+                        <p class="profile-description" data-i18n="education.nurse_educator_desc">
                             Циљ овог јединственог образовног програма је свеобухватно оспособљавање ученика за бригу о здрављу, васпитање, 
                             неговање и подстицање целовитог развоја деце предшколског узраста. Кроз динамичан процес школовања, ученици 
                             стичу темељна знања из области педијатрије, психофизичког и емоционалног развоја деце, здравствено-хигијенске 
@@ -312,79 +312,79 @@
 
                         <div class="subjects-tabs">
                             <div class="tabs-header">
-                                <button class="tab-btn active" data-tab="year1-vasp">I разред</button>
-                                <button class="tab-btn" data-tab="year2-vasp">II разред</button>
-                                <button class="tab-btn" data-tab="year3-vasp">III разред</button>
-                                <button class="tab-btn" data-tab="year4-vasp">IV разред</button>
+                                <button class="tab-btn active" data-tab="year1-pharma"><span data-i18n="education.year1">I разред</span></button>
+                                <button class="tab-btn" data-tab="year2-pharma"><span data-i18n="education.year2">II разред</span></button>
+                                <button class="tab-btn" data-tab="year3-pharma"><span data-i18n="education.year3">III разред</span></button>
+                                <button class="tab-btn" data-tab="year4-pharma"><span data-i18n="education.year4">IV разред</span></button>
                             </div>
 
                             <div class="tabs-content">
                                 <div class="tab-panel active" id="year1-vasp">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Општеобразовни предмети</div>
-                                        <div class="subject-item">2. Развој детета</div>
-                                        <div class="subject-item">3. Психологија детета</div>
-                                        <div class="subject-item">4. Педагогија</div>
-                                        <div class="subject-item">5. Хигијена и исхрана детета</div>
-                                        <div class="subject-item">6. Основе здравствене неге</div>
-                                        <div class="subject-item">7. Комуникација са родитељима</div>
-                                        <div class="subject-item">8. Прва помоћ</div>
-                                        <div class="subject-item">9. Практикум</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.general_subjects">1. Општеобразовни предмети</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.child_development">2. Развој детета</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.child_psychology">3. Психологија детета</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pedagogy">4. Педагогија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.hygiene_child_nutrition">5. Хигијена и исхрана детета</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nursing_basics">6. Основе здравствене неге</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.parent_communication">7. Комуникација са родитељима</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.first_aid">8. Прва помоћ</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.practicum">9. Практикум</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year2-vasp">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Историја</div>
-                                        <div class="subject-item">4. Физичко васпитање</div>
-                                        <div class="subject-item">5. Математика</div>
-                                        <div class="subject-item">6. Физика</div>
-                                        <div class="subject-item">7. Хемија</div>
-                                        <div class="subject-item">8. Биологија</div>
-                                        <div class="subject-item">9. Хигијена са здравственим васпитањем</div>
-                                        <div class="subject-item">10. Микробиологија са епидемиологијом</div>
-                                        <div class="subject-item">11. Патологија</div>
-                                        <div class="subject-item">12. Психологија</div>
-                                        <div class="subject-item">13. Здравствена нега деце раног узраста</div>
-                                        <div class="subject-item">14. Предшколска педагогија</div>
-                                        <div class="subject-item">15. Изборни предмет**</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.history">3. Историја</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">4. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.mathematics">5. Математика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physics">6. Физика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.chemistry">7. Хемија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.biology">8. Биологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.hygiene_health_education">9. Хигијена са здравственим васпитањем</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.microbiology_epidemiology">10. Микробиологија са епидемиологијом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pathology">11. Патологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.psychology">12. Психологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.infant_care">13. Здравствена нега деце раног узраста</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.preschool_pedagogy">14. Предшколска педагогија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject2">15. Изборни предмет**</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year3-vasp">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Социологија</div>
-                                        <div class="subject-item">4. Физичко васпитање</div>
-                                        <div class="subject-item">5. Физика</div>
-                                        <div class="subject-item">6. Хемија</div>
-                                        <div class="subject-item">7. Биологија</div>
-                                        <div class="subject-item">8. Дечја психологија</div>
-                                        <div class="subject-item">9. Педијатрија са негом</div>
-                                        <div class="subject-item">10. Васпитање и нега деце</div>
-                                        <div class="subject-item">11. Књижевност за децу</div>
-                                        <div class="subject-item">12. Изборни предмет**</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.sociology">3. Социологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">4. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physics">5. Физика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.chemistry">6. Хемија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.biology">7. Биологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.child_psychology_advanced">8. Дечја психологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pediatrics_with_care">9. Педијатрија са негом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.child_education_care">10. Васпитање и нега деце</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.childrens_literature">11. Књижевност за децу</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject2">12. Изборни предмет**</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year4-vasp">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Филозофија</div>
-                                        <div class="subject-item">4. Физичко васпитање</div>
-                                        <div class="subject-item">5. Физика</div>
-                                        <div class="subject-item">6. Устав и права грађана</div>
-                                        <div class="subject-item">7. Медицинска биохемија</div>
-                                        <div class="subject-item">8. Инфектологија са негом</div>
-                                        <div class="subject-item">9. Педијатрија са негом</div>
-                                        <div class="subject-item">10. Васпитање и нега деце</div>
-                                        <div class="subject-item">11. Музичко васпитање деце раног узраста</div>
-                                        <div class="subject-item">12. Прва помоћ</div>
-                                        <div class="subject-item">13. Изборни предмет**</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.philosophy">3. Филозофија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">4. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physics">5. Физика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.constitution">6. Устав и права грађана</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.medical_biochemistry">7. Медицинска биохемија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.infectology_with_care">8. Инфектологија са негом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pediatrics_with_care">9. Педијатрија са негом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.child_education_care">10. Васпитање и нега деце</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.music_education">11. Музичко васпитање деце раног узраста</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.first_aid">12. Прва помоћ</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject2">13. Изборни предмет**</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -392,14 +392,14 @@
                     </div>
 
                     <div class="profile-notes">
-                        <h3>Напомене:</h3>
+                        <h3><span data-i18n="education.notes_title">Напомене:</span></h3>
                         <div class="note-item">
                             <div class="note-marker">*</div>
-                            <div class="note-text">Енглески језик / Немачки језик / Руски језик / Француски језик</div>
+                            <div class="note-text" data-i18n="education.foreign_lang_note">Енглески језик / Немачки језик / Руски језик / Француски језик</div>
                         </div>
                         <div class="note-item">
                             <div class="note-marker">**</div>
-                            <div class="note-text">Грађанско васпитање / Верска настава</div>
+                            <div class="note-text" data-i18n="education.elective_note">Грађанско васпитање / Верска настава</div>
                         </div>
                     </div>
                 </div>
@@ -409,8 +409,8 @@
             <section class="education-profile" id="zdravstveni-negovatelj">
                 <div class="profile-header">
                     <div class="profile-content">
-                        <h2 class="profile-title">Здравствени неговатељ</h2>
-                        <p class="profile-description">
+                        <h2 class="profile-title" data-i18n="education.health_caregiver_title">Здравствени неговатељ</h2>
+                        <p class="profile-description" data-i18n="education.health_caregiver_desc">
                             Овај хумани и суштински важан програм образовања има за циљ да ученике стручно и емпатично оспособи за 
                             пружање квалитетне основне здравствене неге, свакодневне подршке и достојанственог односа према болесним 
                             и старим лицима, као и особама са инвалидитетом и хроничним обољењима. По завршетку школовања, ученици 
@@ -423,58 +423,58 @@
 
                         <div class="subjects-tabs">
                             <div class="tabs-header">
-                                <button class="tab-btn active" data-tab="year1-neg">I разред</button>
-                                <button class="tab-btn" data-tab="year2-neg">II разред</button>
-                                <button class="tab-btn" data-tab="year3-neg">III разред</button>
+                                <button class="tab-btn active" data-tab="year1-neg"><span data-i18n="education.year1">I разред</span></button>
+                                <button class="tab-btn" data-tab="year2-neg"><span data-i18n="education.year2">II разред</span></button>
+                                <button class="tab-btn" data-tab="year3-neg"><span data-i18n="education.year3">III разред</span></button>
                             </div>
 
                             <div class="tabs-content">
                                 <div class="tab-panel active" id="year1-neg">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Општеобразовни предмети</div>
-                                        <div class="subject-item">2. Основе неге</div>
-                                        <div class="subject-item">3. Хигијена</div>
-                                        <div class="subject-item">4. Анатомија и физиологија</div>
-                                        <div class="subject-item">5. Здравствено-васпитни рад</div>
-                                        <div class="subject-item">6. Прва помоћ</div>
-                                        <div class="subject-item">7. Практикум</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.general_subjects">1. Општеобразовни предмети</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nursing_fundamentals">2. Основе неге</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.hygiene">3. Хигијена</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.anatomy_physiology">4. Анатомија и физиологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.health_educational_work">5. Здравствено-васпитни рад</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.first_aid">6. Прва помоћ</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.practicum">7. Практикум</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year2-neg">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Страни језик*</div>
-                                        <div class="subject-item">3. Физичко васпитање</div>
-                                        <div class="subject-item">4. Математика</div>
-                                        <div class="subject-item">5. Географија</div>
-                                        <div class="subject-item">6. Здравствена нега</div>
-                                        <div class="subject-item">7. Микробиологија са епидемиологијом</div>
-                                        <div class="subject-item">8. Медицинска биохемија</div>
-                                        <div class="subject-item">9. Фармакологија</div>
-                                        <div class="subject-item">10. Патологија</div>
-                                        <div class="subject-item">11. Исхрана</div>
-                                        <div class="subject-item">12. Здравствена психологија</div>
-                                        <div class="subject-item">13. Изборни предмет**</div>
-                                        <div class="subject-item">14. Изборни предмет***</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.foreign_lang_marker">2. Страни језик*</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">3. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.mathematics">4. Математика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.geography">5. Географија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nursing_care">6. Здравствена нега</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.microbiology_epidemiology">7. Микробиологија са епидемиологијом</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.medical_biochemistry">8. Медицинска биохемија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pharmacology">9. Фармакологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.pathology">10. Патологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nutrition">11. Исхрана</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.health_psychology">12. Здравствена психологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject2">13. Изборни предмет**</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject3">14. Изборни предмет***</span></div>
                                     </div>
                                 </div>
 
                                 <div class="tab-panel" id="year3-neg">
                                     <div class="subjects-grid">
-                                        <div class="subject-item">1. Српски језик и књижевност</div>
-                                        <div class="subject-item">2. Физичко васпитање</div>
-                                        <div class="subject-item">3. Математика</div>
-                                        <div class="subject-item">4. Социологија са правима грађана</div>
-                                        <div class="subject-item">5. Здравствена нега</div>
-                                        <div class="subject-item">6. Основи клиничке медицине</div>
-                                        <div class="subject-item">7. Инфектологија</div>
-                                        <div class="subject-item">8. Медицинска рехабилитација</div>
-                                        <div class="subject-item">9. Неуропсихијатрија</div>
-                                        <div class="subject-item">10. Здравствена нега у кући</div>
-                                        <div class="subject-item">11. Предузетништво</div>
-                                        <div class="subject-item">12. Изборни предмет**</div>
-                                        <div class="subject-item">13. Изборни предмет***</div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.serbian_lang">1. Српски језик и књижевност</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.physical_education">2. Физичко васпитање</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.mathematics">3. Математика</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.sociology_rights">4. Социологија са правима грађана</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.nursing_care">5. Здравствена нега</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.clinical_medicine_basics">6. Основи клиничке медицине</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.infectology">7. Инфектологија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.medical_rehabilitation">8. Медицинска рехабилитација</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.neuropsychiatry">9. Неуропсихијатрија</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.home_healthcare">10. Здравствена нега у кући</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.entrepreneurship">11. Предузетништво</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject2">12. Изборни предмет**</span></div>
+                                        <div class="subject-item"><span data-i18n="education.subjects.elective_subject3">13. Изборни предмет***</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -515,37 +515,37 @@
                 <div class="footer-column footer-brand">
                     <div class="footer-logo-stack">
                         <img src="images/Untitled_preview_rev_1.png" alt="Медицинска школа — лого" class="footer-logo-img">
-                        <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> 58 година традиције</span>
+                        <span class="footer-badge" data-i18n="footer.tradition_badge"><i class="fas fa-star" aria-hidden="true"></i> {years} година традиције</span>
                     </div>
-                    <p class="footer-description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама. Подржавамо сваког ученика кроз менторство, пројекте и реалне стручне ситуације.</p>
+                    <p class="footer-description" data-i18n="footer.description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама. Подржавамо сваког ученика кроз менторство, пројекте и реалне стручне ситуације.</p>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Брзе везе</h4>
+                    <h4 data-i18n="footer.quick_links">Брзе везе</h4>
                     <ul class="footer-links">
-                        <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="maturska-pitanja.html"><span>Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="ucenici-i-roditelji.html"><span>Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="o-nama.html"><span data-i18n="nav.about">О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="obrazovni-profili.html"><span data-i18n="nav.educational_profiles">Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li data-i18n-hide="en,de"><a href="maturska-pitanja.html"><span data-i18n="nav.graduation_questions">Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li data-i18n-hide="en,de"><a href="ucenici-i-roditelji.html"><span data-i18n="nav.students_parents">Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="galerija.html"><span data-i18n="nav.gallery">Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html"><span data-i18n="nav.contact">Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Документа</h4>
+                    <h4 data-i18n="footer.documents">Документа</h4>
                     <ul class="footer-links">
-                        <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="sekcije.html"><span>Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="politika-privatnosti.html"><span>Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="kontakt.html#lokacija"><span>Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="dokumentacija.html"><span data-i18n="footer.documentation">Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="javne-nabavke.html"><span data-i18n="footer.public_procurement">Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="sekcije.html"><span data-i18n="footer.sections_teams">Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="politika-privatnosti.html"><span data-i18n="footer.privacy_policy">Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html#lokacija"><span data-i18n="footer.directions">Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Останимо у контакту</h4>
-                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+                    <h4 data-i18n="footer.stay_connected">Останимо у контакту</h4>
+                    <p class="footer-small-text" data-i18n="footer.social_text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
                     <div class="footer-socials social-links">
                         <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                         <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -554,10 +554,10 @@
                     </div>
                     <div class="footer-newsletter">
                         <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
-                            <span>Пошаљи нам питање</span>
+                            <span data-i18n="footer.send_question">Пошаљи нам питање</span>
                             <i class="fas fa-paper-plane" aria-hidden="true"></i>
                         </a>
-                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
+                        <span class="footer-form-hint" data-i18n="footer.response_time">Одговарамо у року од 24 часа.</span>
                     </div>
                 </div>
             </div>
@@ -567,15 +567,15 @@
 
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић” Панчево. Сва права задржана.</p>
+                <p class="footer-bottom-copy" data-i18n="footer.copyright">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
                 <div class="developer-credit">
-                    <span>Израда и одржавање</span>
+                    <span data-i18n="footer.development">Израда и одржавање</span>
                     <img src="images/pansoft-logo.png" alt="Pansoft">
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="politika-privatnosti.html">Политика приватности</a>
+                    <a href="politika-privatnosti.html" data-i18n="footer.privacy">Политика приватности</a>
                     <span>•</span>
-                    <a href="#">Услови коришћења</a>
+                    <a href="#" data-i18n="footer.terms">Услови коришћења</a>
                     <span>•</span>
                     <a href="#">Sitemap</a>
                 </div>
@@ -775,6 +775,22 @@
             }
         });
     </script>
+    
+    <!-- Load translations as script tags to avoid CORS -->
+    <script>
+        window.translationData = {
+            sr: null, // Will be loaded from script
+            en: null,
+            de: null
+        };
+    </script>
+    <script src="translations-sr.js"></script>
+    <script src="translations-en.js"></script>
+    <script src="translations-de.js"></script>
+    
+    <!-- i18n Internationalization -->
+    <script src="i18n.js"></script>
+    
     <!-- Савет: проверите у DevTools -> Network -> Headers да server враћа Content-Type: text/html; charset=UTF-8 -->
 </body>
 </html>

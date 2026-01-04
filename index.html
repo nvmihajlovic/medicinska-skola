@@ -23,19 +23,18 @@
                 <li class="dropdown" role="menuitem">
                     <a href="o-nama.html" class="nav-link" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav.about">О школи</span> <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                     <ul class="dropdown-menu" role="menu" aria-label="О школи подмени">
-                        <li role="menuitem"><a href="o-nama.html"><i class="fas fa-school" aria-hidden="true"></i> <span data-i18n="nav.about_us">О нама</span></a></li>
-                        <li role="menuitem"><a href="zaposleni.html"><i class="fas fa-users" aria-hidden="true"></i> <span data-i18n="nav.employees">Запослени</span></a></li>
-                        <li role="menuitem"><a href="dokumentacija.html"><i class="fas fa-file-alt" aria-hidden="true"></i> <span data-i18n="nav.documentation">Документација</span></a></li>
-                        <li role="menuitem"><a href="strucni-timovi.html"><i class="fas fa-user-friends" aria-hidden="true"></i> <span data-i18n="nav.professional_teams">Стручни тимови</span></a></li>
-                        <li role="menuitem"><a href="javne-nabavke.html"><i class="fas fa-chart-line" aria-hidden="true"></i> <span data-i18n="nav.public_procurement">Јавне набавке и фин. извештаји</span></a></li>
-                        <li role="menuitem"><a href="sekcije.html"><i class="fas fa-star" aria-hidden="true"></i> <span data-i18n="nav.sections">Секције</span></a></li>
+                        <li role="menuitem"><a href="o-nama.html"><span data-i18n="nav.about_us">О нама</span></a></li>
+                        <li role="menuitem"><a href="zaposleni.html"><span data-i18n="nav.employees">Запослени</span></a></li>
+                        <li role="menuitem" data-i18n-hide="en,de"><a href="dokumentacija.html"><span data-i18n="nav.documentation">Документација</span></a></li>
+                        <li role="menuitem"><a href="strucni-timovi.html"><span data-i18n="nav.professional_teams">Стручни тимови</span></a></li>
+                        <li role="menuitem" data-i18n-hide="en,de"><a href="javne-nabavke.html"><span data-i18n="nav.public_procurement">Јавне набавке и фин. извештаји</span></a></li>
+                        <li role="menuitem"><a href="sekcije.html"><span data-i18n="nav.sections">Секције</span></a></li>
                     </ul>
                 </li>
                 <li role="menuitem"><a href="obrazovni-profili.html" class="nav-link"><span data-i18n="nav.educational_profiles">Образовни профили</span></a></li>
-                <li role="menuitem"><a href="maturska-pitanja.html" class="nav-link"><span data-i18n="nav.graduation_questions">Матурска питања</span></a></li>
-                <li role="menuitem"><a href="ucenici-i-roditelji.html" class="nav-link"><span data-i18n="nav.students_parents">Ученици и родитељи</span></a></li>
+                <li role="menuitem" data-i18n-hide="en,de"><a href="maturska-pitanja.html" class="nav-link"><span data-i18n="nav.graduation_questions">Матурска питања</span></a></li>
+                <li role="menuitem" data-i18n-hide="en,de"><a href="ucenici-i-roditelji.html" class="nav-link"><span data-i18n="nav.students_parents">Ученици и родитељи</span></a></li>
                 <li role="menuitem"><a href="galerija.html" class="nav-link"><span data-i18n="nav.gallery">Галерија</span></a></li>
-                <li role="menuitem"><a href="arhiva.html" class="nav-link"><span data-i18n="nav.archive">Архива</span></a></li>
                 <li role="menuitem"><a href="erasmus-projekti.html" class="nav-link"><span data-i18n="nav.erasmus">Еразмус+ пројекти</span></a></li>
                 <li role="menuitem"><a href="kontakt.html" class="nav-link contact-btn"><span data-i18n="nav.contact">Контакт</span></a></li>
             </ul>
@@ -54,25 +53,25 @@
             <div class="carousel-slide active">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <h1 class="hero-title">Добро дошли у Медицинску школу „Стевица Јовановић"</h1>
-                    <p class="hero-subtitle">Са више од 58 година традиције у образовању здравственог кадра</p>
-                    <a href="o-nama.html" class="cta-button">Сазнајте више</a>
+                    <h1 class="hero-title" data-i18n="home.hero_title_1">Добро дошли у Медицинску школу „Стевица Јовановић"</h1>
+                    <p class="hero-subtitle" data-i18n="home.hero_subtitle_1">Са више од {years} година традиције у образовању здравственог кадра</p>
+                    <a href="o-nama.html" class="cta-button" data-i18n="home.cta_learn_more">Сазнајте више</a>
                 </div>
             </div>
             <div class="carousel-slide">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <h1 id="hero-title" class="hero-title">Савремени програми и пракса</h1>
-                    <p class="hero-subtitle">Практична настава у водећим здравственим установама региона</p>
-                    <a href="obrazovni-profili.html" id="cta-learn" class="cta-button">Погледај програм</a>
+                    <h1 id="hero-title" class="hero-title" data-i18n="home.hero_title_2">Савремени програми и пракса</h1>
+                    <p class="hero-subtitle" data-i18n="home.hero_subtitle_2">Практична настава у водећим здравственим установама региона</p>
+                    <a href="obrazovni-profili.html" id="cta-learn" class="cta-button" data-i18n="home.cta_view_program">Погледај програм</a>
                 </div>
             </div>
             <div class="carousel-slide">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
-                    <h1 class="hero-title">Будућност почиње овде</h1>
-                    <p class="hero-subtitle">Постани део нове генерације здравствених радника</p>
-                    <a href="kontakt.html" class="cta-button">Пријави се сада</a>
+                    <h1 class="hero-title" data-i18n="home.hero_title_3">Будућност почиње овде</h1>
+                    <p class="hero-subtitle" data-i18n="home.hero_subtitle_3">Постани део нове генерације здравствених радника</p>
+                    <a href="kontakt.html" class="cta-button" data-i18n="home.cta_apply_now">Пријави се сада</a>
                 </div>
             </div>
         </div>
@@ -96,10 +95,10 @@
                             <div class="main-icon">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <h2 class="main-title">Образовни профили</h2>
+                            <h2 class="main-title" data-i18n="home.profiles_title">Образовни профили</h2>
                         </div>
                         <div class="card-content-main">
-                            <p class="intro-text">
+                            <p class="intro-text" data-i18n="home.profiles_intro">
                                 Медицинска школа „Стевица Јовановић” у Панчеву образује стручне кадрове за рад у здравству и социјалној заштити, на следећим профилима:
                             </p>
                         </div>
@@ -110,34 +109,34 @@
                             <div class="profile-icon">
                                 <i class="fas fa-user-nurse"></i>
                             </div>
-                            <h3 class="profile-title">Медицинска сестра – техничар</h3>
+                            <h3 class="profile-title" data-i18n="home.profile_nurse">Медицинска сестра – техничар</h3>
                         </a>
 
                         <a href="obrazovni-profili.html#medicinska-sestra-vaspitac" class="profile-card">
                             <div class="profile-icon">
                                 <i class="fas fa-user-nurse"></i>
                             </div>
-                            <h3 class="profile-title">Медицинска сестра – васпитач</h3>
+                            <h3 class="profile-title" data-i18n="home.profile_educator">Медицинска сестра – васпитач</h3>
                         </a>
 
                         <a href="obrazovni-profili.html#zdravstveni-negovatelj" class="profile-card">
                             <div class="profile-icon">
                                 <i class="fas fa-user-md"></i>
                             </div>
-                            <h3 class="profile-title">Здравствени неговатељ</h3>
+                            <h3 class="profile-title" data-i18n="home.profile_caregiver">Здравствени неговатељ</h3>
                         </a>
 
                         <a href="obrazovni-profili.html#ginekolosko-akuserska-sestra" class="profile-card">
                             <div class="profile-icon">
                                 <i class="fas fa-baby"></i>
                             </div>
-                            <h3 class="profile-title">Гинеколошко-акушерска сестра</h3>
+                            <h3 class="profile-title" data-i18n="home.profile_midwife">Гинеколошко-акушерска сестра</h3>
                         </a>
                     </div>
 
                     <div class="mission-card">
                         <div class="mission-content">
-                            <p>
+                            <p data-i18n="home.mission_text">
                                 Наша мисија је да младима пружимо квалитетно образовање засновано на савременим наставним методама и практичној настави
                                 (школски кабинет, дом здравља, здравствене установе...). Посвећени смо развоју вештина, знања и професионалне етике,
                                 у складу са потребама заједнице и тржишта рада.
@@ -146,7 +145,7 @@
                     </div>
                 </div>
                 <div class="section-right">
-                    <h3>О школи</h3>
+                    <h3 data-i18n="home.about_title">О школи</h3>
                     <div class="school-info-cards">
                         <div class="info-card-accordion accordion-item">
                             <div class="card-header accordion-header">
@@ -154,12 +153,12 @@
                                     <i class="fas fa-school"></i>
                                 </div>
                                 <div class="card-title-wrapper">
-                                    <h4 class="card-title">О нама</h4>
+                                    <h4 class="card-title" data-i18n="home.about_us_title">О нама</h4>
                                     <i class="fas fa-chevron-down accordion-toggle"></i>
                                 </div>
                             </div>
                             <div class="card-content accordion-content">
-                                <p>
+                                <p data-i18n="home.about_us_text">
                                     Медицинска школа „Стевица Јовановић” је савремена образовна установа са дугом традицијом.
                                     Наш наставни кадар негује висок стандард квалитета наставе и сарадње са установама здравствене заштите.
                                 </p>
@@ -172,13 +171,13 @@
                                     <i class="fas fa-history"></i>
                                 </div>
                                 <div class="card-title-wrapper">
-                                    <h4 class="card-title">Историјат школе</h4>
+                                    <h4 class="card-title" data-i18n="home.history_title">Историјат школе</h4>
                                     <i class="fas fa-chevron-down accordion-toggle"></i>
                                 </div>
                             </div>
                             <div class="card-content accordion-content">
-                                <p>
-                                    Основана 1946. године, школа је прерасла у значајан регионални центар средњег медицинског образовања.
+                                <p data-i18n="home.history_text">
+                                    Основана {foundingYear}. године, школа је прерасла у значајан регионални центар средњег медицинског образовања.
                                     Традицију градимо кроз стручно усавршавање и континуирано унапређење наставног рада.
                                 </p>
                             </div>
@@ -190,12 +189,12 @@
                                     <i class="fas fa-graduation-cap"></i>
                                 </div>
                                 <div class="card-title-wrapper">
-                                    <h4 class="card-title">Наставни процес</h4>
+                                    <h4 class="card-title" data-i18n="home.teaching_title">Наставни процес</h4>
                                     <i class="fas fa-chevron-down accordion-toggle"></i>
                                 </div>
                             </div>
                             <div class="card-content accordion-content">
-                                <p>
+                                <p data-i18n="home.teaching_text">
                                     Теоријску наставу спајамо са практичним вежбама у реалном окружењу.
                                     Ученици стичу компетенције неопходне за непосредан рад и даље школовање.
                                 </p>
@@ -208,12 +207,12 @@
                                     <i class="fas fa-hand-holding-heart"></i>
                                 </div>
                                 <div class="card-title-wrapper">
-                                    <h4 class="card-title">Вредности и мисија</h4>
+                                    <h4 class="card-title" data-i18n="home.values_title">Вредности и мисија</h4>
                                     <i class="fas fa-chevron-down accordion-toggle"></i>
                                 </div>
                             </div>
                             <div class="card-content accordion-content">
-                                <p>
+                                <p data-i18n="home.values_text">
                                     Негујемо одговорност, хуманост и професионалност. Наши ученици уче да помажу људима и
                                     поштују принципе медицинске етике у сваком контексту.
                                 </p>
@@ -226,12 +225,12 @@
                                     <i class="fas fa-bullseye"></i>
                                 </div>
                                 <div class="card-title-wrapper">
-                                    <h4 class="card-title">Наши циљеви</h4>
+                                    <h4 class="card-title" data-i18n="home.goals_title">Наши циљеви</h4>
                                     <i class="fas fa-chevron-down accordion-toggle"></i>
                                 </div>
                             </div>
                             <div class="card-content accordion-content">
-                                <p>
+                                <p data-i18n="home.goals_text">
                                     Развијамо кључне компетенције, подстичемо тимски рад и критичко мишљење.
                                     Припремамо ученике за успешно запошљавање и наставак школовања.
                                 </p>
@@ -244,12 +243,12 @@
                                     <i class="fas fa-eye"></i>
                                 </div>
                                 <div class="card-title-wrapper">
-                                    <h4 class="card-title">Наша визија</h4>
+                                    <h4 class="card-title" data-i18n="home.vision_title">Наша визија</h4>
                                     <i class="fas fa-chevron-down accordion-toggle"></i>
                                 </div>
                             </div>
                             <div class="card-content accordion-content">
-                                <p>
+                                <p data-i18n="home.vision_text">
                                     Бити препознатљива школа која образује компетентне и посвећене здравствене раднике,
                                     спремне да одговоре на изазове савремене праксе.
                                 </p>
@@ -260,8 +259,8 @@
             </section>
 
             <!-- News Section -->
-            <section class="news-section">
-                <h2>Новости и догађаји</h2>
+            <section class="news-section" id="news-section">
+                <h2 data-i18n="home.news_title">Новости и догађаји</h2>
                 <div class="news-grid page-1" id="news-page-1">
                     <article class="news-card" onclick="openNewsPage('strucna-praksa')">
                         <div class="news-content">
@@ -474,34 +473,34 @@
                 <div class="info-calendar-grid">
                     <!-- Important Dates Calendar -->
                     <div class="calendar-card">
-                        <h3><i class="fas fa-calendar-alt"></i> Важни датуми</h3>
+                        <h3><i class="fas fa-calendar-alt"></i> <span data-i18n="home.important_dates">Важни датуми</span></h3>
                         <div class="calendar-events">
                             <div class="event-item">
-                                <div class="event-date">15. септембар</div>
+                                <div class="event-date"><span data-i18n="home.date_sep15">15. септембар</span></div>
                                 <div class="event-details">
-                                    <h4>Почетак наставе</h4>
-                                    <p>Свечани пријем првака у школском дворишту</p>
+                                    <h4><span data-i18n="home.event_school_start">Почетак наставе</span></h4>
+                                    <p><span data-i18n="home.event_school_start_desc">Свечани пријем првака у школском дворишту</span></p>
                                 </div>
                             </div>
                             <div class="event-item">
-                                <div class="event-date">1. октобар</div>
+                                <div class="event-date"><span data-i18n="home.date_oct1">1. октобар</span></div>
                                 <div class="event-details">
-                                    <h4>Дан школе</h4>
-                                    <p>Свећана академија у амфитеатру</p>
+                                    <h4><span data-i18n="home.event_school_day">Дан школе</span></h4>
+                                    <p><span data-i18n="home.event_school_day_desc">Свећана академија у амфитеатру</span></p>
                                 </div>
                             </div>
                             <div class="event-item">
-                                <div class="event-date">20. децембар</div>
+                                <div class="event-date"><span data-i18n="home.date_dec20">20. децембар</span></div>
                                 <div class="event-details">
-                                    <h4>Новојогодишњи вашар</h4>
-                                    <p>Хуманитарна продаја ученичких радова</p>
+                                    <h4><span data-i18n="home.event_bazaar">Новојогодишњи вашар</span></h4>
+                                    <p><span data-i18n="home.event_bazaar_desc">Хуманитарна продаја ученичких радова</span></p>
                                 </div>
                             </div>
                             <div class="event-item">
-                                <div class="event-date">15. јун</div>
+                                <div class="event-date"><span data-i18n="home.date_jun15">15. јун</span></div>
                                 <div class="event-details">
-                                    <h4>Матура</h4>
-                                    <p>Свечана додела диплома</p>
+                                    <h4><span data-i18n="home.event_graduation">Матура</span></h4>
+                                    <p><span data-i18n="home.event_graduation_desc">Свечана додела диплома</span></p>
                                 </div>
                             </div>
                         </div>
@@ -509,41 +508,41 @@
 
                     <!-- Quick Information -->
                     <div class="quick-info-card">
-                        <h3><i class="fas fa-info-circle"></i> Брзе информације</h3>
+                        <h3><i class="fas fa-info-circle"></i> <span data-i18n="home.quick_info">Брзе информације</span></h3>
                         <div class="info-items">
                             <div class="info-item-quick">
                                 <i class="fas fa-graduation-cap"></i>
                                 <div class="info-content">
-                                    <h4>Упис ђака</h4>
-                                    <p>Све информације о упису, смерovima и условима</p>
+                                    <h4><span data-i18n="home.info_enrollment">Упис ђака</span></h4>
+                                    <p><span data-i18n="home.info_enrollment_desc">Све информације о упису, смерovima и условима</span></p>
                                 </div>
                             </div>
                             <div class="info-item-quick">
                                 <i class="fas fa-euro-sign"></i>
                                 <div class="info-content">
-                                    <h4>Стипендије</h4>
-                                    <p>Конкурси и услови за ученичке стипендије</p>
+                                    <h4><span data-i18n="home.info_scholarships">Стипендије</span></h4>
+                                    <p><span data-i18n="home.info_scholarships_desc">Конкурси и услови за ученичке стипендије</span></p>
                                 </div>
                             </div>
                             <div class="info-item-quick">
                                 <i class="fas fa-clock"></i>
                                 <div class="info-content">
-                                    <h4>Распоред звоњења</h4>
-                                    <p>4 смене наставних часова</p>
+                                    <h4><span data-i18n="home.info_schedule">Распоред звоњења</span></h4>
+                                    <p><span data-i18n="home.info_schedule_desc">4 смене наставних часова</span></p>
                                 </div>
                             </div>
                             <div class="info-item-quick">
                                 <i class="fas fa-certificate"></i>
                                 <div class="info-content">
-                                    <h4>Сертификати</h4>
-                                    <p>Потврде, уверења и потребна документа</p>
+                                    <h4><span data-i18n="home.info_certificates">Сертификати</span></h4>
+                                    <p><span data-i18n="home.info_certificates_desc">Потврде, уверења и потребна документа</span></p>
                                 </div>
                             </div>
                             <div class="info-item-quick">
                                 <i class="fas fa-briefcase"></i>
                                 <div class="info-content">
-                                    <h4>Запошљавање</h4>
-                                    <p>95% ученика наставља школовање или се запошљава</p>
+                                    <h4><span data-i18n="home.info_employment">Запошљавање</span></h4>
+                                    <p><span data-i18n="home.info_employment_desc">95% ученика наставља школовање или се запошљава</span></p>
                                 </div>
                             </div>
                         </div>
@@ -567,16 +566,16 @@
                     <i class="fas fa-users"></i>
                 </div>
             </div>
-            <h2 class="ending-title" id="cta-title">Започните своју будућност у здравству</h2>
-            <p class="ending-description">Са више од 58 година традиције, пружамо квалитетно образовање и практичну обуку у водећим здравственим установама региона.</p>
+            <h2 class="ending-title" id="cta-title" data-i18n="home.cta_title">Започните своју будућност у здравству</h2>
+            <p class="ending-description" data-i18n="home.cta_description">Са више од {years} година традиције, пружамо квалитетно образовање и практичну обуку у водећим здравственим установама региона.</p>
             <div class="ending-actions">
                 <a href="kontakt.html" class="ending-btn ending-btn-primary" aria-label="Контактирајте нас за више информација о упису">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    Контактирајте нас
+                    <span data-i18n="home.cta_contact">Контактирајте нас</span>
                 </a>
                 <a href="obrazovni-profili.html" class="ending-btn ending-btn-secondary" aria-label="Погледајте образовне профиле и програме">
                     <i class="fas fa-book-open" aria-hidden="true"></i>
-                    Наши програми
+                    <span data-i18n="home.cta_programs">Наши програми</span>
                 </a>
             </div>
         </div>
@@ -594,39 +593,38 @@
                 <div class="footer-column footer-brand">
                     <div class="footer-logo-stack">
                         <img src="images/Untitled_preview_rev_1.png" alt="Медицинска школа — лого" class="footer-logo-img">
-                        <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> 58 година традиције</span>
+                        <span class="footer-badge"><i class="fas fa-star" aria-hidden="true"></i> <span data-i18n="footer.years_tradition">{years} година традиције</span></span>
                     </div>
-                    <p class="footer-description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама. Подржавамо сваког ученика кроз менторство, пројекте и реалне стручне ситуације.</p>
+                    <p class="footer-description" data-i18n="footer.description">Средња стручна школа са савременим програмима и нагласком на практичној настави у водећим здравственим установама. Подржавамо сваког ученика кроз менторство, пројекте и реалне стручне ситуације.</p>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Брзе везе</h4>
+                    <h4 data-i18n="footer.quick_links">Брзе везе</h4>
                     <ul class="footer-links">
-                        <li><a href="o-nama.html"><span>О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="obrazovni-profili.html"><span>Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="maturska-pitanja.html"><span>Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="ucenici-i-roditelji.html"><span>Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="galerija.html"><span>Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="erasmus-projekti.html"><span>Erasmus+ пројекти</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="kontakt.html"><span>Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="o-nama.html"><span data-i18n="nav.about">О школи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="obrazovni-profili.html"><span data-i18n="nav.educational_profiles">Образовни профили</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li data-i18n-hide="en,de"><a href="maturska-pitanja.html"><span data-i18n="nav.graduation_questions">Матурска питања</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li data-i18n-hide="en,de"><a href="ucenici-i-roditelji.html"><span data-i18n="nav.students_parents">Ученици и родитељи</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="galerija.html"><span data-i18n="nav.gallery">Галерија</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="erasmus-projekti.html"><span data-i18n="nav.erasmus">Erasmus+ пројекти</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html"><span data-i18n="nav.contact">Контакт</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Документа</h4>
+                    <h4 data-i18n="footer.documents">Документа</h4>
                     <ul class="footer-links">
-                        <li><a href="dokumentacija.html"><span>Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="javne-nabavke.html"><span>Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="arhiva.html"><span>Архива</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="sekcije.html"><span>Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="politika-privatnosti.html"><span>Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
-                        <li><a href="kontakt.html#lokacija"><span>Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="dokumentacija.html"><span data-i18n="nav.documentation">Документација</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="javne-nabavke.html"><span data-i18n="nav.public_procurement">Јавне набавке</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="sekcije.html"><span data-i18n="footer.sections_teams">Секције и тимови</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="politika-privatnosti.html"><span data-i18n="footer.privacy_policy">Политика приватности</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                        <li><a href="kontakt.html#lokacija"><span data-i18n="footer.directions">Како до нас</span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h4>Останимо у контакту</h4>
-                    <p class="footer-small-text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
+                    <h4 data-i18n="footer.stay_connected">Останимо у контакту</h4>
+                    <p class="footer-small-text" data-i18n="footer.social_text">Пратимо успехе наших ученика и делимо вести из здравствене праксе. Придружите нам се на друштвеним мрежама и пишите нам уколико су вам потребне додатне информације.</p>
                     <div class="footer-socials social-links">
                         <a href="#" class="social-link facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                         <a href="#" class="social-link instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -635,10 +633,10 @@
                     </div>
                     <div class="footer-newsletter">
                         <a class="footer-btn footer-btn--light" href="mailto:info@medicinskapancevo.edu.rs">
-                            <span>Пошаљи нам питање</span>
+                            <span data-i18n="footer.send_question">Пошљи нам питање</span>
                             <i class="fas fa-paper-plane" aria-hidden="true"></i>
                         </a>
-                        <span class="footer-form-hint">Одговарамо у року од 24 часа.</span>
+                        <span class="footer-form-hint" data-i18n="footer.response_time">Одговарамо у року од 24 часа.</span>
                     </div>
                 </div>
             </div>
@@ -648,17 +646,17 @@
 
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> Медицинска школа „Стевица Јовановић" Панчево. Сва права задржана.</p>
+                <p class="footer-bottom-copy">&copy; <span id="current-year"></span> <span data-i18n="footer.school_name">Медицинска школа „Стевица Јовановић“ Панчево</span>. <span data-i18n="footer.all_rights">Сва права задржана</span>.</p>
                 <div class="developer-credit">
-                    <span>Израда и одржавање</span>
+                    <span data-i18n="footer.developed_by">Израда и одржавање</span>
                     <img src="images/pansoft-logo.png" alt="Pansoft">
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="politika-privatnosti.html">Политика приватности</a>
+                    <a href="politika-privatnosti.html" data-i18n="footer.privacy_policy">Политика приватности</a>
                     <span>•</span>
-                    <a href="uslovi-koristenja.html">Услови коришћења</a>
+                    <a href="uslovi-koristenja.html" data-i18n="footer.terms_of_use">Услови коришћења</a>
                     <span>•</span>
-                    <a href="sitemap.html">Мапа сајта</a>
+                    <a href="sitemap.html" data-i18n="footer.sitemap">Мапа сајта</a>
                 </div>
             </div>
         </div>
@@ -806,6 +804,18 @@
             }
         });
     </script>
+    
+    <!-- Load translations as script tags to avoid CORS -->
+    <script>
+        window.translationData = {
+            sr: null,
+            en: null,
+            de: null
+        };
+    </script>
+    <script src="translations-sr.js"></script>
+    <script src="translations-en.js"></script>
+    <script src="translations-de.js"></script>
     
     <!-- i18n Internationalization -->
     <script src="i18n.js"></script>

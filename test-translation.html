@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Prevoda</title>
+</head>
+<body>
+    <h1>TEST PREVODA</h1>
+    
+    <button onclick="testSR()">Test SR</button>
+    <button onclick="testEN()">Test EN</button>
+    <button onclick="testDE()">Test DE</button>
+    
+    <div id="result"></div>
+    
+    <script>
+        window.translationData = {
+            sr: null,
+            en: null,
+            de: null
+        };
+    </script>
+    <script src="translations-sr.js"></script>
+    <script src="translations-en.js"></script>
+    <script src="translations-de.js"></script>
+    
+    <script>
+        function testSR() {
+            const result = document.getElementById('result');
+            if (window.translationData.sr) {
+                result.innerHTML = '<pre>' + JSON.stringify(window.translationData.sr.nav, null, 2) + '</pre>';
+                console.log('SR loaded:', window.translationData.sr);
+            } else {
+                result.innerHTML = '<p style="color:red">SR nije učitan!</p>';
+            }
+        }
+        
+        function testEN() {
+            const result = document.getElementById('result');
+            if (window.translationData.en) {
+                result.innerHTML = '<pre>' + JSON.stringify(window.translationData.en.nav, null, 2) + '</pre>';
+                console.log('EN loaded:', window.translationData.en);
+            } else {
+                result.innerHTML = '<p style="color:red">EN nije učitan!</p>';
+            }
+        }
+        
+        function testDE() {
+            const result = document.getElementById('result');
+            if (window.translationData.de) {
+                result.innerHTML = '<pre>' + JSON.stringify(window.translationData.de.nav, null, 2) + '</pre>';
+                console.log('DE loaded:', window.translationData.de);
+            } else {
+                result.innerHTML = '<p style="color:red">DE nije učitan!</p>';
+            }
+        }
+        
+        window.onload = function() {
+            console.log('=== PROVERA UČITAVANJA ===');
+            console.log('SR:', window.translationData.sr ? 'UČITAN ✓' : 'NIJE UČITAN ✗');
+            console.log('EN:', window.translationData.en ? 'UČITAN ✓' : 'NIJE UČITAN ✗');
+            console.log('DE:', window.translationData.de ? 'UČITAN ✓' : 'NIJE UČITAN ✗');
+        };
+    </script>
+</body>
+</html>
