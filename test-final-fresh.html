@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINAL TEST - Erasmus Translations</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: white; text-align: center; margin-bottom: 30px; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .card { background: white; border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .card h2 { color: #667eea; margin-bottom: 15px; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .success { color: #10b981; font-weight: bold; }
+        .error { color: #ef4444; font-weight: bold; }
+        .info { background: #dbeafe; border-left: 4px solid #3b82f6; padding: 15px; margin: 10px 0; border-radius: 4px; }
+        .lang-switcher { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+        .lang-btn { padding: 12px 30px; border: none; background: white; color: #667eea; font-weight: bold; cursor: pointer; border-radius: 8px; font-size: 16px; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .lang-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+        .lang-btn.active { background: #667eea; color: white; }
+        pre { background: #f3f4f6; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 14px; line-height: 1.6; }
+        ul { list-style: none; padding-left: 0; }
+        ul li { padding: 8px 0; border-bottom: 1px solid #e5e7eb; }
+        ul li:last-child { border-bottom: none; }
+        .test-content { background: #f9fafb; padding: 20px; border-radius: 8px; margin: 15px 0; border: 2px solid #667eea; }
+        .test-content p { margin: 10px 0; line-height: 1.8; }
+        strong { color: #667eea; }
+        .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px; }
+        .status-item { padding: 15px; background: #f9fafb; border-radius: 8px; border-left: 4px solid #10b981; }
+        .status-item.error { border-left-color: #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 FINAL CACHE-FREE TEST - Erasmus Translations</h1>
+        
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="sr" onclick="switchLang('sr')">🇷🇸 СРПСКИ</button>
+            <button class="lang-btn" data-lang="en" onclick="switchLang('en')">🇬🇧 ENGLISH</button>
+            <button class="lang-btn" data-lang="de" onclick="switchLang('de')">🇩🇪 DEUTSCH</button>
+        </div>
+        
+        <div class="info">
+            <strong>ℹ️ INFO:</strong> Ova stranica koristi POTPUNO NOVE fajlove (translations-sr-fresh.js) koji nikada nisu bili keširani u browseru!
+        </div>
+        
+        <div class="card">
+            <h2>📊 Translation System Status</h2>
+            <div id="status">⏳ Loading translations...</div>
+        </div>
+        
+        <div class="card">
+            <h2>🎯 Live Translation Demo</h2>
+            <div class="test-content">
+                <p><strong>Page Title:</strong> <span data-i18n="erasmus.page_title" style="font-size: 1.2em; color: #667eea;">Loading...</span></p>
+                <hr style="margin: 15px 0; border: none; border-top: 2px solid #e5e7eb;">
+                <p><strong>Leipzig Description (lajpcig_desc1):</strong></p>
+                <p data-i18n="erasmus.lajpcig_desc1" style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px; line-height: 1.8;">Loading translation...</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>🔍 Raw Data Inspection</h2>
+            <div id="raw-data">⏳ Analyzing...</div>
+        </div>
+    </div>
+    
+    <script>
+        window.translationData = { sr: null, en: null, de: null };
+    </script>
+    <script src="translations-sr-fresh.js"></script>
+    <script src="translations-en-fresh.js"></script>
+    <script src="translations-de-fresh.js"></script>
+    <script src="i18n.js"></script>
+    
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            if (window.i18n) {
+                i18n.switchLanguage(lang);
+            }
+        }
+        
+        setTimeout(() => {
+            const statusDiv = document.getElementById('status');
+            const rawDataDiv = document.getElementById('raw-data');
+            
+            let html = '<div class="status-grid">';
+            
+            // Check system
+            const checks = [
+                { name: 'i18n system', test: () => typeof i18n !== 'undefined', critical: true },
+                { name: 'window.translationData', test: () => window.translationData !== null, critical: true },
+                { name: 'SR translations', test: () => window.translationData.sr !== null, critical: true },
+                { name: 'EN translations', test: () => window.translationData.en !== null, critical: true },
+                { name: 'DE translations', test: () => window.translationData.de !== null, critical: true },
+                { name: 'SR.erasmus', test: () => window.translationData.sr?.erasmus !== undefined, critical: true },
+                { name: 'EN.erasmus', test: () => window.translationData.en?.erasmus !== undefined, critical: true },
+                { name: 'DE.erasmus', test: () => window.translationData.de?.erasmus !== undefined, critical: true },
+                { name: 'SR.erasmus.lajpcig_desc1', test: () => window.translationData.sr?.erasmus?.lajpcig_desc1 !== undefined, critical: true },
+                { name: 'EN.erasmus.lajpcig_desc1', test: () => window.translationData.en?.erasmus?.lajpcig_desc1 !== undefined, critical: true },
+                { name: 'DE.erasmus.lajpcig_desc1', test: () => window.translationData.de?.erasmus?.lajpcig_desc1 !== undefined, critical: true },
+                { name: 'SR.erasmus.berlin_desc1', test: () => window.translationData.sr?.erasmus?.berlin_desc1 !== undefined, critical: true }
+            ];
+            
+            checks.forEach(check => {
+                const result = check.test();
+                const className = result ? 'status-item' : 'status-item error';
+                const icon = result ? '✅' : '❌';
+                html += `<div class="${className}">${icon} <strong>${check.name}</strong></div>`;
+            });
+            
+            html += '</div>';
+            
+            // i18n.t() test
+            if (typeof i18n !== 'undefined' && typeof i18n.t === 'function') {
+                const testValue = i18n.t('erasmus.page_title');
+                html += `<div style="margin-top: 20px; padding: 15px; background: #f0fdf4; border-radius: 8px; border-left: 4px solid #10b981;">
+                    <strong>✅ i18n.t() Test:</strong><br>
+                    <code style="background: white; padding: 5px 10px; border-radius: 4px; display: inline-block; margin-top: 5px;">
+                        erasmus.page_title = "${testValue}"
+                    </code>
+                </div>`;
+            }
+            
+            statusDiv.innerHTML = html;
+            
+            // Raw data
+            if (window.translationData?.sr?.erasmus?.lajpcig_desc1) {
+                const text = window.translationData.sr.erasmus.lajpcig_desc1;
+                rawDataDiv.innerHTML = `
+                    <p><strong>✅ SUCCESS! Found lajpcig_desc1:</strong></p>
+                    <pre>${text.substring(0, 300)}...</pre>
+                    <p><strong>Length:</strong> ${text.length} characters</p>
+                    <p><strong>First 50 chars:</strong> "${text.substring(0, 50)}..."</p>
+                `;
+            } else {
+                rawDataDiv.innerHTML = '<p class="error">❌ lajpcig_desc1 NOT FOUND in window.translationData.sr.erasmus</p>';
+            }
+            
+            // Log to console
+            console.log('=== TRANSLATION DATA ===');
+            console.log('SR:', window.translationData.sr);
+            console.log('EN:', window.translationData.en);
+            console.log('DE:', window.translationData.de);
+            console.log('SR.erasmus:', window.translationData.sr?.erasmus);
+            console.log('SR.erasmus.lajpcig_desc1:', window.translationData.sr?.erasmus?.lajpcig_desc1);
+            
+        }, 1000);
+    </script>
+</body>
+</html>

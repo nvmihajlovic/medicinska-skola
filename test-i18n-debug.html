@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <title>i18n Debug Test - Erasmus</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .test-box { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .lang-btn { padding: 10px 20px; margin: 5px; cursor: pointer; border: 2px solid #4a90e2; background: white; border-radius: 5px; }
+        .lang-btn.active { background: #4a90e2; color: white; }
+        pre { background: #f0f0f0; padding: 10px; border-radius: 4px; overflow-x: auto; }
+        h1 { color: #4a90e2; }
+        h2 { color: #357abd; border-bottom: 2px solid #4a90e2; padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <h1>ðŸ” i18n Debug Panel - Erasmus Translations</h1>
+    
+    <div class="test-box">
+        <h2>Language Switcher</h2>
+        <div id="language-switcher">
+            <button class="lang-btn active" data-lang="sr">Ð¡Ð  - Ð¡Ñ€Ð¿ÑÐºÐ¸</button>
+            <button class="lang-btn" data-lang="en">EN - English</button>
+            <button class="lang-btn" data-lang="de">DE - Deutsch</button>
+        </div>
+    </div>
+    
+    <div class="test-box">
+        <h2>Translation Status</h2>
+        <div id="status">Loading...</div>
+    </div>
+    
+    <div class="test-box">
+        <h2>Live Translation Test</h2>
+        <p><strong>Page Title:</strong> <span data-i18n="erasmus.page_title">-</span></p>
+        <p><strong>Leipzig Description:</strong></p>
+        <p data-i18n="erasmus.lajpcig_desc1" style="border: 2px solid #4a90e2; padding: 10px; background: #f9f9f9;">-</p>
+    </div>
+    
+    <div class="test-box">
+        <h2>Raw Translation Data (First 200 chars)</h2>
+        <div id="raw-data"></div>
+    </div>
+    
+    <script>
+        window.translationData = { sr: null, en: null, de: null };
+    </script>
+    <script src="translations-sr.js?t=1767799994"></script>
+    <script src="translations-en.js?t=1767799994"></script>
+    <script src="translations-de.js?t=1767799994"></script>
+    <script src="i18n.js?t=1767799994"></script>
+    
+    <script>
+        setTimeout(() => {
+            const status = document.getElementById('status');
+            const rawData = document.getElementById('raw-data');
+            
+            let html = '<h3>System Check:</h3><ul>';
+            
+            // Check if i18n exists
+            if (typeof i18n !== 'undefined') {
+                html += '<li class="success">âœ“ i18n object exists</li>';
+            } else {
+                html += '<li class="error">âœ— i18n object NOT found!</li>';
+            }
+            
+            // Check if translationData exists
+            if (window.translationData) {
+                html += '<li class="success">âœ“ window.translationData exists</li>';
+                
+                // Check each language
+                ['sr', 'en', 'de'].forEach(lang => {
+                    if (window.translationData[lang]) {
+                        html += `<li class="success">âœ“ ${lang.toUpperCase()} translations loaded</li>`;
+                        
+                        // Check erasmus section
+                        if (window.translationData[lang].erasmus) {
+                            html += `<li class="success">âœ“ ${lang.toUpperCase()}.erasmus section exists</li>`;
+                            
+                            // Check specific keys
+                            const keys = ['page_title', 'lajpcig_desc1', 'berlin_desc1'];
+                            keys.forEach(key => {
+                                if (window.translationData[lang].erasmus[key]) {
+                                    html += `<li class="success">âœ“ ${lang.toUpperCase()}.erasmus.${key} exists</li>`;
+                                } else {
+                                    html += `<li class="error">âœ— ${lang.toUpperCase()}.erasmus.${key} MISSING!</li>`;
+                                }
+                            });
+                        } else {
+                            html += `<li class="error">âœ— ${lang.toUpperCase()}.erasmus section MISSING!</li>`;
+                        }
+                    } else {
+                        html += `<li class="error">âœ— ${lang.toUpperCase()} translations NOT loaded!</li>`;
+                    }
+                });
+            } else {
+                html += '<li class="error">âœ— window.translationData NOT found!</li>';
+            }
+            
+            html += '</ul>';
+            status.innerHTML = html;
+            
+            // Show raw data
+            if (window.translationData && window.translationData.sr && window.translationData.sr.erasmus) {
+                const desc = window.translationData.sr.erasmus.lajpcig_desc1 || 'NOT FOUND';
+                rawData.innerHTML = `
+                    <h3>SR - erasmus.lajpcig_desc1 (first 200 chars):</h3>
+                    <pre>${desc.substring(0, 200)}...</pre>
+                    <p><strong>Length:</strong> ${desc.length} characters</p>
+                    <p><strong>Starts with:</strong> "${desc.substring(0, 30)}..."</p>
+                `;
+            } else {
+                rawData.innerHTML = '<p class="error">erasmus.lajpcig_desc1 NOT ACCESSIBLE!</p>';
+            }
+            
+            // Test i18n.t() function
+            if (typeof i18n !== 'undefined' && typeof i18n.t === 'function') {
+                const testKey = i18n.t('erasmus.page_title');
+                status.innerHTML += `<h3>i18n.t() Test:</h3><p><strong>erasmus.page_title:</strong> "${testKey}"</p>`;
+            }
+            
+        }, 800);
+    </script>
+</body>
+</html>
+

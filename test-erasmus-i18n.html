@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Erasmus i18n</title>
+</head>
+<body>
+    <h1>Test i18n Sistema - Erasmus</h1>
+    
+    <div class="language-switcher" id="language-switcher">
+        <button class="lang-btn active" data-lang="sr">СР</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+    </div>
+    
+    <hr>
+    
+    <h2 data-i18n="erasmus.page_title">Eразмус+ пројекти</h2>
+    <p data-i18n="erasmus.page_subtitle">Међународна сарадња и мобилности ученика и запослених</p>
+    
+    <h3 data-i18n="erasmus.lajpcig_title">Лајпциг</h3>
+    <p data-i18n="erasmus.lajpcig_desc1">
+        У оквиру Еразмуса+ програма, наши ученици и запослени су посетили Немачку у Лајпцигу...
+    </p>
+    
+    <hr>
+    <div id="debug"></div>
+    
+    <script>
+        window.translationData = {
+            sr: null,
+            en: null,
+            de: null
+        };
+    </script>
+    <script src="translations-sr.js?v=2.0"></script>
+    <script src="translations-en.js?v=2.0"></script>
+    <script src="translations-de.js?v=2.0"></script>
+    <script src="i18n.js?v=2.0"></script>
+    
+    <script>
+        // Debug info
+        setTimeout(() => {
+            const debug = document.getElementById('debug');
+            debug.innerHTML = `
+                <h3>Debug Info:</h3>
+                <p><strong>Current Lang:</strong> ${i18n.getCurrentLanguage()}</p>
+                <p><strong>Translations loaded:</strong> ${Object.keys(i18n.translations).length > 0 ? 'YES' : 'NO'}</p>
+                <p><strong>Erasmus section exists:</strong> ${i18n.translations.erasmus ? 'YES' : 'NO'}</p>
+                <p><strong>Elements with data-i18n:</strong> ${document.querySelectorAll('[data-i18n]').length}</p>
+                <p><strong>erasmus.page_title value:</strong> ${i18n.t('erasmus.page_title')}</p>
+                <p><strong>erasmus.lajpcig_desc1 length:</strong> ${i18n.t('erasmus.lajpcig_desc1').length} chars</p>
+            `;
+        }, 500);
+    </script>
+</body>
+</html>

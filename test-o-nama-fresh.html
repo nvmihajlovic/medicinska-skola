@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test O Nama - Fresh Load</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 { color: #667eea; margin-bottom: 10px; }
+        .status { 
+            padding: 15px; 
+            margin: 15px 0; 
+            border-radius: 8px; 
+            font-family: 'Courier New', monospace;
+        }
+        .success { background: #d4edda; color: #155724; border: 2px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 2px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 2px solid #bee5eb; }
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .lang-btn {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .lang-btn:hover { background: #5568d3; transform: translateY(-2px); }
+        .lang-btn.active { background: #764ba2; }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        .test-section h3 { margin-top: 0; color: #667eea; }
+        .translation-test { 
+            padding: 10px; 
+            background: white; 
+            margin: 10px 0; 
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }
+        .key { 
+            color: #764ba2; 
+            font-weight: 600; 
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        .value { 
+            margin-top: 5px; 
+            color: #333;
+            font-size: 16px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #e83e8c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test O Nama Translation - Fresh Cache</h1>
+        <p>Timestamp: <?php echo time(); ?> | <?php echo date('Y-m-d H:i:s'); ?></p>
+
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="switchLanguage('sr')">🇷🇸 Srpski</button>
+            <button class="lang-btn" onclick="switchLanguage('en')">🇬🇧 English</button>
+            <button class="lang-btn" onclick="switchLanguage('de')">🇩🇪 Deutsch</button>
+        </div>
+
+        <div id="status"></div>
+
+        <div class="test-section">
+            <h3>📋 Translation System Status</h3>
+            <div id="system-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🔤 About Translations Test</h3>
+            
+            <div class="translation-test">
+                <div class="key">about.page_title</div>
+                <div class="value" data-i18n="about.page_title">О школи</div>
+            </div>
+
+            <div class="translation-test">
+                <div class="key">about.page_subtitle</div>
+                <div class="value" data-i18n="about.page_subtitle">Историјат, мисија и вредности наше образовне установе</div>
+            </div>
+
+            <div class="translation-test">
+                <div class="key">about.who_we_are_title</div>
+                <div class="value" data-i18n="about.who_we_are_title">Ко смо</div>
+            </div>
+
+            <div class="translation-test">
+                <div class="key">about.who_we_are_text1</div>
+                <div class="value" data-i18n="about.who_we_are_text1">Медицинска школа „Стевица Јовановић" основана је 1965. године...</div>
+            </div>
+
+            <div class="translation-test">
+                <div class="key">about.mission_title</div>
+                <div class="value" data-i18n="about.mission_title">Мисија</div>
+            </div>
+
+            <div class="translation-test">
+                <div class="key">about.mission_text</div>
+                <div class="value" data-i18n="about.mission_text">Наша мисија је развој компетентних и хуманих здравствених радника...</div>
+            </div>
+
+            <div class="translation-test">
+                <div class="key">about.why_choose_title</div>
+                <div class="value" data-i18n="about.why_choose_title">Зашто изабрати нас</div>
+            </div>
+
+            <div class="translation-test">
+                <div class="key">about.reason_certified</div>
+                <div class="value" data-i18n="about.reason_certified">Вертификовани програми</div>
+            </div>
+
+            <div class="translation-test">
+                <div class="key">about.stats_title</div>
+                <div class="value" data-i18n="about.stats_title">У бројкама</div>
+            </div>
+
+            <div class="translation-test">
+                <div class="key">about.achievements_title</div>
+                <div class="value" data-i18n="about.achievements_title">Постигнућа</div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🔍 Debug Console</h3>
+            <div id="debug-console" style="background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 12px; max-height: 300px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <!-- Translation System -->
+    <script>
+        window.translationData = {
+            sr: null,
+            en: null,
+            de: null
+        };
+    </script>
+    <script src="translations-sr.js?nocache=<?php echo time(); ?>"></script>
+    <script src="translations-en.js?nocache=<?php echo time(); ?>"></script>
+    <script src="translations-de.js?nocache=<?php echo time(); ?>"></script>
+    <script src="i18n.js?nocache=<?php echo time(); ?>"></script>
+
+    <script>
+        const debugConsole = document.getElementById('debug-console');
+        const statusDiv = document.getElementById('status');
+        const systemStatusDiv = document.getElementById('system-status');
+
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const line = `[${timestamp}] ${message}`;
+            debugConsole.innerHTML += `<div style="color: ${type === 'error' ? '#f48771' : type === 'success' ? '#89d185' : '#d4d4d4'}">${line}</div>`;
+            debugConsole.scrollTop = debugConsole.scrollHeight;
+        }
+
+        function checkTranslations() {
+            log('Checking translation system...', 'info');
+            
+            let html = '';
+            let allGood = true;
+
+            // Check if translationData exists
+            if (typeof window.translationData === 'undefined') {
+                html += '<div class="status error">❌ window.translationData is undefined</div>';
+                allGood = false;
+                log('ERROR: window.translationData is undefined', 'error');
+            } else {
+                html += '<div class="status success">✅ window.translationData exists</div>';
+                log('✓ window.translationData exists', 'success');
+                
+                // Check each language
+                ['sr', 'en', 'de'].forEach(lang => {
+                    if (!window.translationData[lang]) {
+                        html += `<div class="status error">❌ ${lang} translations missing</div>`;
+                        allGood = false;
+                        log(`ERROR: ${lang} translations missing`, 'error');
+                    } else {
+                        html += `<div class="status success">✅ ${lang} translations loaded</div>`;
+                        log(`✓ ${lang} translations loaded`, 'success');
+                        
+                        // Check about section
+                        if (!window.translationData[lang].about) {
+                            html += `<div class="status error">❌ ${lang}.about section missing</div>`;
+                            allGood = false;
+                            log(`ERROR: ${lang}.about section missing`, 'error');
+                        } else {
+                            const aboutKeys = Object.keys(window.translationData[lang].about);
+                            html += `<div class="status info">📦 ${lang}.about has ${aboutKeys.length} keys</div>`;
+                            log(`✓ ${lang}.about has ${aboutKeys.length} keys: ${aboutKeys.join(', ')}`, 'success');
+                        }
+                    }
+                });
+            }
+
+            // Check i18n.js
+            if (typeof window.switchLanguage === 'undefined') {
+                html += '<div class="status error">❌ i18n.js not loaded (switchLanguage missing)</div>';
+                allGood = false;
+                log('ERROR: i18n.js not loaded', 'error');
+            } else {
+                html += '<div class="status success">✅ i18n.js loaded</div>';
+                log('✓ i18n.js loaded', 'success');
+            }
+
+            systemStatusDiv.innerHTML = html;
+
+            if (allGood) {
+                statusDiv.innerHTML = '<div class="status success">🎉 All systems operational! Translations ready.</div>';
+                log('=== ALL SYSTEMS OPERATIONAL ===', 'success');
+            } else {
+                statusDiv.innerHTML = '<div class="status error">⚠️ Translation system has errors. Check console.</div>';
+                log('=== ERRORS DETECTED ===', 'error');
+            }
+        }
+
+        // Run check when page loads
+        window.addEventListener('load', () => {
+            setTimeout(checkTranslations, 500);
+        });
+
+        function switchLanguage(lang) {
+            log(`Switching to ${lang}...`, 'info');
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Switch language using i18n system
+            if (typeof window.switchLanguage === 'function') {
+                window.switchLanguage(lang);
+                log(`✓ Language switched to ${lang}`, 'success');
+            } else {
+                log('ERROR: switchLanguage function not found', 'error');
+            }
+        }
+    </script>
+</body>
+</html>

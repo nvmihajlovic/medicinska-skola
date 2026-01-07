@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <title>Direct Object Test</title>
+</head>
+<body>
+    <h1>Direct Access Test</h1>
+    <pre id="output"></pre>
+    
+    <script>
+        window.translationData = { sr: null, en: null, de: null };
+    </script>
+    <script src="translations-sr-fresh.js"></script>
+    
+    <script>
+        setTimeout(() => {
+            const output = document.getElementById('output');
+            let text = '=== DIRECT OBJECT INSPECTION ===\n\n';
+            
+            text += '1. window.translationData exists? ' + (window.translationData ? 'YES' : 'NO') + '\n';
+            text += '2. window.translationData.sr exists? ' + (window.translationData.sr ? 'YES' : 'NO') + '\n';
+            text += '3. window.translationData.sr.erasmus exists? ' + (window.translationData.sr?.erasmus ? 'YES' : 'NO') + '\n\n';
+            
+            if (window.translationData.sr?.erasmus) {
+                text += '4. Keys in erasmus object:\n';
+                const keys = Object.keys(window.translationData.sr.erasmus);
+                keys.forEach(key => {
+                    text += `   - ${key}\n`;
+                });
+                
+                text += '\n5. Checking specific values:\n';
+                text += `   breadcrumb_home: ${window.translationData.sr.erasmus.breadcrumb_home || 'NOT FOUND'}\n`;
+                text += `   page_title: ${window.translationData.sr.erasmus.page_title || 'NOT FOUND'}\n`;
+                text += `   lajpcig_location: ${window.translationData.sr.erasmus.lajpcig_location || 'NOT FOUND'}\n`;
+                text += `   lajpcig_title: ${window.translationData.sr.erasmus.lajpcig_title || 'NOT FOUND'}\n`;
+                text += `   lajpcig_desc1 exists: ${window.translationData.sr.erasmus.lajpcig_desc1 ? 'YES' : 'NO'}\n`;
+                
+                if (window.translationData.sr.erasmus.lajpcig_desc1) {
+                    text += `   lajpcig_desc1 length: ${window.translationData.sr.erasmus.lajpcig_desc1.length}\n`;
+                    text += `   lajpcig_desc1 first 100 chars:\n   "${window.translationData.sr.erasmus.lajpcig_desc1.substring(0, 100)}..."\n`;
+                }
+            } else {
+                text += 'ERROR: erasmus object not found!';
+            }
+            
+            output.textContent = text;
+            console.log('Full SR object:', window.translationData.sr);
+            console.log('Full erasmus object:', window.translationData.sr?.erasmus);
+        }, 500);
+    </script>
+</body>
+</html>

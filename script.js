@@ -42,13 +42,46 @@ hamburger.addEventListener('click', function() {
     document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
 });
 
-// Close menu when clicking overlay
+// Close mobile menu when clicking overlay
 menuOverlay.addEventListener('click', function() {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
     menuOverlay.classList.remove('active');
     document.body.style.overflow = '';
 });
+
+// Active page indicator - Desktop navbar enhancement
+(function setActivePage() {
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+    
+    // Get all nav links (both in main menu and dropdowns)
+    const allNavLinks = document.querySelectorAll('.nav-link, .dropdown-menu a');
+    
+    allNavLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        
+        // Remove any existing active class
+        link.classList.remove('active');
+        
+        // Check if this link matches current page
+        if (linkHref === currentPage || 
+            (currentPage === '' && linkHref === 'index.html') ||
+            (currentPage === 'index.html' && linkHref === 'index.html')) {
+            link.classList.add('active');
+            
+            // If it's in a dropdown, mark the parent dropdown link as active too
+            const parentDropdown = link.closest('.dropdown');
+            if (parentDropdown) {
+                const parentLink = parentDropdown.querySelector(':scope > .nav-link');
+                if (parentLink) {
+                    parentLink.classList.add('active');
+                }
+            }
+        }
+    });
+})();
+
 
 // Close mobile menu when clicking on a link (except dropdown toggles)
 document.querySelectorAll('.nav-link:not(.dropdown > .nav-link)').forEach(link => {
